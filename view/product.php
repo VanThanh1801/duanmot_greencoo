@@ -12,7 +12,7 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-1.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-1.jpg"
                                 alt="Colorlib Template">
                             <span class="status">30%</span>
                             <div class="overlay"></div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-2.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-2.jpg"
                                 alt="Colorlib Template">
                             <div class="overlay"></div>
                         </a>
@@ -74,7 +74,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-3.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-3.jpg"
                                 alt="Colorlib Template">
                             <div class="overlay"></div>
                         </a>
@@ -104,7 +104,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-4.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-4.jpg"
                                 alt="Colorlib Template">
                             <div class="overlay"></div>
                         </a>
@@ -136,7 +136,7 @@
 
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-5.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-5.jpg"
                                 alt="Colorlib Template">
                             <span class="status">30%</span>
                             <div class="overlay"></div>
@@ -168,7 +168,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-6.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-6.jpg"
                                 alt="Colorlib Template">
                             <div class="overlay"></div>
                         </a>
@@ -198,7 +198,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-7.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-7.jpg"
                                 alt="Colorlib Template">
                             <div class="overlay"></div>
                         </a>
@@ -228,7 +228,7 @@
                 </div>
                 <div class="col-md-6 col-lg-3 ftco-animate">
                     <div class="product">
-                        <a href="#" class="img-prod"><img class="img-fluid" src="images/product-8.jpg"
+                        <a href="#" class="img-prod"><img class="img-fluid" src="./view/images/product-8.jpg"
                                 alt="Colorlib Template">
                             <div class="overlay"></div>
                         </a>
