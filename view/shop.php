@@ -17,10 +17,10 @@
     			<div class="col-md-10 mb-5 text-center">
     				<ul class="product-category">
     					<li><a href="#" class="active">All</a></li>
-    					<li><a href="#">Vegetables</a></li>
-    					<li><a href="#">Fruits</a></li>
-    					<li><a href="#">Juice</a></li>
-    					<li><a href="#">Dried</a></li>
+    					<li><a href="#">Rau xanh</a></li>
+    					<li><a href="#">Trái cây</a></li>
+    					<li><a href="#">Nước ép</a></li>
+    					<li><a href="#">Hạt khô</a></li>
     				</ul>
     			</div>
     		</div>

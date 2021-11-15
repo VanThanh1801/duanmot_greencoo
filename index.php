@@ -1,1 +1,5 @@
-<?php include("./view/home.php") ?>
+<?php 
+    session_start();
+    include "./view/home.php"; 
+    
+?>

@@ -3,10 +3,9 @@
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate text-center">
-                    <span class="subheading">Testimony</span>
-                    <h2 class="mb-4">Our satisfied customer says</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-                        live the blind texts. Separated they live in</p>
+                    <span class="subheading">Phản hồi</span>
+                    <h2 class="mb-4">Khách hàng nói gì về GreenCoCo</h2>
+                    <p>Chất lượng miễn chê, phong cách bán hàng nhiệt tình</p>
                 </div>
             </div>
             <div class="row ftco-animate">
@@ -20,8 +19,7 @@
                                     </span>
                                 </div>
                                 <div class="text text-center">
-                                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    <p class="mb-5 pl-4 line">Chất lượng miễn chê, phong cách bán hàng nhiệt tình.</p>
                                     <p class="name">Garreth Smith</p>
                                     <span class="position">Marketing Manager</span>
                                 </div>
@@ -35,8 +33,7 @@
                                     </span>
                                 </div>
                                 <div class="text text-center">
-                                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    <p class="mb-5 pl-4 line">Thực sự ấn tượng với GreenCoCo.</p>
                                     <p class="name">Garreth Smith</p>
                                     <span class="position">Interface Designer</span>
                                 </div>
@@ -50,8 +47,7 @@
                                     </span>
                                 </div>
                                 <div class="text text-center">
-                                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    <p class="mb-5 pl-4 line">Tôi tin tưởng và chọn mua cho gia đình, bạm bè.</p>
                                     <p class="name">Garreth Smith</p>
                                     <span class="position">UI Designer</span>
                                 </div>
@@ -65,8 +61,7 @@
                                     </span>
                                 </div>
                                 <div class="text text-center">
-                                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    <p class="mb-5 pl-4 line">Chất lượng miễn chê, phong cách bán hàng nhiệt tình.</p>
                                     <p class="name">Garreth Smith</p>
                                     <span class="position">Web Developer</span>
                                 </div>
@@ -80,8 +75,7 @@
                                     </span>
                                 </div>
                                 <div class="text text-center">
-                                    <p class="mb-5 pl-4 line">Far far away, behind the word mountains, far from the
-                                        countries Vokalia and Consonantia, there live the blind texts.</p>
+                                    <p class="mb-5 pl-4 line">Thực sự ấn tượng với GreenCoCo.</p>
                                     <p class="name">Garreth Smith</p>
                                     <span class="position">System Analyst</span>
                                 </div>
