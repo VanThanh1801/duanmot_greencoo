@@ -8,7 +8,7 @@
 <?php include_once("./view/product.php") ?>
 
 <?php include_once("./view/deal.php") ?>
-
+<?php include_once("./view/sale.php") ?>
 <?php include_once("./view/info.php") ?>
 
 <?php include_once("./view/contacts.php") ?>
