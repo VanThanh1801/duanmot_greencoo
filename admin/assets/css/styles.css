@@ -32,3 +32,7 @@
     border-color: #cb0c9f;
     border: 1px solid #cb0c9f;
 }
+
+.product_item {
+    margin-left: 50px;
+}
