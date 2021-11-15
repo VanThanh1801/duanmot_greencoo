@@ -5,7 +5,7 @@
                 <div class="col-md-7 heading-section ftco-animate text-center">
                     <span class="subheading">Phản hồi</span>
                     <h2 class="mb-4">Khách hàng nói gì về GreenCoCo</h2>
-                    <p>Chất lượng miễn chê, phong cách bán hàng nhiệt tình</p>
+                    <!-- <p>Chất lượng miễn chê, phong cách bán hàng nhiệt tình</p> -->
                 </div>
             </div>
             <div class="row ftco-animate">
@@ -13,7 +13,7 @@
                     <div class="carousel-testimony owl-carousel">
                         <div class="item">
                             <div class="testimony-wrap p-4 pb-5">
-                                <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                                <div class="user-img mb-5" style="background-image: url(./view/images/person_1.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -27,7 +27,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap p-4 pb-5">
-                                <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+                                <div class="user-img mb-5" style="background-image: url(./view/images/person_2.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -41,7 +41,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap p-4 pb-5">
-                                <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+                                <div class="user-img mb-5" style="background-image: url(./view/images/person_3.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -55,7 +55,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap p-4 pb-5">
-                                <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                                <div class="user-img mb-5" style="background-image: url(./view/images/person_1.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -69,7 +69,7 @@
                         </div>
                         <div class="item">
                             <div class="testimony-wrap p-4 pb-5">
-                                <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                                <div class="user-img mb-5" style="background-image: url(./view/images/person_1.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
                                         <i class="icon-quote-left"></i>
                                     </span>
@@ -96,23 +96,23 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm ftco-animate">
-                    <a href="#" class="partner"><img src="images/partner-1.png" class="img-fluid"
+                    <a href="#" class="partner"><img src="./view/images/partner-1.png" class="img-fluid"
                             alt="Colorlib Template"></a>
                 </div>
                 <div class="col-sm ftco-animate">
-                    <a href="#" class="partner"><img src="images/partner-2.png" class="img-fluid"
+                    <a href="#" class="partner"><img src="./view/images/partner-2.png" class="img-fluid"
                             alt="Colorlib Template"></a>
                 </div>
                 <div class="col-sm ftco-animate">
-                    <a href="#" class="partner"><img src="images/partner-3.png" class="img-fluid"
+                    <a href="#" class="partner"><img src="./view/images/partner-3.png" class="img-fluid"
                             alt="Colorlib Template"></a>
                 </div>
                 <div class="col-sm ftco-animate">
-                    <a href="#" class="partner"><img src="images/partner-4.png" class="img-fluid"
+                    <a href="#" class="partner"><img src="./view/images/partner-4.png" class="img-fluid"
                             alt="Colorlib Template"></a>
                 </div>
                 <div class="col-sm ftco-animate">
-                    <a href="#" class="partner"><img src="images/partner-5.png" class="img-fluid"
+                    <a href="#" class="partner"><img src="./view/images/partner-5.png" class="img-fluid"
                             alt="Colorlib Template"></a>
                 </div>
             </div>
