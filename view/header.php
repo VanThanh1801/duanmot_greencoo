@@ -85,6 +85,7 @@
 	          <li class="nav-item"><a href="./view/about.php" class="nav-link">Về chúng tôi</a></li>
 	          <li class="nav-item"><a href="./view/blog.php" class="nav-link">Tin tức</a></li>
 	          <li class="nav-item"><a href="./view/contact.php" class="nav-link">Liên hệ</a></li>
+			  <li class="nav-item"><a href="./view/login.php" class="nav-link">Login</a></li>
 	          <li class="nav-item cta cta-colored"><a href="./view/cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
                 </ul>
