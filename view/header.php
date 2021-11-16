@@ -68,23 +68,24 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Trang Chủ</a></li>
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Trang Chủ</a></li>
+			  <li class="nav-item active"><a href="./view/shop.php" class="nav-link">Cửa hàng</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-			  <a class="dropdown-item" href="shop.html">Sữa và trứng</a>
-                            <a class="dropdown-item" href="wishlist.html">Cá và hải sản</a>
-                            <a class="dropdown-item" href="product-single.html"> Hoa quả</a>
-                            <a class="dropdown-item" href="cart.html">Hải sản</a>
-                            <a class="dropdown-item" href="checkout.html">Thịt và gia cầm</a>
-							<a class="dropdown-item" href="cart.html"> Đồ uống</a>
-                            <a class="dropdown-item" href="checkout.html">Rau củ </a>
+			  <a class="dropdown-item" href="./view/shop">Sữa và trứng</a>
+                            <a class="dropdown-item" href="#">Cá và hải sản</a>
+                            <a class="dropdown-item" href="#"> Hoa quả</a>
+                            <a class="dropdown-item" href="#">Hải sản</a>
+                            <a class="dropdown-item" href="#">Thịt và gia cầm</a>
+							<a class="dropdown-item" href="#"> Đồ uống</a>
+                            <a class="dropdown-item" href="#">Rau củ </a>
               </div>
             </li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Về chúng tôi</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Tin tức</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item"><a href="./view/about.php" class="nav-link">Về chúng tôi</a></li>
+	          <li class="nav-item"><a href="./view/blog.php" class="nav-link">Tin tức</a></li>
+	          <li class="nav-item"><a href="./view/contact.php" class="nav-link">Liên hệ</a></li>
+	          <li class="nav-item cta cta-colored"><a href="./view/cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
                 </ul>
             </div>

@@ -1,10 +1,18 @@
 <?php
 
-function insert_sanpham($tensp, $giaold, $gianew, $hinh, $mota, $iddm, $hastag, $nhacungcap){
-    $sql="insert into product(name,old_price,new_price, img, description, id_cate, id_hastags, id_agent) values('$tensp','$giaold', '$gianew', '$hinh','$mota','$iddm', '$hastag', '$nhacungcap')";
+function insert_sanpham($tensp, $giaold, $gianew, $file_name, $mota, $iddm, $hastag, $nhacungcap ){
+    $sql="insert into product(name,old_price,new_price, img, description, id_cate, id_hastags, id_agent) values('$tensp','$giaold', '$gianew', '$file_name','$mota','$iddm', '$hastag', '$nhacungcap', )";
+   var_dump($sql);
     pdo_execute($sql);
    
+   
 }
+function insert_image($id_pro, $value){
+    $sql = "insert into album(product_id, img) value('$id_pro', '$value')";
+    pdo_execute($sql);
+}
+
+
 function delete_sanpham($id){
     $sql="delete from sanpham where id=".$id;
     pdo_execute($sql);

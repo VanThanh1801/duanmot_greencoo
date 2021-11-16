@@ -66,25 +66,37 @@ if(isset($_GET['act'])) {
       $mota=$_POST['mota'];
       $hastag = $_POST['hastag'];
       $nhacungcap = $_POST['idncc'];
-      $hinh=$_FILES['hinh']['name'];
-      $target_dir = "../upload/";
-      $hinhs = $_FILES['hinhs']['name'];
-      $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-      if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-          // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-      } else {
-          //  echo "Sorry, there was an error uploading your file.";
+
+
+      if(isset($_FILES['hinh'])){
+        $file = $_FILES['hinh'];
+        $file_name = $file['name'];
+        move_uploaded_file($file['tmp_name'], '../uploads'. $file_name);
       }
+     
+     
+
       if(isset($_FILES['hinhs'])){
-        $hinhs = $_FILES['hinhs']['name'];
-        foreach($hinh as $key => $value){
-          move_uploaded_file($_FILES["hinhs"]["tmp_name"][$key], $target_file);
+        $files = $_FILES['hinhs'];
+        $file_names = $files['name'];
+        foreach($file_names as $key => $value){
+          move_uploaded_file($files['tmp_name'][$key],  '../uploads'. $value);
 
         }
 
       }
 
-        insert_sanpham($tensp, $giaold, $gianew, $hinh, $mota, $iddm, $hastag, $nhacungcap );
+        insert_sanpham($tensp, $giaold, $gianew, $file_name, $mota, $iddm, $hastag, $nhacungcap );
+
+        $id_pro = mysqli_insert_id($conn);
+        foreach($file_names as $key => $value){
+          insert_image($id_pro, $value);
+
+        }
+
+
+      
+
     
         $thongbao="Thêm thành công";
     }
