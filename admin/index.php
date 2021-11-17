@@ -66,47 +66,51 @@ if(isset($_GET['act'])) {
       $mota=$_POST['mota'];
       $hastag = $_POST['hastag'];
       $nhacungcap = $_POST['idncc'];
-
-
-      if(isset($_FILES['hinh'])){
-        $file = $_FILES['hinh'];
-        $file_name = $file['name'];
-        move_uploaded_file($file['tmp_name'], '../uploads'. $file_name);
-      }
+      $hinh=$_FILES['hinh']['name'];
+      $target_dir = "../upload/";
+      $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                   // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                } else {
+                      //  echo "Sorry, there was an error uploading your file.";
+                  }
+      $hinhs=$_FILES['hinhs']['name'];
+      $target_file = $target_dir . basename($_FILES["hinhs"]["name"]);
+      if (move_uploaded_file($_FILES["hinhs"]["tmp_name"], $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+     } else {
+           //  echo "Sorry, there was an error uploading your file.";
+       }
      
-     
 
-      if(isset($_FILES['hinhs'])){
-        $files = $_FILES['hinhs'];
-        $file_names = $files['name'];
-        foreach($file_names as $key => $value){
-          move_uploaded_file($files['tmp_name'][$key],  '../uploads'. $value);
+      // if(isset($_FILES['hinhs'])){
+      //   $files = $_FILES['hinhs'];
+      //   $file_names = $files['name'];
+      //   foreach($file_names as $key => $value){
+      //     move_uploaded_file($files['tmp_name'][$key],  '../uploads'. $value);
 
-        }
+      //   }
 
-      }
+      // }
 
-        insert_sanpham($tensp, $giaold, $gianew, $file_name, $mota, $iddm, $hastag, $nhacungcap );
+        // 
 
-        $id_pro = mysqli_insert_id($conn);
-        foreach($file_names as $key => $value){
-          insert_image($id_pro, $value);
+        // $id_pro = mysqli_insert_id($conn);
+        // foreach($file_names as $key => $value){
+        //   insert_image($id_pro, $value);
 
-        }
-
-
-      
-
-    
+        // }
+        insert_sanpham($tensp,$giaold,$gianew,$hinh,$hinhs,$mota,$iddm,$hastag,$nhacungcap);
         $thongbao="Thêm thành công";
+        
     }
     $listdanhmuc=loadall_danhmuc();
     $listnhacungcap=loadall_nhacungcap();
-  
+    $listhastags = loadall_hastags();
     include "sanpham/add.php";
     break;
 case 'listsp':
-    if(isset($_POST['listok'])&&($_POST['listok'])){
+      if(isset($_POST['listok'])&&($_POST['listok'])){
         $kyw=$_POST['kyw'];
         $iddm=$_POST['iddm'];
     }else{
@@ -114,9 +118,9 @@ case 'listsp':
         $iddm=0;
     }
     $listdanhmuc=loadall_danhmuc();
-    
+    $listhastags=loadall_hastags();
     $listsanpham=loadall_sanpham($kyw,$iddm);
-    include "sanpham/list.php";
+    include "../admin/sanpham/list.php";
     break;
 case 'xoasp':
     if(isset($_GET['id'])&&($_GET['id']>0)){
@@ -125,44 +129,57 @@ case 'xoasp':
     $listsanpham=loadall_sanpham();
     include "sanpham/list.php";
     break;
+// case 'suasp':
+//     if(isset($_GET['id'])&&($_GET['id']>0)){
+//         $sanpham=loadone_sanpham($_GET['id']);
+//     }
+//     $listdanhmuc=loadall_danhmuc(); 
+//     // var_dump($listdanhmuc);
+//     // die;
+//     $thongbao="Cập nhật thành công";
+//     include "sanpham/update.php";
+//     break;
 case 'suasp':
-    if(isset($_GET['id'])&&($_GET['id']>0)){
-        $sanpham=loadone_sanpham($_GET['id']);
-    }
-    $listdanhmuc=loadall_danhmuc(); 
-    // var_dump($listdanhmuc);
-    // die;
-    $thongbao="Cập nhật thành công";
-    include "sanpham/update.php";
-    break;
+  if(isset($_GET['id'])&&($_GET['id']>0)){
+      $sanpham=loadone_sanpham($_GET['id']);
+  }
+  $listhastags=loadall_hastags();
+  $listdanhmuc=loadall_danhmuc();
+  $listnhacungcap=loadall_nhacungcap();
+  $listsanpham=loadall_sanpham();
+  include "./sanpham/updatesp.php";
+  break; 
 case 'updatesp':
     if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
-        $id=$_POST['id'];
-        $iddm=$_POST['iddm'];
-        $tensp=$_POST['tensp'];
-        $giasp=$_POST['giasp'];
-        $mota=$_POST['mota'];
-        $hinh=$_FILES['hinh']['name'];
-        $target_dir = "../upload/";
-        $hinhs = $_FILES['hinhs']['name'];
-        $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
-        if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
-            // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
-        } else {
-            //  echo "Sorry, there was an error uploading your file.";
-        }
-        if(isset($_FILES['hinhs'])){
-          $hinhs = $_FILES['hinhs']['name'];
-          foreach($hinh as $key => $value){
-            move_uploaded_file($_FILES["hinhs"]["tmp_name"][$key], $target_file);
-
-          }
-
-        }
-        update_sanpham($id,$iddm,$tensp,$giasp,$mota,$hinh);
+      $iddm=$_POST['iddm'];
+      $tensp=$_POST['tensp'];
+      $giaold=$_POST['giaold'];
+      $gianew = $_POST['gianew'];
+      $mota=$_POST['mota'];
+      $hastag = $_POST['hastag'];
+      $nhacungcap = $_POST['idncc'];
+      $hinh=$_FILES['hinh']['name'];
+      $target_dir = "../upload/";
+      $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                   // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                } else {
+                      //  echo "Sorry, there was an error uploading your file.";
+                  }
+      $hinhs=$_FILES['hinhs']['name'];
+      $target_file = $target_dir . basename($_FILES["hinhs"]["name"]);
+      if (move_uploaded_file($_FILES["hinhs"]["tmp_name"], $target_file)) {
+        // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+     } else {
+           //  echo "Sorry, there was an error uploading your file.";
+       }
+     
+        update_sanpham($id,$tensp,$giaold,$gianew,$hinh,$hinhs,$mota,$iddm,$hastag,$nhacungcap);
         $thongbao="Cập nhật thành công";
     }
+    $listhastags=loadall_hastags();
     $listdanhmuc=loadall_danhmuc();
+    $listnhacungcap=loadall_nhacungcap();
     $listsanpham=loadall_sanpham();
     include "sanpham/list.php";
     break;

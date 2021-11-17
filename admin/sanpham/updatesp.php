@@ -9,9 +9,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Danh mục</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Sản phẩm</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">List Danh mục</h6>
+                    <h6 class="font-weight-bolder mb-0">thêm sản phẩm</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -135,155 +135,182 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List san pham</h2>
+                            <h2>San Pham</h2>
                             <button class="btn_butn">
-                                <a href="index.php?act=addsp">Them san pham</a>
+                                <a href="index.php?act=addsp">Them San Pham</a>
                             </button>
                         </div>
 
+                        <div class="product_item">
+
+                        <?php
+
+                        if(is_array($sanpham)){
+                            extract($sanpham);
+                        }
+                        $hinhpath="../upload/".$img;
+                        if(is_file($hinhpath)){
+                            $hinh="<img src='".$hinhpath."' height='80'>";
+                        }else{
+                            $hinh="no photo";
+                        }
+
+                        ?>
+                            <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
 
 
-                        <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                                <table class="table align-items-center mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Id san pham</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Ten san pham</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Giá cũ</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Giá mới</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            hình ảnh</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Hình ảnh mô tả</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Miêu tả</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Danh mục</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            nhà cung cấp</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            hastag </th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label for="product-title">Tên sản phẩm </label>
+                                        <input type="text" name="tensp" class="form-control" value="<?php echo $name; ?>">
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                  foreach($listsanpham as $sanpham){
-                    extract($sanpham);
-                    $suasp="index.php?act=suasp&id=".$id;
-                    $xoasp="index.php?act=xoasp&id=".$id;
-                    $hinhpath = "../upload/" . $img;
-                    $hinhpathp = "../upload/".$img_phu;
-                    if (is_file($hinhpath)) {
-                        $hinh = "<img src='" . $hinhpath . "' height='80'>";
-                    } else {
-                        $hinh = "no photo";
-                    }
-                    
-                    if (is_file($hinhpathp)) {
-                        $hinhp = "<img src='" . $hinhpathp . "' height='80'>";
-                    } else {
-                        $hinhp = "no photo";
-                    }
-                    echo'
-                      <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                       
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-xs text-secondary mb-0">'.$id.'</p>
-                          </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Giá cũ sản phẩm</label>
+                                            <input type="text" name="giaold" class="form-control" size="60" value="<?php echo $old_price; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Gía sản phẩm mới nhất</label>
+                                            <input type="text" name="gianew" class="form-control" size="60" value="<?php echo $new_price; ?>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="product-title">Hình ảnh sản phẩm</label>
+                                        <input type="file" name="hinh" value="<?php echo $hinhpath; ?>">
+                                        <?= $hinh;?>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-title">Mô tả sản phẩm</label>
+                                        <textarea name="mota" id="" cols="30" rows="10" class="form-control" value="<?php echo $mota; ?>"></textarea>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="product-title">Danh mục sản phẩm</label>
+
+                                        <select name="iddm" id="" class="form-control">
+
+                                        <?php
+                                foreach ($listdanhmuc as $danhmuc) {
+                                    extract($danhmuc);
+                                    if($id_cate==$id) $s="selected"; else $s="";
+                                    echo '<option value="'.$id.'" '.$s.'>'.$name.'</option>';
+                                }
+                            ?>
+
+
+                                        </select>
+
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-title">Hastag</label>
+
+                                        <select name="hastag" id="" class="form-control" >
+
+                                            <?php
+                                        // foreach ($listhastags as $hastags) {
+                                        //     extract($hastags);
+                                        //     echo '<option value="' . $id . '">' . $name . '</option>';
+                                        // }
+                                        ?>
+                                        <?php
+                                foreach ($listhastags as $hastags) {
+                                    extract($hastags);
+                                    if($id_hastags==$id) $s="selected"; else $s="";
+                                    echo '<option value="'.$id.'" '.$s.'>'.$name.'</option>';
+                                }
+                            ?>
+                                        </select>
+
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <label for="product-title">Nhà cung cấp</label>
+
+                                        <select name="idncc" id="" class="form-control" value="<?php echo $id_agent; ?>">
+
+                                            <?php
+                                        // foreach ($listnhacungcap as $nhacungcap) {
+                                        //     extract($nhacungcap);
+                                        //     echo '<option value="' . $id . '">' . $name . '</option>';
+                                        // }
+                                        ?>
+                                        <?php
+                                foreach ($listnhacungcap as $nhacungcap) {
+                                    extract($nhacungcap);
+                                    if($id_agent==$id) $s="selected"; else $s="";
+                                    echo '<option value="'.$id.'" '.$s.'>'.$name.'</option>';
+                                }
+                            ?>
+                                        </select>
+
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="product-title">Hình ảnh mô tả</label>
+                                        <input type="file" name="hinhs" value="<?php echo $hinhpathp; ?>" >
+
+                                    </div>
+
+
+
+
+                                </div>
+                                <!--Main Content-->
+
+
+                                <!-- SIDEBAR-->
+
+
+                                <aside id="admin_sidebar" class="col-md-4">
+
+
+                                    <div class="form-group">
+                                    <input type="hidden" name="id" value="<?=$id?>">
+                                        <input type="submit" class="btn btn-primary btn-lg" name="capnhat"
+                                            value="SỬA">
+                                        <!-- <input type="reset" class="btn btn-primary btn-lg" value="NHẬP LẠI"> -->
+                                        <a href="index.php?act=listsp"><input type="button"
+                                                class="btn btn-primary btn-lg" value="DANH SÁCH"></a>
+                                    </div>
+
+
+                                    <!-- Product Categories-->
+
+
+
+
+
+
+
+
+                                </aside>
+
+
+
+                            </form>
+                                
+
+
                         </div>
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$name.'</p>
-                      
-                      </td>
-                      <td>
-                      <p class="text-xs font-weight-bold mb-0">'.$old_price.'</p>
-                    
-                    </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$new_price.'</p>
-                  
-                  </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$hinh.'</p>
-                    
-                    </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$hinhp.'</p>
-                    
-                    </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$mota.'</p>
-                  
-                  </td>
-                  <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_cate .'</p>
-                  
-                  </td>
-                  <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_hastags .'</p>
-                  
-                  </td>
-                  <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_agent .'</p>
-                  
-                  </td>
-                     
-                     
-                      <td class="align-middle">
-                        <a href="'.$suasp.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td> 
-                      <td class="align-middle">
-                        <a href="'.$xoasp.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                         Delete
-                        </a>
-                      </td>
-                    </tr>';
 
 
 
 
-                  }
-                  
-                  
-                  ?>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
-
+            <h3 class="bg-success"><?php
+                            if (isset($thongbao) && ($thongbao != "")) echo $thongbao;
+                            ?></h3>
         </div>
     </main>
 

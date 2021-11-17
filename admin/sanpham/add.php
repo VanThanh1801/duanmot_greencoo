@@ -180,9 +180,6 @@
                                         <textarea name="mota" id="" cols="30" rows="10" class="form-control"></textarea>
                                     </div>
 
-                                   
-
-                                   
 
                                     <div class="form-group">
                                         <label for="product-title">Danh mục sản phẩm</label>
@@ -197,16 +194,22 @@
                                         ?>
 
 
-
-
-
                                         </select>
 
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="product-title">hastag</label>
-                                        <input type="text" name="hastag" class="form-control">
+                                        <label for="product-title">Hastag</label>
+
+                                        <select name="hastag" id="" class="form-control">
+
+                                            <?php
+                                        foreach ($listhastags as $hastags) {
+                                            extract($hastags);
+                                            echo '<option value="' . $id . '">' . $name . '</option>';
+                                        }
+                                        ?>
+                                        </select>
 
                                     </div>
                                    
@@ -221,32 +224,14 @@
                                             echo '<option value="' . $id . '">' . $name . '</option>';
                                         }
                                         ?>
-
-
-
-
-
                                         </select>
-
 
                                     </div>
                                     <div class="form-group">
                                         <label for="product-title">Hình ảnh mô tả</label>
-                                        <input type="file" name="hinhs[]" multiple="multiple">
+                                        <input type="file" name="hinhs" >
 
                                     </div>
-
-
-                                   
-                                    
-
-                                    
-
-
-
-
-                              
-
 
 
 
