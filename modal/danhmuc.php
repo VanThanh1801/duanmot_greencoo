@@ -7,6 +7,11 @@ function loadall_danhmuc(){
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
 }
+function loadall_hastags(){
+    $sql = "SELECT * FROM hastags order by id desc";
+    $listhastags=pdo_query($sql);
+    return $listhastags;
+}
 function insert_danhmuc($name){
     $sql="insert into category(name) values('$name')";
    
