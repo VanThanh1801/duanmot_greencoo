@@ -155,6 +155,9 @@
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Ten Danh Muc</th>
                                             <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Hinh anh</th>
+                                            <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Action</th>
                                             <th
@@ -186,6 +189,10 @@
                         <p class="text-xs font-weight-bold mb-0">'.$name.'</p>
                       
                       </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0">'.$img_cate.'</p>
+                    
+                    </td>
                      
                       <td class="align-middle">
                         <a href="'.$suadm.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">

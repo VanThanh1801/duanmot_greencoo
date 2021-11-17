@@ -12,8 +12,9 @@ function loadall_hastags(){
     $listhastags=pdo_query($sql);
     return $listhastags;
 }
-function insert_danhmuc($name){
-    $sql="insert into category(name) values('$name')";
+function insert_danhmuc($name, $img_cate){
+    $sql="insert into category(name, img_cate) values('$name', '$img_cate')";
+  
    
 
     pdo_execute($sql);
@@ -31,8 +32,8 @@ function delete_danhmuc($id){
 }
 
 
-function update_danhmuc($id,$tenloai){
-    $sql="update category set name='".$tenloai."' where id=".$id;
+function update_danhmuc($id,$tenloai, $img_cate){
+    $sql="update category set name='".$tenloai."', img_cate = '".$img_cate."' where id=".$id;
     pdo_execute($sql);
 }
 ?>

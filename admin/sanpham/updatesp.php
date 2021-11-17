@@ -129,6 +129,12 @@
                 </div>
             </div>
         </nav>
+        <?php 
+          if(is_array($sanpham)){
+            extract($sanpham);
+        }
+        
+        ?>
 
         <div class="container-fluid py-4">
             <div class="row">
@@ -143,11 +149,9 @@
 
                         <div class="product_item">
 
-                        <?php
+                            <?php
 
-                        if(is_array($sanpham)){
-                            extract($sanpham);
-                        }
+                       
                         $hinhpath="../upload/".$img;
                         if(is_file($hinhpath)){
                             $hinh="<img src='".$hinhpath."' height='80'>";
@@ -162,24 +166,40 @@
                                 <div class="col-md-8">
                                     <div class="form-group">
                                         <label for="product-title">Tên sản phẩm </label>
-                                        <input type="text" name="tensp" class="form-control" value="<?php echo $name; ?>">
+                                        <input type="text" name="tensp" class="form-control"
+                                            value="<?php echo $name; ?>">
 
                                     </div>
                                     <div class="form-group row">
 
                                         <div class="col-xs-3">
                                             <label for="product-price">Giá cũ sản phẩm</label>
-                                            <input type="text" name="giaold" class="form-control" size="60" value="<?php echo $old_price; ?>">
+                                            <input type="text" name="giaold" class="form-control" size="60"
+                                                value="<?php echo $old_price; ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
 
                                         <div class="col-xs-3">
                                             <label for="product-price">Gía sản phẩm mới nhất</label>
-                                            <input type="text" name="gianew" class="form-control" size="60" value="<?php echo $new_price; ?>">
+                                            <input type="text" name="gianew" class="form-control" size="60"
+                                                value="<?php echo $new_price; ?>">
                                         </div>
                                     </div>
-                                    
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Số lượng</label>
+                                            <input type="text" name="sl" class="form-control" size="60">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Khối lượng</label>
+                                            <input type="text" name="kl" class="form-control" size="60">
+                                        </div>
+                                    </div>
                                     <div class="form-group">
                                         <label for="product-title">Hình ảnh sản phẩm</label>
                                         <input type="file" name="hinh" value="<?php echo $hinhpath; ?>">
@@ -188,7 +208,8 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="product-title">Mô tả sản phẩm</label>
-                                        <textarea name="mota" id="" cols="30" rows="10" class="form-control" value="<?php echo $mota; ?>"></textarea>
+                                        <textarea name="mota" id="" cols="30" rows="10" class="form-control"
+                                            value="<?php echo $mota; ?>"></textarea>
                                     </div>
 
 
@@ -197,7 +218,7 @@
 
                                         <select name="iddm" id="" class="form-control">
 
-                                        <?php
+                                            <?php
                                 foreach ($listdanhmuc as $danhmuc) {
                                     extract($danhmuc);
                                     if($id_cate==$id) $s="selected"; else $s="";
@@ -213,15 +234,12 @@
                                     <div class="form-group">
                                         <label for="product-title">Hastag</label>
 
-                                        <select name="hastag" id="" class="form-control" >
+                                        <select name="hastag" id="" class="form-control">
 
                                             <?php
-                                        // foreach ($listhastags as $hastags) {
-                                        //     extract($hastags);
-                                        //     echo '<option value="' . $id . '">' . $name . '</option>';
-                                        // }
+                                       
                                         ?>
-                                        <?php
+                                            <?php
                                 foreach ($listhastags as $hastags) {
                                     extract($hastags);
                                     if($id_hastags==$id) $s="selected"; else $s="";
@@ -231,11 +249,12 @@
                                         </select>
 
                                     </div>
-                                   
+
                                     <div class="form-group">
                                         <label for="product-title">Nhà cung cấp</label>
 
-                                        <select name="idncc" id="" class="form-control" value="<?php echo $id_agent; ?>">
+                                        <select name="idncc" id="" class="form-control"
+                                            value="<?php echo $id_agent; ?>">
 
                                             <?php
                                         // foreach ($listnhacungcap as $nhacungcap) {
@@ -243,7 +262,7 @@
                                         //     echo '<option value="' . $id . '">' . $name . '</option>';
                                         // }
                                         ?>
-                                        <?php
+                                            <?php
                                 foreach ($listnhacungcap as $nhacungcap) {
                                     extract($nhacungcap);
                                     if($id_agent==$id) $s="selected"; else $s="";
@@ -253,11 +272,7 @@
                                         </select>
 
                                     </div>
-                                    <div class="form-group">
-                                        <label for="product-title">Hình ảnh mô tả</label>
-                                        <input type="file" name="hinhs" value="<?php echo $hinhpathp; ?>" >
-
-                                    </div>
+                                 
 
 
 
@@ -273,16 +288,15 @@
 
 
                                     <div class="form-group">
-                                    <input type="hidden" name="id" value="<?=$id?>">
-                                        <input type="submit" class="btn btn-primary btn-lg" name="capnhat"
-                                            value="SỬA">
-                                        <!-- <input type="reset" class="btn btn-primary btn-lg" value="NHẬP LẠI"> -->
+                                        <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                                        <input type="submit" class="btn btn-primary btn-lg" name="capnhat" value="SỬA">
+
                                         <a href="index.php?act=listsp"><input type="button"
                                                 class="btn btn-primary btn-lg" value="DANH SÁCH"></a>
                                     </div>
 
 
-                                    <!-- Product Categories-->
+
 
 
 
@@ -296,7 +310,7 @@
 
 
                             </form>
-                                
+
 
 
                         </div>

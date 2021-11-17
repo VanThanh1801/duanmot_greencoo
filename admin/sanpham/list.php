@@ -165,7 +165,11 @@
                                             hình ảnh</th>
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Hình ảnh mô tả</th>
+                                            số lượng</th>
+                                            <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            khối lượng</th>
+                                          
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Miêu tả</th>
@@ -194,18 +198,14 @@
                     $suasp="index.php?act=suasp&id=".$id;
                     $xoasp="index.php?act=xoasp&id=".$id;
                     $hinhpath = "../upload/" . $img;
-                    $hinhpathp = "../upload/".$img_phu;
+                    // $hinhpathp = "../upload/".$img_phu;
                     if (is_file($hinhpath)) {
                         $hinh = "<img src='" . $hinhpath . "' height='80'>";
                     } else {
                         $hinh = "no photo";
                     }
                     
-                    if (is_file($hinhpathp)) {
-                        $hinhp = "<img src='" . $hinhpathp . "' height='80'>";
-                    } else {
-                        $hinhp = "no photo";
-                    }
+                  
                     echo'
                       <tr>
                       <td>
@@ -229,20 +229,26 @@
                     <p class="text-xs font-weight-bold mb-0">'.$new_price.'</p>
                   
                   </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$hinh.'</p>
+                  <td>
+                  <p class="text-xs font-weight-bold mb-0">'.$hinh.'</p>
                     
-                    </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$hinhp.'</p>
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">'.$product_quanlilty.'</p>
+                  
+                  </td>
+                  <td>
+                    <p class="text-xs font-weight-bold mb-0">'.$product_kl.'</p>
+                  
+                  </td>
+                   
                     
-                    </td>
                     <td>
                     <p class="text-xs font-weight-bold mb-0">'.$mota.'</p>
                   
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_cate .'</p>
+                    <p class="text-xs font-weight-bold mb-0">'.$id_cate.'</p>
                   
                   </td>
                   <td>

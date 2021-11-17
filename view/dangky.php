@@ -57,7 +57,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Vegefoods</a>
+            <a class="navbar-brand" href="index.html">GreenCoCo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -135,13 +135,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="form-check d-flex justify-content-center mb-5">
-                                            <input class="form-check-input me-2" type="checkbox" value=""
-                                                id="form2Example3c" />
-                                            <label class="form-check-label" for="form2Example3">
-                                                I agree all statements in <a href="#!">Terms of service</a>
-                                            </label>
-                                        </div>
+                                        
 
                                         <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
                                             <button type="button" class="btn btn-primary btn-lg">Register</button>
@@ -152,7 +146,7 @@
                                 </div>
                                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
 
-                                    <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-registration/draw1.png"
+                                    <img src="./images/green.png"
                                         class="img-fluid" alt="Sample image">
 
                                 </div>

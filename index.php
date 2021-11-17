@@ -1,5 +1,34 @@
 
 <?php include_once("./view/header.php") ?>
+
+<?php include("./modal/pdo.php"); ?>
+
+<?php include("./modal/sanpham.php"); ?>
+<?php include("./global.php"); ?>
+<?php include("./modal/danhmuc.php");  ?>
+
+<?php 
+$dsdm = loadall_danhmuc();
+$spnew = loadall_sanpham_home();
+$dstop10 = loadall_sanpham_top10();
+
+
+
+
+
+?>
+
+
+
+
+
+
+
+
+
+
+
+
 <?php include_once("./view/banner.php") ?>
 
 <?php include_once("./view/shipping.php") ?>

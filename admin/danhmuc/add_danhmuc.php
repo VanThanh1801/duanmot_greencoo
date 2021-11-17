@@ -134,14 +134,18 @@
                     </div>
                     <div class="card-body px-0 pt-0 pb-2">
                         <div class="table-responsive p-0">
-                            <form action="index.php?act=adddm" method="post">
+                            <form action="index.php?act=adddm" method="post" enctype="multipart/form-data" >
 
                                 <div class="form-group">
                                     <label for="category-title" class="label_title">Title</label>
                                     <input name="cat_title" type="text" class="form-control
                                 ">
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="category-title" class="label_title">Hinh anh</label>
+                                    <input name="img_cate" type="file" class="form-control
+                                ">
+                                </div>
 
                                 <div class="btn_button">
 

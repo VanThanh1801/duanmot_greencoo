@@ -1,7 +1,7 @@
 <?php
 
-function insert_sanpham($tensp,$giaold,$gianew,$hinh,$hinhs,$mota,$iddm,$hastag,$nhacungcap){
-    $sql="INSERT into product(name,old_price,new_price,img,img_phu,mota,id_cate,id_hastags,id_agent) values('$tensp','$giaold', '$gianew', '$hinh','$hinhs','$mota','$iddm', '$hastag', '$nhacungcap')";
+function insert_sanpham($tensp,$giaold,$gianew,$hinh,$mota,$iddm,$hastag,$nhacungcap, $khoiluong,  $soluong ){
+    $sql="INSERT into product(name,old_price,new_price,img,mota,id_cate,id_hastags,id_agent, product_quanlilty, product_kl) values('$tensp','$giaold', '$gianew', '$hinh','$mota','$iddm', '$hastag', '$nhacungcap', '$soluong', '$khoiluong')";
     pdo_execute($sql);
 
 }
@@ -10,12 +10,12 @@ function delete_sanpham($id){
     pdo_execute($sql);
 }
 function loadall_sanpham_top10(){
-    $sql="select * from product where 1 order by luotxem desc limit 0,10"; 
+    $sql="select * from product where 1 order by view desc limit 0,8"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
 function loadall_sanpham_home(){
-    $sql="select * from product where 1 order by id desc limit 0,9"; 
+    $sql="select * from product where 1 order by id desc limit 0,8"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
@@ -51,13 +51,12 @@ function load_sanpham_cungloai($id,$iddm){
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
-function update_sanpham($id,$tensp,$giaold,$gianew,$hinh,$hinhs,$mota,$iddm,$hastag,$nhacungcap){
+function update_sanpham($id,$tensp,$giaold,$gianew,$hinh,$mota,$iddm,$hastag,$nhacungcap, $khoiluong,  $soluong){
     if($hinh!="")
-        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',img='".$hinh."',img_phu='".$hinhs."',id_hastags='".$hastag."',id_agent='".$nhacungcap."' WHERE id=".$id;
+        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',img='".$hinh."',id_hastags='".$hastag."',id_agent='".$nhacungcap."', product_quanlilty = '".$soluong."', product_kl = '".$khoiluong."' WHERE id=".$id;
     else 
-        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',id_hastags='".$hastag."',id_agent='".$nhacungcap."' where id=".$id;   
-        var_dump($sql);
-        die;
+        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',id_hastags='".$hastag."',id_agent='".$nhacungcap."',  product_quanlilty = '".$soluong."', product_kl = '".$khoiluong."' where id=".$id;   
+      
         pdo_execute($sql);
     
     

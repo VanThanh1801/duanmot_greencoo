@@ -57,7 +57,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Vegefoods</a>
+            <a class="navbar-brand" href="index.html">GreenCoCo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -93,12 +93,12 @@
         <div class="container py-5 h-100">
             <div class="row d-flex align-items-center justify-content-center h-100">
                 <div class="col-md-8 col-lg-7 col-xl-6">
-                    <img src="https://mdbootstrap.com/img/Photos/new-templates/bootstrap-login-form/draw2.svg"
+                    <img src="./images/Green.png"
                         class="img-fluid" alt="Phone image">
                 </div>
                 <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
                     <form>
-                        <!-- Email input -->
+                        <h1>Đăng nhập tài khoản của bạn </h1>
                         <div class="form-outline mb-4">
                             <input type="email" id="form1Example13" class="form-control form-control-lg" />
                             <label class="form-label" for="form1Example13">Email address</label>
@@ -109,6 +109,7 @@
                             <input type="password" id="form1Example23" class="form-control form-control-lg" />
                             <label class="form-label" for="form1Example23">Password</label>
                         </div>
+                        <p>Bạn chưa có tài khoản? <a href="./dangky.php ">Đăng ký</a></p>
 
                         <div class="d-flex justify-content-around align-items-center mb-4">
                             <!-- Checkbox -->
@@ -116,7 +117,7 @@
                                 <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                                 <label class="form-check-label" for="form1Example3"> Remember me </label>
                             </div>
-                            <a href="#!">Forgot password?</a>
+                            <a href="./resetpass.php">Forgot password?</a>
                         </div>
 
                         <!-- Submit button -->

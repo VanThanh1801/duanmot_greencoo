@@ -169,7 +169,21 @@
                                             <input type="text" name="gianew" class="form-control" size="60">
                                         </div>
                                     </div>
-                                    
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Số lượng</label>
+                                            <input type="text" name="sl" class="form-control" size="60">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Khối lượng</label>
+                                            <input type="text" name="kl" class="form-control" size="60">
+                                        </div>
+                                    </div>
+
                                     <div class="form-group">
                                         <label for="product-title">Hình ảnh sản phẩm</label>
                                         <input type="file" name="hinh">
@@ -199,21 +213,6 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="product-title">Hastag</label>
-
-                                        <select name="hastag" id="" class="form-control">
-
-                                            <?php
-                                        foreach ($listhastags as $hastags) {
-                                            extract($hastags);
-                                            echo '<option value="' . $id . '">' . $name . '</option>';
-                                        }
-                                        ?>
-                                        </select>
-
-                                    </div>
-                                   
-                                    <div class="form-group">
                                         <label for="product-title">Nhà cung cấp</label>
 
                                         <select name="idncc" id="" class="form-control">
@@ -228,19 +227,31 @@
 
                                     </div>
                                     <div class="form-group">
-                                        <label for="product-title">Hình ảnh mô tả</label>
-                                        <input type="file" name="hinhs" >
+                                        <label for="product-title">Hastag</label>
+
+                                        <select name="hastag" id="" class="form-control">
+
+                                            <?php
+                                        foreach ($listhastags as $hastags) {
+                                            extract($hastags);
+                                            echo '<option value="' . $id . '">' . $name . '</option>';
+                                        }
+                                        ?>
+                                        </select>
 
                                     </div>
 
 
 
 
+
+
+
+
+
+
                                 </div>
-                                <!--Main Content-->
 
-
-                                <!-- SIDEBAR-->
 
 
                                 <aside id="admin_sidebar" class="col-md-4">
