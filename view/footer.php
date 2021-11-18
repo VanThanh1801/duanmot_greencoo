@@ -13,7 +13,7 @@
                         <h2 class="ftco-heading-2">GreenCoCo</h2>
                         <p> Giao hàng trong vòng 3 giờ
                             Thời gian nhận đơn hàng: 08:00 - 17:00
-                            Hotline: 0981744296</p>
+                            Hotline: 0931910246</p>
                         <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                             <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                             <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -54,11 +54,11 @@
                         <h2 class="ftco-heading-2">Câu hỏi thường gặp?</h2>
                         <div class="block-23 mb-3">
                             <ul>
-                                <li><span class="icon icon-map-marker"></span><span class="text">Số 1, Trịnh Văn Bô, Nam Từ Liêm, Mỹ Đình 1, Hà Nội</span></li>
+                                <li><span class="icon icon-map-marker"></span><span class="text">Số 1 Trịnh Văn Bô, Phường Mỹ Đình 1, Quận Nam Từ Liêm,  TP. Hà Nội</span></li>
                                 <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929
                                             210</span></a></li>
                                 <li><a href="#"><span class="icon icon-envelope"></span><span
-                                            class="text">poly@yemail.com</span></a></li>
+                                            class="text">poly@email.com</span></a></li>
                             </ul>
                         </div>
                     </div>
