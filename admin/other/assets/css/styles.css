@@ -1,0 +1,38 @@
+.label_title {
+    font-size: 16px;
+}
+
+.btn_button {
+    margin: 20px;
+}
+
+.btn_but {
+    background-color: #cb0c9f;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 30px;
+    border-color: #cb0c9f;
+    border: 1px solid #cb0c9f;
+}
+
+.btn_butn {
+    background-color: #cb0c9f;
+    border-radius: 4px;
+    color: white;
+    padding: 11px 30px;
+    border-color: #cb0c9f;
+    border: 1px solid #cb0c9f;
+}
+
+.btn_butn a {
+    background-color: #cb0c9f;
+    border-radius: 4px;
+    color: white;
+    padding: 10px 30px;
+    border-color: #cb0c9f;
+    border: 1px solid #cb0c9f;
+}
+
+.product_item {
+    margin-left: 50px;
+}

@@ -1,3 +1,6 @@
+<?php include_once "./header.php";
+        include_once "./sidebar.php";
+?>
 <body class="g-sidenav-show  bg-gray-100">
 
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -316,3 +319,4 @@
 </body>
 
 </html>
+<?php include_once "./footer.php" ?>
