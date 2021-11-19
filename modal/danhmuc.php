@@ -12,11 +12,11 @@ function loadall_nhacungcap(){
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
 }
-function loadall_hastags(){
-    $sql = "SELECT * FROM hastags order by id desc";
-    $listhastags=pdo_query($sql);
-    return $listhastags;
-}
+// function loadall_hastags(){
+//     $sql = "SELECT * FROM hastags order by id desc";
+//     $listhastags=pdo_query($sql);
+//     return $listhastags;
+// }
 function insert_danhmuc($name, $img_cate){
     $sql="insert into category(name, img_cate) values('$name', '$img_cate')";
   

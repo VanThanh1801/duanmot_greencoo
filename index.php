@@ -131,6 +131,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
        
   
         break;
+    case 'shop':
+      include 'view/shop.php';
+      
+
+      break;
       case 'tintuc':
         include 'view/blog.php';
         

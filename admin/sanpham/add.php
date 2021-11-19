@@ -229,20 +229,7 @@
                                         </select>
 
                                     </div>
-                                    <div class="form-group">
-                                        <label for="product-title">Hastag</label>
-
-                                        <select name="hastag" id="" class="form-control">
-
-                                            <?php
-                                        foreach ($listhastags as $hastags) {
-                                            extract($hastags);
-                                            echo '<option value="' . $id . '">' . $name . '</option>';
-                                        }
-                                        ?>
-                                        </select>
-
-                                    </div>
+                                   
 
 
 

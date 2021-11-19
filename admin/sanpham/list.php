@@ -182,9 +182,7 @@
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             nhà cung cấp</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            hastag </th>
+                                           
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Action</th>
@@ -254,10 +252,7 @@
                     <p class="text-xs font-weight-bold mb-0">'.$id_cate.'</p>
                   
                   </td>
-                  <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_hastags .'</p>
-                  
-                  </td>
+                 
                   <td>
                     <p class="text-xs font-weight-bold mb-0">'.$id_agent .'</p>
                   
