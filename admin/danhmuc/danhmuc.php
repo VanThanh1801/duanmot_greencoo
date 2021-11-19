@@ -1,3 +1,7 @@
+<?php 
+    include_once "./header.php";
+    include_once "./sidebar.php";
+?>
 <body class="g-sidenav-show  bg-gray-100">
 
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
@@ -243,6 +247,7 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+    <?php include_once "./footer.php" ?>
 </body>
 
 </html>
