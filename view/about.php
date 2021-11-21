@@ -1,4 +1,4 @@
-
+<!-- 
 <!DOCTYPE html>
 <html lang="en">
 
@@ -58,7 +58,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Vegefoods</a>
+            <a class="navbar-brand" href="index.html">GreenCoCo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -66,7 +66,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item active"><a href="../index.php" class="nav-link">Home</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Shop</a>
@@ -78,9 +78,9 @@
                             <a class="dropdown-item" href="checkout.html">Checkout</a>
                         </div>
                     </li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                    <li class="nav-item"><a href="about.php" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="blog.php" class="nav-link">Blog</a></li>
+                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
                     <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span
                                 class="icon-shopping_cart"></span>[0]</a></li>
 
@@ -88,8 +88,8 @@
             </div>
         </div>
     </nav>
-    
-    <div class="hero-wrap hero-bread" style="background-image: url('images/bg_1.jpg');">
+     -->
+    <div class="hero-wrap hero-bread" style="background-image: url('view/images/bg_1.jpg');">
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
@@ -103,7 +103,7 @@
     <section class="ftco-section ftco-no-pb ftco-no-pt bg-light">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(images/about.jpg);">
+					<div class="col-md-5 p-md-5 img img-2 d-flex justify-content-center align-items-center" style="background-image: url(view/images/about.jpg);">
 						<a href="https://vimeo.com/45830194" class="icon popup-vimeo d-flex justify-content-center align-items-center">
 							<span class="icon-play"></span>
 						</a>
@@ -111,7 +111,7 @@
 					<div class="col-md-7 py-5 wrap-about pb-md-5 ftco-animate">
 	          <div class="heading-section-bold mb-4 mt-md-5">
 	          	<div class="ml-md-0">
-		            <h2 class="mb-4">Welcome to Vegefoods an eCommerce website</h2>
+		            <h2 class="mb-4">Welcome to GreenCoCo an eCommerce website</h2>
 	            </div>
 	          </div>
 	          <div class="pb-md-5">
@@ -143,7 +143,7 @@
       </div>
     </section>
 		
-		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(images/bg_3.jpg);">
+		<section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(view/images/bg_3.jpg);">
     	<div class="container">
     		<div class="row justify-content-center py-5">
     			<div class="col-md-10">
@@ -200,7 +200,7 @@
             <div class="carousel-testimony owl-carousel">
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(view/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -214,7 +214,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_2.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(view/images/person_2.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -228,7 +228,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_3.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(view/images/person_3.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -242,7 +242,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(view/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -256,7 +256,7 @@
               </div>
               <div class="item">
                 <div class="testimony-wrap p-4 pb-5">
-                  <div class="user-img mb-5" style="background-image: url(images/person_1.jpg)">
+                  <div class="user-img mb-5" style="background-image: url(view/images/person_1.jpg)">
                     <span class="quote d-flex align-items-center justify-content-center">
                       <i class="icon-quote-left"></i>
                     </span>
@@ -325,11 +325,11 @@
 			</div>
 		</section>
 
-    <?php include_once("footer.php") ?>
+    <!-- <?php //include_once("footer.php") ?>
     
   
 
-  <!-- loader -->
+  
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
@@ -351,4 +351,4 @@
   <script src="js/main.js"></script>
     
   </body>
-</html>
+</html> -->

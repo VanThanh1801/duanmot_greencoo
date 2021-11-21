@@ -60,7 +60,7 @@
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.html">GreenCoCo</a>
+            <a class="navbar-brand" href="index.php">GreenCoCo</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu
@@ -68,23 +68,25 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link">Trang Chủ</a></li>
+	          <li class="nav-item active"><a href="index.php" class="nav-link">Trang Chủ</a></li>
+			  <li class="nav-item active"><a href="index.php?act=shop" class="nav-link">Cửa hàng</a></li>
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-		                    	  <a class="dropdown-item" href="shop.html">Sữa và trứng</a>
-                            <a class="dropdown-item" href="wishlist.html">Cá và hải sản</a>
-                            <a class="dropdown-item" href="product-single.html"> Hoa quả</a>
-                            <a class="dropdown-item" href="cart.html">Hải sản</a>
-                            <a class="dropdown-item" href="checkout.html">Thịt và gia cầm</a>
-							<a class="dropdown-item" href="cart.html"> Đồ uống</a>
-                            <a class="dropdown-item" href="checkout.html">Rau củ </a>
+			  <a class="dropdown-item" href="./view/shop">Trái cây nội địa, nhập khẩu</a>
+                            <a class="dropdown-item" href="#">Thực phẩm chín, ăn liền</a>
+                            <a class="dropdown-item" href="#">Rau hữu cơ</a>
+                            <a class="dropdown-item" href="#">Hải sản cao câp</a>
+                            <a class="dropdown-item" href="#">Thịt sạch các loại</a>
+                            <a class="dropdown-item" href="#">Thực phẩm khô</a>
+						
               </div>
             </li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Giới thiệu</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Tin tức</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
-	          <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
+	          <li class="nav-item"><a href="index.php?act=vechungtoi" class="nav-link">Về chúng tôi</a></li>
+	          <li class="nav-item"><a href="index.php?act=tintuc" class="nav-link">Tin tức</a></li>
+	          <li class="nav-item"><a href="index.php?act=lienhe" class="nav-link">Liên hệ</a></li>
+			  <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login</a></li>
+	          <li class="nav-item cta cta-colored"><a href="./view/cart.php" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
                 </ul>
             </div>
