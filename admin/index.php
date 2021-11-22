@@ -84,6 +84,7 @@ include "../modal/pdo.php"; ?>
 
           $iddm = $_POST['iddm'];
           $tensp = $_POST['tensp'];
+          $saleoff = $_POST['saleoff'];
           $giaold = $_POST['giaold'];
           $gianew = $_POST['gianew'];
           $mota = $_POST['mota'];
@@ -102,7 +103,9 @@ include "../modal/pdo.php"; ?>
 
 
 
-          insert_sanpham($tensp, $giaold, $gianew, $hinh, $mota, $iddm,  $nhacungcap, $khoiluong,  $soluong);
+
+          insert_sanpham($tensp,$saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $nhacungcap, $khoiluong,  $soluong);
+
           $thongbao = "Thêm thành công";
         }
         $listdanhmuc = loadall_danhmuc();
@@ -146,6 +149,7 @@ include "../modal/pdo.php"; ?>
           $id = $_POST['id'];
           $iddm = $_POST['iddm'];
           $tensp = $_POST['tensp'];
+          $saleoff = $_POST['saleoff'];
           $giaold = $_POST['giaold'];
           $gianew = $_POST['gianew'];
           $khoiluong = $_POST['kl'];
@@ -162,7 +166,7 @@ include "../modal/pdo.php"; ?>
             //  echo "Sorry, there was an error uploading your file.";
           }
 
-          update_sanpham($id, $tensp, $giaold, $gianew, $hinh, $mota, $iddm, $hastag, $nhacungcap, $soluong, $khoiluong);
+          update_sanpham($id, $tensp,$saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $hastag, $nhacungcap, $soluong, $khoiluong);
           $thongbao = "Cập nhật thành công";
         }
        
@@ -264,12 +268,22 @@ include "../modal/pdo.php"; ?>
           }
           include "./login-admin/edit.php";
             break;
+            case 'logout':
+              session_unset();
+              header('location:index.php?act=dangnhap');
+              break;
     }
   }
   else{
-    include('header.php');
-    include('sidebar.php');
-    include('footer.php');
+    if(!isset($_SESSION['user']) && !isset($_SESSION['pass'])){
+      header('location:index.php?act=dangnhap');
+    }
+    else{
+      header('refresh:0.5,location:index.php');
+       include('header.php');
+       include('sidebar.php');
+       include('footer.php');
+    }
   }
 
 

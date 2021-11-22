@@ -177,6 +177,14 @@
 
                                         <div class="col-xs-3">
                                             <label for="product-price">Giá cũ sản phẩm</label>
+                                            <input type="text" name="saleoff" class="form-control" size="60"
+                                                value="<?php echo $saleoff; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Giá cũ sản phẩm</label>
                                             <input type="text" name="giaold" class="form-control" size="60"
                                                 value="<?php echo $old_price; ?>">
                                         </div>
