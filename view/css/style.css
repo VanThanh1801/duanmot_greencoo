@@ -11291,7 +11291,7 @@ h5,
 .owl-carousel.home-slider .slider-item .slider-text .subheading {
     color: #000000;
     font-weight: 300;
-    font-size: 12px;
+    font-size: 35px;
     letter-spacing: 4px;
     text-transform: uppercase;
     display: inline-block;
@@ -12569,7 +12569,7 @@ textarea.form-control {
 }
 
 .heading-section .subheading {
-    font-size: 18px;
+    font-size: 35px;
     display: block;
     margin-bottom: 10px;
     font-family: "Lora", Georgia, serif;

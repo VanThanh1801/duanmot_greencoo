@@ -88,7 +88,7 @@ include "../modal/pdo.php"; ?>
           $giaold = $_POST['giaold'];
           $gianew = $_POST['gianew'];
           $mota = $_POST['mota'];
-          $hastag = $_POST['hastag'];
+       
           $khoiluong = $_POST['kl'];
           $soluong = $_POST['sl'];
           $nhacungcap = $_POST['idncc'];
@@ -103,12 +103,14 @@ include "../modal/pdo.php"; ?>
 
 
 
-          insert_sanpham($tensp,$saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $hastag, $nhacungcap, $khoiluong,  $soluong);
+
+          insert_sanpham($tensp,$saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $nhacungcap, $khoiluong,  $soluong);
+
           $thongbao = "Thêm thành công";
         }
         $listdanhmuc = loadall_danhmuc();
         $listnhacungcap = loadall_nhacungcap();
-        $listhastags = loadall_hastags();
+     
         include "sanpham/add.php";
         break;
       case 'listsp':
@@ -120,7 +122,7 @@ include "../modal/pdo.php"; ?>
           $iddm = 0;
         }
         $listdanhmuc = loadall_danhmuc();
-        $listhastags = loadall_hastags();
+      
         $listsanpham = loadall_sanpham($kyw, $iddm);
         include "../admin/sanpham/list.php";
         break;
@@ -136,7 +138,7 @@ include "../modal/pdo.php"; ?>
         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
           $sanpham = loadone_sanpham($_GET['id']);
         }
-        $listhastags = loadall_hastags();
+        
         $listdanhmuc = loadall_danhmuc();
         $listnhacungcap = loadall_nhacungcap();
         $listsanpham = loadall_sanpham();
@@ -167,7 +169,7 @@ include "../modal/pdo.php"; ?>
           update_sanpham($id, $tensp,$saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $hastag, $nhacungcap, $soluong, $khoiluong);
           $thongbao = "Cập nhật thành công";
         }
-        $listhastags = loadall_hastags();
+       
         $listdanhmuc = loadall_danhmuc();
         $listnhacungcap = loadall_nhacungcap();
         $listsanpham = loadall_sanpham();

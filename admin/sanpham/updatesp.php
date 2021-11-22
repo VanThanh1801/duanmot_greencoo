@@ -242,24 +242,7 @@
 
 
                                     </div>
-                                    <div class="form-group">
-                                        <label for="product-title">Hastag</label>
-
-                                        <select name="hastag" id="" class="form-control">
-
-                                            <?php
-                                       
-                                        ?>
-                                            <?php
-                                foreach ($listhastags as $hastags) {
-                                    extract($hastags);
-                                    if($id_hastags==$id) $s="selected"; else $s="";
-                                    echo '<option value="'.$id.'" '.$s.'>'.$name.'</option>';
-                                }
-                            ?>
-                                        </select>
-
-                                    </div>
+                                    
 
                                     <div class="form-group">
                                         <label for="product-title">Nhà cung cấp</label>
@@ -267,12 +250,7 @@
                                         <select name="idncc" id="" class="form-control"
                                             value="<?php echo $id_agent; ?>">
 
-                                            <?php
-                                        // foreach ($listnhacungcap as $nhacungcap) {
-                                        //     extract($nhacungcap);
-                                        //     echo '<option value="' . $id . '">' . $name . '</option>';
-                                        // }
-                                        ?>
+                                        
                                             <?php
                                 foreach ($listnhacungcap as $nhacungcap) {
                                     extract($nhacungcap);
