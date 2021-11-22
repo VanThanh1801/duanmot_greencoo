@@ -6,8 +6,11 @@ function insert_nhacungcap($tenncc,$emailncc,$telncc,$addressncc,$statusncc){
     pdo_execute($sql);
    
 }
-
-
+function loadall_agent(){
+    $sql="select * from agent order by id desc limit 0,4";
+    $listdanhmuc=pdo_query($sql);
+    return $listdanhmuc;
+}
 
 function loadone_nhacungcap($id){
     $sql="select * from agent where id=".$id;

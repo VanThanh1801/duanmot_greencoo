@@ -12,6 +12,9 @@
 <?php include("./modal/sanpham.php"); ?>
 <?php include("./global.php"); ?>
 <?php include("./modal/danhmuc.php");  ?>
+<?php include("./modal/nhacungcap.php");  ?>
+
+
 
 <?php 
 $dsdm = loadall_danhmuc();

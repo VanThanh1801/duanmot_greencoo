@@ -109,7 +109,7 @@ include "../modal/pdo.php"; ?>
           $thongbao = "Thêm thành công";
         }
         $listdanhmuc = loadall_danhmuc();
-        $listnhacungcap = loadall_nhacungcap();
+        $listnhacungcap = loadall_agent(); 
      
         include "sanpham/add.php";
         break;
@@ -140,7 +140,7 @@ include "../modal/pdo.php"; ?>
         }
         
         $listdanhmuc = loadall_danhmuc();
-        $listnhacungcap = loadall_nhacungcap();
+        $listnhacungcap = loadall_agent();
         $listsanpham = loadall_sanpham();
         include "./sanpham/updatesp.php";
         break;
@@ -171,7 +171,7 @@ include "../modal/pdo.php"; ?>
         }
        
         $listdanhmuc = loadall_danhmuc();
-        $listnhacungcap = loadall_nhacungcap();
+        $listnhacungcap = loadall_agent();
         $listsanpham = loadall_sanpham();
         include "sanpham/list.php";
         break;
@@ -194,7 +194,7 @@ include "../modal/pdo.php"; ?>
         break;
       case 'listncc':
 
-        $listnhacungcap = loadall_nhacungcap();
+        $listnhacungcap = loadall_agent();
 
         include "nhacungcap/list.php";
         break;
@@ -202,7 +202,7 @@ include "../modal/pdo.php"; ?>
         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
           delete_nhacungcap($_GET['id']);
         }
-        $listnhacungcap = loadall_nhacungcap();
+        $listnhacungcap = loadall_agent();
         include "nhacungcap/list.php";
         break;
       case 'suancc':
@@ -223,7 +223,7 @@ include "../modal/pdo.php"; ?>
           update_nhacungcap($id, $tenncc, $emailncc, $dtncc, $diachincc, $trangthaincc);
           $thongbao = "Cập nhật thành công";
         }
-        $listnhacungcap = loadall_nhacungcap();
+        $listnhacungcap = loadall_agent();
         include "nhacungcap/list.php";
         break;
       case 'dangnhap':

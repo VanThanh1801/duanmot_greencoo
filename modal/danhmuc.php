@@ -7,11 +7,7 @@ function loadall_danhmuc(){
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
 }
-function loadall_agent(){
-    $sql="select * from agent order by id desc limit 0,4";
-    $listdanhmuc=pdo_query($sql);
-    return $listdanhmuc;
-}
+
 // function loadall_hastags(){
 //     $sql = "SELECT * FROM hastags order by id desc";
 //     $listhastags=pdo_query($sql);

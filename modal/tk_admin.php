@@ -7,6 +7,8 @@ function checkuser($user,$pass){
 }
 function insert_taikhoan($email,$user,$pass){
     $sql="INSERT into qtv(email,user,pass) values('$email','$user','$pass')";
+    // var_dump($sql);
+    // die;
     pdo_execute($sql);
     
 }
