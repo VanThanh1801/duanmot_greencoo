@@ -508,6 +508,12 @@ mark,
     height: 202px;
 }
 
+.img-fluid {
+    width: 420px;
+    height: 400px;
+    border-radius: 10px;
+}
+
 .img-thumbnail {
     padding: 0.25rem;
     background-color: #fff;

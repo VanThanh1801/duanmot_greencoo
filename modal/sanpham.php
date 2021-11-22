@@ -1,8 +1,9 @@
 <?php
 
-function insert_sanpham($tensp,$giaold,$gianew,$hinh,$mota,$iddm,$nhacungcap, $khoiluong,  $soluong ){
+function insert_sanpham($tensp,$giaold,$gianew,$hinh,$mota,$iddm,$nhacungcap, $khoiluong,$soluong ){
     $sql="INSERT into product(name,old_price,new_price,img,mota,id_cate,id_agent, product_quanlilty, product_kl) values('$tensp','$giaold', '$gianew', '$hinh','$mota','$iddm', '$nhacungcap', '$soluong', '$khoiluong')";
     var_dump($sql);
+    die;
     pdo_execute($sql);
 
 }
