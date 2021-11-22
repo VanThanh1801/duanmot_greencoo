@@ -11,56 +11,54 @@
     <div class="container">
         <div class="row">
 
-            <?php 
-            foreach($dstop10 as $top10){
+        <?php 
+                    $i =0 ;
+                    foreach ($dstop10 as $sp) {
+                       extract($sp);
+                       $linksp="index.php?act=product-single&id=".$id;
+                       $hinh=$img_path.$img;
+                       if(($i==2)||($i==5)||($i==8)||($i==11)){
 
-
-            
-            extract($top10);
-            $img = $img_path.$img;
-            $linksp = "index.php?act=sanphamct&idsp=".$id;
-            echo '
-
-
-            <div class="col-md-6 col-lg-3 ftco-animate">
-            <div class="product">
-                <a href="$linksp" class="img-prod"><img class="img-fluid" src="'.$img.'"
-                        alt="Colorlib Template">
-                    <span class="status">50%</span>
-                    <div class="overlay"></div>
-                </a>
-                <div class="text py-3 pb-4 px-3 text-center">
-                    <h3><a href="#">'.$name.'</a></h3>
-                    <div class="d-flex">
-                        <div class="pricing">
-                            <p class="price"><span class="mr-2 price-dc">'.$old_price.' VND</span><span
-                                    class="price-sale">'.$new_price.' VND</span></p>
+                       }
+                       
+                       echo '
+                        <div class="col-md-6 col-lg-3 ftco-animate">
+                        <div class="product">
+                            <a href="'.$linksp.'" class="img-prod"><img class="img-fluid" src="'.$hinh.'"
+                                    alt="Colorlib Template">
+                               
+                                <div class="overlay"></div>
+                            </a>
+                            <div class="text py-3 pb-4 px-3 text-center">
+                                 <h3><a href="'.$linksp.'">'.$name.'</a></h3>
+                                <div class="d-flex">
+                                    <div class="pricing">
+                                        <p class="price"><span class="mr-2 price-dc">'.$old_price.'</span><span
+                                                class="price-sale">'.$new_price.'</span></p>
+                                    </div>
+                                </div>
+                            <div class="bottom-area d-flex px-3">
+                                 <div class="m-auto d-flex">
+                                     <a href="#"
+                                         class="add-to-cart d-flex justify-content-center align-items-center text-center">
+                                         <span><i class="ion-ios-menu"></i></span>
+                                     </a>
+                                     <a href="addtocart" class="buy-now d-flex justify-content-center align-items-center mx-1">
+                                         <span><i class="ion-ios-cart"></i></span>
+                                     </a>
+                                     <a href="#" class="heart d-flex justify-content-center align-items-center ">
+                                         <span><i class="ion-ios-heart"></i></span>
+                                     </a>
+                                 </div>
+                             </div>
                         </div>
-                    </div>
-                    <div class="bottom-area d-flex px-3">
-                        <div class="m-auto d-flex">
-                            <a href="#"
-                                class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                <span><i class="ion-ios-menu"></i></span>
-                            </a>
-                            <a href="#" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                <span><i class="ion-ios-cart"></i></span>
-                            </a>
-                            <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                <span><i class="ion-ios-heart"></i></span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-            
-            ';
-          
-            
-            }
-            
-            ?>
+                     </div>
+                     </div>';
+                     $i+=1; 
+                    }
+                  
+                   
+                ?>
 
 
 

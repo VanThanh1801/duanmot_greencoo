@@ -36,21 +36,20 @@
         <div class="container">
             <div class="row no-gutters d-flex align-items-start align-items-center px-md-0">
                 <div class="col-lg-12 d-block">
-                    <div class="row d-flex">
-                        <div class="col-md pr-4 d-flex topper align-items-center">
-                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
-                                    class="icon-phone2"></span></div>
-                            <span class="text">+ 1235 2355 98</span>
-                        </div>
-                        <div class="col-md pr-4 d-flex topper align-items-center">
-                            <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
-                                    class="icon-paper-plane"></span></div>
-                            <span class="text">youremail@email.com</span>
-                        </div>
-                        <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                            <span class="text">3-5 Business days delivery &amp; Free Returns</span>
-                        </div>
-                    </div>
+					<div class="row d-flex">
+		    			<div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
+						    <span class="text">+ 1235 2355 98</span>
+					    </div>
+					    <div class="col-md pr-4 d-flex topper align-items-center">
+					    	<div class="icon mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
+						    <span class="text">poly@email.com</span>
+							
+					    </div>
+					    <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
+						    <span class="text">Giao hàng trong ngày &amp; Freeship</span>
+					    </div>
+				    </div>
                 </div>
             </div>
         </div>
@@ -64,24 +63,24 @@
             </button>
 
             <div class="collapse navbar-collapse" id="ftco-nav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Shop</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="shop.html">Shop</a>
-                            <a class="dropdown-item" href="wishlist.html">Wishlist</a>
-                            <a class="dropdown-item" href="product-single.html">Single Product</a>
-                            <a class="dropdown-item" href="cart.html">Cart</a>
-                            <a class="dropdown-item" href="checkout.html">Checkout</a>
-                        </div>
-                    </li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                    <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                    <li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span
-                                class="icon-shopping_cart"></span>[0]</a></li>
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active"><a href="index.html" class="nav-link">Trang Chủ</a></li>
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục</a>
+					<div class="dropdown-menu" aria-labelledby="dropdown04">
+					<a class="dropdown-item" href="shop.html">Sữa và trứng</a>
+									<a class="dropdown-item" href="wishlist.html">Cá và hải sản</a>
+									<a class="dropdown-item" href="product-single.html"> Hoa quả</a>
+									<a class="dropdown-item" href="cart.html">Hải sản</a>
+									<a class="dropdown-item" href="checkout.html">Thịt và gia cầm</a>
+									<a class="dropdown-item" href="cart.html"> Đồ uống</a>
+									<a class="dropdown-item" href="checkout.html">Rau củ </a>
+					</div>
+					</li>
+					<li class="nav-item"><a href="about.html" class="nav-link">Giới thiệu</a></li>
+					<li class="nav-item"><a href="blog.html" class="nav-link">Tin tức</a></li>
+					<li class="nav-item"><a href="contact.html" class="nav-link">Liên hệ</a></li>
+					<li class="nav-item cta cta-colored"><a href="cart.html" class="nav-link"><span class="icon-shopping_cart"></span>[0]</a></li>
 
                 </ul>
             </div>
@@ -92,8 +91,8 @@
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Cart</span></p>
-            <h1 class="mb-0 bread">My Cart</h1>
+          	<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Trang chủ</a></span> </p>
+            <h1 class="mb-0 bread">Giỏ hàng</h1>
           </div>
         </div>
       </div>
@@ -109,10 +108,10 @@
 						      <tr class="text-center">
 						        <th>&nbsp;</th>
 						        <th>&nbsp;</th>
-						        <th>Product name</th>
-						        <th>Price</th>
-						        <th>Quantity</th>
-						        <th>Total</th>
+						        <th>Tên sản phẩm</th>
+						        <th>Giá</th>
+						        <th>Số lượng</th>
+						        <th>Tổng tiền</th>
 						      </tr>
 						    </thead>
 						    <tbody>

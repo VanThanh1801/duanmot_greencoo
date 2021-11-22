@@ -3,7 +3,12 @@
 <?php
 
 function loadall_danhmuc(){
-    $sql="select * from category order by id desc";
+    $sql="select * from category order by id desc limit 0,6";
+    $listdanhmuc=pdo_query($sql);
+    return $listdanhmuc;
+}
+function loadall_nhacungcap(){
+    $sql="select * from agent order by id desc limit 0,4";
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
 }

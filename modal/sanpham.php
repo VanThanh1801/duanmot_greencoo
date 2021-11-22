@@ -10,12 +10,22 @@ function delete_sanpham($id){
     pdo_execute($sql);
 }
 function loadall_sanpham_top10(){
-    $sql="select * from product where 1 order by view desc limit 0,8"; 
+    $sql="select * from product where 1 order by view asc limit 0,8"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
 function loadall_sanpham_home(){
-    $sql="select * from product where 1 order by id desc limit 0,8"; 
+    $sql="select * from product where 1 order by id desc limit 0,4"; 
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham_saleoff(){
+    $sql="select * from product where 1 order by id asc limit 0,6"; 
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham_new(){
+    $sql="select * from product where 1 order by id desc limit 0,4"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
@@ -28,6 +38,16 @@ function loadall_sanpham($kyw="",$iddm=0){
         $sql.=" and iddm ='".$iddm."'";
     }
     $sql.=" order by id desc";
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham_shop(){
+    $sql="SELECT * from product where 1 order by id desc limit 0,16"; 
+    $listsanpham=pdo_query($sql);
+    return $listsanpham;
+}
+function loadall_sanpham_sale(){
+    $sql="SELECT * from product where 1 order by id desc limit 0,6"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
@@ -46,6 +66,11 @@ function loadone_sanpham($id){
     $sp=pdo_query_one($sql);
     return $sp;
 }
+// function loadone_sanpham_product_single($id){
+//     $sql="SELECT * from product where id=".$id;
+//     $sp=pdo_query_one($sql);
+//     return $sp;
+// }
 function load_sanpham_cungloai($id,$iddm){
     $sql="select * from product where iddm=".$iddm." AND id <> ".$id;
     $listsanpham=pdo_query($sql);

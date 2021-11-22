@@ -1,9 +1,10 @@
 
 <?php session_start(); ?>
-
-<?php include_once("./view/header.php")
-
+<?php 
+  include_once("./view/header.php");
 ?>
+
+
 
 
 <?php include("./modal/pdo.php"); ?>
@@ -14,18 +15,32 @@
 
 <?php 
 $dsdm = loadall_danhmuc();
+$dsncc = loadall_nhacungcap();
 $spnew = loadall_sanpham_home();
 $dstop10 = loadall_sanpham_top10();
+$spsaleoff =loadall_sanpham_saleoff();
+$prnew = loadall_sanpham_new();
+
 
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-      case 'sanpham':
-       
-      case 'sanphamct':
+      case "shop":
+          $fullsp = loadall_sanpham_shop();
+          include "view/shop.php";
+        break;
+      case 'product-single':
         
-     
-  
+            if(isset($_GET['id'])&&($_GET['id']>0)) {
+              $id=$_GET['id'];
+              $onesp=loadone_sanpham($id);
+              // $dstop10=load_sanpham_cungloai($id,$iddm);
+              extract($onesp);
+              include "view/product-single.php";  
+          }else{
+              include "view/product-single.php";
+          }
+          break;
       case 'dangky':
         
         if (isset($_POST['dangky']) && ($_POST['dangky'])) {
@@ -134,7 +149,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         break;
     }
   } else {
+   
     include("view/home.php");
+     
   }
   
 
@@ -169,7 +186,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 <?php //include_once("./view/info.php") ?>
 <!-- <?php //include_once("./view/home.php") ?> -->
 <?php //include_once("./view/contacts.php") ?>
-<?php include_once("./view/footer.php") ?>
+
+<?php include_once("./view/footer.php");  ?>
 
 
 
