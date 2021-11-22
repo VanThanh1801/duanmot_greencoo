@@ -161,6 +161,13 @@
                                     <div class="form-group row">
 
                                         <div class="col-xs-3">
+                                            <label for="product-price">Giảm giá</label>
+                                            <input type="text" name="saleoff" class="form-control" size="60">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
                                             <label for="product-price">Giá cũ sản phẩm</label>
                                             <input type="text" name="giaold" class="form-control" size="60">
                                         </div>

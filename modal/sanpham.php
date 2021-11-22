@@ -1,7 +1,7 @@
 <?php
 
-function insert_sanpham($tensp,$giaold,$gianew,$hinh,$mota,$iddm,$hastag,$nhacungcap, $khoiluong,  $soluong ){
-    $sql="INSERT into product(name,old_price,new_price,img,mota,id_cate,id_hastags,id_agent, product_quanlilty, product_kl) values('$tensp','$giaold', '$gianew', '$hinh','$mota','$iddm', '$hastag', '$nhacungcap', '$soluong', '$khoiluong')";
+function insert_sanpham($tensp,$saleoff,$giaold,$gianew,$hinh,$mota,$iddm,$hastag,$nhacungcap, $khoiluong,  $soluong ){
+    $sql="INSERT into product(name,saleoff,old_price,new_price,img,mota,id_cate,id_hastags,id_agent, product_quanlilty, product_kl) values('$tensp','$saleoff','$giaold', '$gianew', '$hinh','$mota','$iddm', '$hastag', '$nhacungcap', '$soluong', '$khoiluong')";
     pdo_execute($sql);
 
 }
@@ -76,11 +76,11 @@ function load_sanpham_cungloai($id,$iddm){
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
-function update_sanpham($id,$tensp,$giaold,$gianew,$hinh,$mota,$iddm,$hastag,$nhacungcap, $khoiluong,  $soluong){
+function update_sanpham($id,$tensp,$saleoff,$giaold,$gianew,$hinh,$mota,$iddm,$hastag,$nhacungcap, $khoiluong,  $soluong){
     if($hinh!="")
-        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',img='".$hinh."',id_hastags='".$hastag."',id_agent='".$nhacungcap."', product_quanlilty = '".$soluong."', product_kl = '".$khoiluong."' WHERE id=".$id;
+        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', saleoff = '".$saleoff."' ,old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',img='".$hinh."',id_hastags='".$hastag."',id_agent='".$nhacungcap."', product_quanlilty = '".$soluong."', product_kl = '".$khoiluong."' WHERE id=".$id;
     else 
-        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',id_hastags='".$hastag."',id_agent='".$nhacungcap."',  product_quanlilty = '".$soluong."', product_kl = '".$khoiluong."' where id=".$id;   
+        $sql="UPDATE product set id_cate='".$iddm."', name='".$tensp."', saleoff = '".$saleoff."', old_price='".$giaold."',new_price='".$gianew."',mota='".$mota."',id_hastags='".$hastag."',id_agent='".$nhacungcap."',  product_quanlilty = '".$soluong."', product_kl = '".$khoiluong."' where id=".$id;   
       
         pdo_execute($sql);
     

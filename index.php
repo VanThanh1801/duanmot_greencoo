@@ -15,7 +15,7 @@
 
 <?php 
 $dsdm = loadall_danhmuc();
-$dsncc = loadall_nhacungcap();
+$dsncc = loadall_agent();
 $spnew = loadall_sanpham_home();
 $dstop10 = loadall_sanpham_top10();
 $spsaleoff =loadall_sanpham_saleoff();

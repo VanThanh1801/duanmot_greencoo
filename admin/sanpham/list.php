@@ -10,7 +10,7 @@
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sản phẩm</a>
                         </li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Danh mục</li>
                     </ol>
@@ -157,6 +157,9 @@
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Ten san pham</th>
+                                                <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Giảm giá</th>
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Giá cũ</th>
@@ -208,77 +211,95 @@
                         $hinh = "no photo";
                     }
                     
-                  
-                    echo'
+                  ?>
+
                       <tr>
                       <td>
                         <div class="d-flex px-2 py-1">
                        
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-xs text-secondary mb-0">'.$id.'</p>
+                            <p class="text-xs text-secondary mb-0"><?= $id ?></p>
                           </div>
                         </div>
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$name.'</p>
+                        <p class="text-xs font-weight-bold mb-0"><?= $name ?></p>
                       
                       </td>
+                      <?php 
+                        if($saleoff != null){
+                          ?>  
+                    <td>
+                      <p class="text-xs font-weight-bold mb-0"><?= $saleoff ?>%</p>
+                    
+                    </td>
+                    <?php    
+                    }else{
+                        $tbsale="Chưa Có!!!";
+                        ?>
+                         <td>
+                      <p class="text-xs font-weight-bold mb-0"><?= $tbsale ?></p>
+                    
+                    </td>
+                    <?php
+                    }
+                      ?>
                       <td>
-                      <p class="text-xs font-weight-bold mb-0">'.$old_price.'</p>
+                      <p class="text-xs font-weight-bold mb-0"><?= $old_price ?></p>
                     
                     </td>
                     <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$new_price.'</p>
+                    <p class="text-xs font-weight-bold mb-0"><?= $new_price ?></p>
                   
                   </td>
                   <td>
-                  <p class="text-xs font-weight-bold mb-0">'.$hinh.'</p>
+                  <p class="text-xs font-weight-bold mb-0"><?= $hinh ?></p>
                     
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$product_quanlilty.'</p>
+                    <p class="text-xs font-weight-bold mb-0"><?= $product_quanlilty ?></p>
                   
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$product_kl.'</p>
+                    <p class="text-xs font-weight-bold mb-0"><?= $product_kl ?></p>
                   
                   </td>
                    
                     
                     <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$mota.'</p>
+                    <p class="text-xs font-weight-bold mb-0" width="100px"><?= $mota ?></p>
                   
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_cate.'</p>
+                    <p class="text-xs font-weight-bold mb-0"><?= $id_cate ?></p>
                   
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_hastags .'</p>
+                    <p class="text-xs font-weight-bold mb-0"><?= $id_hastags ?></p>
                   
                   </td>
                   <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$id_agent .'</p>
+                    <p class="text-xs font-weight-bold mb-0"><?= $id_agent ?></p>
                   
                   </td>
                      
                      
                       <td class="align-middle">
-                        <a href="'.$suasp.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="<?= $suasp ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td> 
                       <td class="align-middle">
-                        <a href="'.$xoasp.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="<?= $xoasp ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                          Delete
                         </a>
                       </td>
-                    </tr>';
+                    </tr>
 
 
 
-
+                    <?php
                   }
                   
                   
