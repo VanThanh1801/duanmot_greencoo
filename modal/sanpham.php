@@ -40,7 +40,7 @@ function loadall_sanpham($kyw="",$iddm=0){
     if($iddm>0){
         $sql.=" and id_cate ='".$iddm."'";
     }
-    $sql.=" order by id desc";
+    $sql.=" order by id desc limit 0,20";
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
@@ -56,7 +56,7 @@ function loadall_sanpham_sale(){
 }
 function load_ten_dm($iddm){
     if($iddm>0){
-        $sql="select * from danhmuc where id=".$iddm;
+        $sql="SELECT * from category where id=".$iddm;
         $dm=pdo_query_one($sql);
         extract($dm);
         return $name;
@@ -75,7 +75,7 @@ function loadone_sanpham($id){
 //     return $sp;
 // }
 function load_sanpham_cungloai($id,$iddm){
-    $sql="select * from product where iddm=".$iddm." AND id <> ".$id;
+    $sql="SELECT * from product where iddm=".$iddm." AND id <> ".$id;
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
