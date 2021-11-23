@@ -72,7 +72,7 @@
 
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active"><a href="" class="nav-link">Trang Chủ</a></li>
+                    <li class="nav-item active"><a href="index.php?act=home" class="nav-link">Trang Chủ</a></li>
                     <li class="nav-item active"><a href="index.php?act=shop" class="nav-link">Cửa hàng</a></li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
@@ -88,19 +88,64 @@
                         </div>
                     </li>
                     <li class="nav-item"><a href="index.php?act=vechungtoi" class="nav-link">Về chúng tôi</a></li>
-                    <li class="nav-item"><a href="index.php?act=tintuc" class="nav-link">Tin tức</a></li>
+                    <!-- <li class="nav-item"><a href="index.php?act=tintuc" class="nav-link">Tin tức</a></li> -->
+                    <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login
                     <li class="nav-item"><a href="index.php?act=lienhe" class="nav-link">Liên hệ</a></li>
+                   
 
 
-                    <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login</a></li>
+
+                  
+
+                            <?php
+                            if (isset($_SESSION['user'])) {
+                                extract($_SESSION['user']);
+                                echo '
+                                <li class="nav-item user"> Hello '.$user.'</li>
+                                ';
+                            ?>
+                        
+                              
+
+
+                            
+                            <?php
+                            } else {
+                                echo " ";
+                            }
+
+                            ?>
+                          <li class="nav-item"><a href="index.php?act=thoat" class="nav-link">Thoat</a></li>
+
+
+                
                     <li class="nav-item cta cta-colored"><a href="index.php?act=addtocart" class="nav-link"><span
-                                class="icon-shopping_cart"></span>[0]</a></li>
+                                class="icon-shopping_cart">
+                            
+                                <?php
+                                if(isset($_SESSION['mycart'])){
+                                    echo count($_SESSION['mycart']) + 1;
+                                }
+                                else{
+                                    echo '0';
+                                }
+                                
+                                
+                                ?>
+                            
+                            </span>
+                               
+
+
+                        </a></li>
                     <li class="nav-item">
                         <form class="" action="index.php?act=sanpham" method="post">
                             <input class="search_input" type="text" placeholder="Search" aria-label="Search" name="kyw">
-                            
+
                         </form>
                     </li>
+                    <!-- <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login -->
+
 
                 </ul>
 

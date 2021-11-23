@@ -13623,3 +13623,8 @@ input.search_input {
     margin-right: -400px;
     margin-top: 10px;
 }
+
+li.nav-item.user {
+    margin-top: 20px;
+    color: red;
+}

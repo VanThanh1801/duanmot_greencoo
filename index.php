@@ -87,14 +87,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           $pass = $_POST['pass'];
           $checkuser = checkuser($email, $pass);
           $thongbao="Bạn đã đăng nhập thành công!";
-          // if (is_array($checkuser)) {
-          //   $_SESSION['user'] = $checkuser;
+          if (is_array($checkuser)) {
+            $_SESSION['user'] = $checkuser;
   
-          //   // $thongbao="Bạn đã đăng nhập thành công!";
-          //   header('Location: index.php');
-          // } else {
-          //   $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
-          // }
+            // $thongbao="Bạn đã đăng nhập thành công!";
+            include("view/home.php");
+          } else {
+            $thongbao = "Tài khoản không tồn tại. Vui lòng kiểm tra hoặc đăng ký!";
+          }
         }
         include("view/dangnhap.php");
         break;
@@ -133,9 +133,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         include "view/resetpass.php";
         break;
       case 'thoat':
-        // session_unset();
-        // header('Location: index.php');
-        // break;
+        session_unset();
+        include("view/home.php");
+        break;
   
   
   
@@ -158,9 +158,24 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         include "view/cart.php";
         break;
        
-      case 'delcart':
+        case 'delcart':
+          if (isset($_GET['idcart'])) {
+            
+            // array_slice($_SESSION['mycart'], $_GET['idcart'], 1);
+            if($_GET['idcart'] == 0){
+              unset($_SESSION['mycart'][0]);
+            }else{
+              unset($_SESSION['mycart'][$_GET['idcart']]);
+            
+            }
+            
+          } else {
+            $_SESSION['mycart'] = [];
+          }
+        
+          break;
        
-      case 'viewcart';
+     
        
       case 'vechungtoi':
         include 'view/about.php';
@@ -182,6 +197,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         
 
         break;
+ 
       case 'bill';
       include "./view/cart/bill.php";
       break;
