@@ -33,12 +33,12 @@ function loadall_sanpham_new(){
     return $listsanpham;
 }
 function loadall_sanpham($kyw="",$iddm=0){
-    $sql="SELECT * from product where 1"; 
+    $sql="select * from product where 1"; 
     if($kyw!=""){
         $sql.=" and name like '%".$kyw."%'";
     }
     if($iddm>0){
-        $sql.=" and iddm ='".$iddm."'";
+        $sql.=" and id_cate ='".$iddm."'";
     }
     $sql.=" order by id desc";
     $listsanpham=pdo_query($sql);

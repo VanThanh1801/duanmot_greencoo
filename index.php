@@ -28,10 +28,25 @@ $prnew = loadall_sanpham_new();
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
-      case "shop":
-          $fullsp = loadall_sanpham_shop();
-          include "view/shop.php";
+      case 'sanpham':
+        if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
+          $kyw = $_POST['kyw'];
+        } else {
+          $kyw = "";
+        }
+        if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
+          $iddm = $_GET['iddm'];
+        } else {
+          $iddm = 0;
+        }
+        $dssp = loadall_sanpham($kyw, $iddm);
+        $tendm = load_ten_dm($iddm);
+        include "view/shop.php";
         break;
+      // case "shop":
+      //     $fullsp = loadall_sanpham_shop();
+      //     include "view/shop.php";
+      //   break;
       case 'product-single':
         
             if(isset($_GET['id'])&&($_GET['id']>0)) {

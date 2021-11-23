@@ -16,18 +16,25 @@
         <div class="row justify-content-center">
             <div class="col-md-10 mb-5 text-center">
                 <ul class="product-category">
-                    <li><a href="#" class="active">Tất cả</a></li>
-                    <li><a href="#">Rau củ</a></li>
-                    <li><a href="#">Thịt</a></li>
-                    <li><a href="#">Hải sản</a></li>
-                    <li><a href="#">Đồ uống</a></li>
+
+                <?php foreach($dsdm as $dm){
+                    extract($dm);
+                    $linkdm = "index.php?act=sanpham&iddm".$id;
+                    $hinh = $img_path.$img_cate;
+
+                    echo '
+                    <li><a href="'.$linkdm.'" >'.$name.'</a></li>
+                    
+                    ';
+                }
+                    ?>
                 </ul>
             </div>
         </div>
         <div class="row">    
                 <?php 
                     $i =0 ;
-                    foreach ($fullsp as $sp) {
+                    foreach ($dssp as $sp) {
                        extract($sp);
                        $linksp="index.php?act=product-single&id=".$id;
                        $hinh=$img_path.$img;

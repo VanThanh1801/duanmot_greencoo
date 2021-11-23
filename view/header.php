@@ -90,12 +90,18 @@
                     <li class="nav-item"><a href="index.php?act=vechungtoi" class="nav-link">Về chúng tôi</a></li>
                     <li class="nav-item"><a href="index.php?act=tintuc" class="nav-link">Tin tức</a></li>
                     <li class="nav-item"><a href="index.php?act=lienhe" class="nav-link">Liên hệ</a></li>
-                    
+
 
                     <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login</a></li>
                     <li class="nav-item cta cta-colored"><a href="./view/cart.php" class="nav-link"><span
                                 class="icon-shopping_cart"></span>[0]</a></li>
-                   
+                    <li class="nav-item">
+                        <form class="" action="index.php?act=sanpham" method="post">
+                            <input class="search_input" type="text" placeholder="Search" aria-label="Search" name="kyw">
+                            
+                        </form>
+                    </li>
+
                 </ul>
 
 
