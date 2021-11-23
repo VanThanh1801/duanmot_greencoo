@@ -93,7 +93,7 @@
 
 
                     <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login</a></li>
-                    <li class="nav-item cta cta-colored"><a href="./view/cart.php" class="nav-link"><span
+                    <li class="nav-item cta cta-colored"><a href="index.php?act=addtocart" class="nav-link"><span
                                 class="icon-shopping_cart"></span>[0]</a></li>
                     <li class="nav-item">
                         <form class="" action="index.php?act=sanpham" method="post">

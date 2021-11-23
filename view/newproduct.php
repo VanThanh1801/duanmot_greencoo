@@ -17,7 +17,7 @@
                        extract($sp);
                        $linksp="index.php?act=product-single&id=".$id;
                        $hinh=$img_path.$img;
-                       if(($i==2)||($i==5)||($i==8)||($i==11)){
+                       if(($i==2)||($i==5)||($i==8)||($i==11)){ 
 
                        }
                        
@@ -39,16 +39,18 @@
                                 </div>
                             <div class="bottom-area d-flex px-3">
                                  <div class="m-auto d-flex">
-                                     <a href="#"
-                                         class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                         <span><i class="ion-ios-menu"></i></span>
-                                     </a>
-                                     <a href="addtocart" class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                         <span><i class="ion-ios-cart"></i></span>
-                                     </a>
-                                     <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                         <span><i class="ion-ios-heart"></i></span>
-                                     </a>
+                                <form action="index.php?act=addtocart" method="post">
+                                    <input type="hidden" name="id" value="'.$id.'">
+                                    <input type="hidden" name="name" value="'.$name.'">
+                                    <input type="hidden" name="img" value="'.$img.'">
+                                    <input type="hidden" name="old_price" value="'.$old_price.'">
+                                    <input type="hidden" name="new_price" value="'.$new_price.'">
+                                    <input type="hidden" name="sale" value="'.$saleoff.'">
+            
+                                    <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+                                        
+                                    
+                                </form>
                                  </div>
                              </div>
                         </div>

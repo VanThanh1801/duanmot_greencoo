@@ -13610,3 +13610,16 @@ textarea.form-control {
 .col-md-4.col-md-offset-4 {
     margin: 50px 300px 50px 380px;
 }
+
+input.cart {
+    background-color: #4ec94e;
+    color: white;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+input.search_input {
+    margin-right: -400px;
+    margin-top: 10px;
+}

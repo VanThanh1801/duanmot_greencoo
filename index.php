@@ -4,7 +4,10 @@
   include_once("./view/header.php");
 ?>
 
+<?php
 
+if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
+?>
 
 
 <?php include("./modal/pdo.php"); ?>
@@ -138,7 +141,22 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
   
   
   
-      case 'addtocart':
+        case 'addtocart':
+        if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+          $id = $_POST['id'];
+          $name = $_POST['name'];
+          $saleoff = $_POST['sale'];
+          $new_price = $_POST['new_price'];
+          $img = $_POST['img'];
+          $old_price = $_POST['old_price'];
+          $soluong = 1;
+          $thanhtien = $soluong * $new_price;
+          $spadd = [$id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien];
+          array_push($_SESSION['mycart'], $spadd);
+          unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien);
+        }
+        include "view/cart.php";
+        break;
        
       case 'delcart':
        
