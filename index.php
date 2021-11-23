@@ -43,16 +43,16 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $tendm = load_ten_dm($iddm);
         include "view/shop.php";
         break;
-      // case "shop":
-      //     $fullsp = loadall_sanpham_shop();
-      //     include "view/shop.php";
-      //   break;
+      case "shop":
+          $dssp = loadall_sanpham_shop();
+          include "view/shop.php";
+        break;
       case 'product-single':
         
             if(isset($_GET['id'])&&($_GET['id']>0)) {
               $id=$_GET['id'];
               $onesp=loadone_sanpham($id);
-              // $dstop10=load_sanpham_cungloai($id,$iddm);
+              $spcungloai=load_sanpham_cungloai($id,$iddm);
               extract($onesp);
               include "view/product-single.php";  
           }else{
