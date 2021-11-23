@@ -1,7 +1,7 @@
 <?php include_once("./view/banner.php") ?>
 
 <?php include_once("./view/shipping.php") ?>
-<?php include_once("./view/category.php") ?>
+<?php //include_once("./view/category.php") ?>
 <?php include_once("./view/saleproduct.php") ?>
 
 <?php include_once("./view/product.php") ?>
