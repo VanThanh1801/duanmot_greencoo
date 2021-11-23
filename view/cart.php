@@ -33,13 +33,16 @@
 
 								<?php 
 								$tong = 0;
+								$i = 0;
+
 								foreach($_SESSION['mycart'] as $cart){
 									$hinh = $img_path.$cart[2];
 									$thanhtien = $cart[3] * $cart[6];
 									$tong += $thanhtien;
+									$xoasp = '<a href="index.php?act=delcart&idcart='.$i.'"><span class="ion-ios-close"></span></a>';
 									echo '
 									<tr class="text-center">
-                                    <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+                                    <td class="product-remove">'.$xoasp.'</td>
 
                                     <td class="image-prod">
                                         <div class="img" style="background-image:url('.$hinh.');"></div>
@@ -67,6 +70,8 @@
                                 </tr><!-- END TR-->
 									
 									';
+									$i += 1;
+
 								}
 								
 								?>
