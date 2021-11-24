@@ -55,7 +55,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
     
             $id = $_GET['idsp'];
-            // update_luotxem($id);
+            update_luotxem($id);
             // if (isset($_POST['insert'])) {
             //   $noidung = $_POST['noidungbl'];
     

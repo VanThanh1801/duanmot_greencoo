@@ -29,7 +29,7 @@
                         <?php 
                 foreach($dsdm as $dm){
                     extract($dm);
-                    $linkdm = "index.php?act=sanpham&iddm".$id;
+                    $linkdm = "index.php?act=sanpham&iddm=".$id;
                 
 
                     echo '

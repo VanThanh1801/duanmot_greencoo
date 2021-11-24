@@ -89,7 +89,7 @@ function update_sanpham($id,$tensp,$saleoff,$giaold,$gianew,$hinh,$mota,$iddm,$n
     
 }
 function update_luotxem($idsp){
-    $sql = "update sanpham set luotxem = luotxem + 1 where id=".$idsp;
+    $sql = "update product set view = view + 1 where id=".$idsp;
     pdo_execute($sql);
 
 }

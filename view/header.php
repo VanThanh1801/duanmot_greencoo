@@ -78,7 +78,11 @@
                         <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Danh mục</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="./view/shop">Trái cây nội địa, nhập khẩu</a>
+
+                        
+                 
+
+                            <a class="dropdown-item" href="">Trái cây nội địa, nhập khẩu</a>
                             <a class="dropdown-item" href="#">Thực phẩm chín, ăn liền</a>
                             <a class="dropdown-item" href="#">Rau hữu cơ</a>
                             <a class="dropdown-item" href="#">Hải sản cao câp</a>
