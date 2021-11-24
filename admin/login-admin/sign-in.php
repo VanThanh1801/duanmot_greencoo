@@ -24,7 +24,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./assets/img/favicon.png">
   <title>
-    Soft UI Dashboard by Creative Tim
+   GreenCoCo
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -43,7 +43,7 @@
     <div class="row">
       <div class="col-12">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
+        <!-- <nav class="navbar navbar-expand-lg blur blur-rounded top-0 z-index-3 shadow position-absolute my-3 py-2 start-0 end-0 mx-4">
           <div class="container-fluid">
             <a class="navbar-brand font-weight-bolder ms-lg-0 ms-3 " href="../pages/dashboard.html">
               Soft UI Dashboard
@@ -89,7 +89,7 @@
               </ul>
             </div>
           </div>
-        </nav>
+        </nav> -->
         <!-- End Navbar -->
       </div>
     </div>
@@ -102,8 +102,8 @@
             <div class="col-xl-4 col-lg-5 col-md-6 d-flex flex-column mx-auto">
               <div class="card card-plain mt-8">
                 <div class="card-header pb-0 text-left bg-transparent">
-                  <h3 class="font-weight-bolder text-info text-gradient">Welcome back</h3>
-                  <p class="mb-0">Enter your email and password to sign in</p>
+                  <h3 class="font-weight-bolder text-info text-gradient">Chào mừng trở lại</h3>
+                  <p class="mb-0">Nhập email và mật khẩu của bạn để đăng nhập</p>
                 </div>
                 <div class="card-body">
 
@@ -127,7 +127,7 @@
                   <form role="form"  method="post">
                     <label>User Admin</label>
                     <div class="mb-3">
-                      <input type="text" class="form-control" placeholder="Email" name="user" aria-label="Email" aria-describedby="email-addon">
+                      <input type="text" class="form-control" placeholder="username" name="user" aria-label="Email" aria-describedby="email-addon">
                     </div>
                     <label>Password</label>
                     <div class="mb-3">
@@ -145,8 +145,8 @@
                 </div>
                 <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
-                    Don't have an account?
-                    <a href="index.php?act=dangky" class="text-info text-gradient font-weight-bold">Sign up</a>
+                  Không có tài khoản?
+                    <a href="index.php?act=dangky" class="text-info text-gradient font-weight-bold">Đăng ký</a>
                   </p>
                 </div>
               </div>
@@ -163,7 +163,7 @@
     </section>
   </main>
   <!-- -------- START FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
-  <footer class="footer py-5">
+  <!-- <footer class="footer py-5">
     <div class="container">
       <div class="row">
         <div class="col-lg-8 mb-4 mx-auto text-center">
@@ -214,7 +214,7 @@
         </div>
       </div>
     </div>
-  </footer>
+  </footer> -->
   <!-- -------- END FOOTER 3 w/ COMPANY DESCRIPTION WITH LINKS & SOCIAL ICONS & COPYRIGHT ------- -->
   <!--   Core JS Files   -->
   <script src="./assets/js/core/popper.min.js"></script>
