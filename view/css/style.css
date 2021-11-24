@@ -13628,3 +13628,9 @@ li.nav-item.user {
     margin-top: 20px;
     color: red;
 }
+
+img.img-fluid.item {
+    width: 500px;
+    height: 500px;
+    border-radius: 10px;
+}

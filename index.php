@@ -172,6 +172,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           } else {
             $_SESSION['mycart'] = [];
           }
+          include("view/cart.php");
         
           break;
        
@@ -187,11 +188,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       
 
       break;
-      case 'tintuc':
-        include 'view/blog.php';
-        
-  
-        break;
+      
       case 'lienhe':
         include 'view/contact.php';
         

@@ -106,7 +106,7 @@
                 extract($onesp);
                 $hinh = $img_path . $img;
                 ?>
-                <a href="<?php echo $hinh ?>" class="image-popup"> <img src=<?php echo $hinh ?> class="img-fluid" alt=""></a>
+                <a href="<?php echo $hinh ?>" class="image-popup"> <img src=<?php echo $hinh ?> class="img-fluid item" alt=""></a>
             </div>
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                 <h3><?php echo $name ?></h3>
