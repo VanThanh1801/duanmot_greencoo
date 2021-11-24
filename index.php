@@ -50,17 +50,33 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           $dssp = loadall_sanpham_shop();
           include "view/shop.php";
         break;
-      case 'product-single':
-        
-            if(isset($_GET['id'])&&($_GET['id']>0)) {
-              $id=$_GET['id'];
-              $onesp=loadone_sanpham($id);
-              $spcungloai=load_sanpham_cungloai($id,$iddm);
-              extract($onesp);
-              include "view/product-single.php";  
-          }else{
-              include "view/product-single.php";
+        case 'sanphamct':
+      
+          if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
+    
+            $id = $_GET['idsp'];
+            // update_luotxem($id);
+            // if (isset($_POST['insert'])) {
+            //   $noidung = $_POST['noidungbl'];
+    
+            //   $ma_Kh = $_SESSION['user']['id'];
+            //   $ma_sanpham = $id;
+            //   // inser_comment($noidung, $ma_sanpham, $ma_Kh);
+            //   // var_dump(inser_comment($noidung, $ma_sanpham, $ma_Kh, $ngay_bl));
+    
+            // }
+            // $showbl = select_binhluan($id);
+            $onesp = loadone_sanpham($id);
+            
+    
+            $sp_cung_loai = load_sanpham_cungloai($id, $onesp['id_cate']);
+    
+    
+            include "view/product-single.php";
+          } else {
+            include "view/home.php";
           }
+    
           break;
       case 'dangky':
         

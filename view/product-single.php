@@ -191,9 +191,9 @@
         <div class="row">
             <?php
             $i = 0;
-            foreach ($dstop10 as $sp) {
+            foreach ($sp_cung_loai as $sp) {
                 extract($sp);
-                $linksp = "index.php?act=product-single&id=" . $id;
+                $linksp = "index.php?act=sanpham&idsp=" . $id;
                 $hinh = $img_path . $img;
                 if (($i == 2) || ($i == 6) || ($i == 8) || ($i == 11)) {
                 }
