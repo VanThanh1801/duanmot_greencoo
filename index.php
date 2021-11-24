@@ -155,13 +155,13 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           array_push($_SESSION['mycart'], $spadd);
           unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien);
         }
-        include "view/cart.php";
+        include "view/viewcar.php";
         break;
        
         case 'delcart':
           if (isset($_GET['idcart'])) {
             
-            // array_slice($_SESSION['mycart'], $_GET['idcart'], 1);
+           
             if($_GET['idcart'] == 0){
               unset($_SESSION['mycart'][0]);
             }else{
@@ -172,10 +172,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           } else {
             $_SESSION['mycart'] = [];
           }
-          include("view/cart.php");
+          include("view/viewcar.php");
         
           break;
-       
+    case 'viewcart':
+      include 'view/viewcar.php';
+      
+
+      break;
+            
      
        
       case 'vechungtoi':
@@ -196,7 +201,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         break;
  
       case 'bill';
-      include "./view/cart/bill.php";
+      include "./view/bill.php";
       break;
       default:
         include("./view/home.php");
@@ -226,20 +231,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
 
-<?php //include_once("./view/banner.php") ?>
 
-<?php //include_once("./view/shipping.php") ?>
-<?php //include_once("./view/category.php") ?>
-<?php //include_once("./view/saleproduct.php") ?>
-<?php //include_once("./view/newproduct.php") ?>
-<?php //include_once("./view/product.php") ?>
-<?php //include_once("./view/searchproduct.php") ?>
-
-<?php //include_once("./view/deal.php") ?>
-<?php //include_once("./view/sale.php") ?>
-<?php //include_once("./view/info.php") ?>
-<!-- <?php //include_once("./view/home.php") ?> -->
-<?php //include_once("./view/contacts.php") ?>
 
 <?php include_once("./view/footer.php");  ?>
 

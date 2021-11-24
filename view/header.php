@@ -119,7 +119,7 @@
 
 
                 
-                    <li class="nav-item cta cta-colored"><a href="index.php?act=addtocart" class="nav-link"><span
+                    <li class="nav-item cta cta-colored"><a href="index.php?act=viewcart" class="nav-link"><span
                                 class="icon-shopping_cart">
                             
                                 <?php
