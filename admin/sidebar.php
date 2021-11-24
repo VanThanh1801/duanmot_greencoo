@@ -174,7 +174,8 @@
                 </g>
               </svg>
             </div>
-            <span class="nav-link-text ms-1">Back to GreenCoCo</span>
+            <span class="nav-link-text ms-1"><a href="../index.php">Back to GreenCoCo</a>
+              </span>
           </a>
         </li>
         <!-- <li class="nav-item">
