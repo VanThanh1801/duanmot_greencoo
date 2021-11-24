@@ -14,7 +14,7 @@
                     $i =0 ;
                     foreach ($spnew as $sp) {
                        extract($sp);
-                       $linksp="index.php?act=product-single&id=".$id;
+                       $linksp="index.php?act=sanphamct&idsp=".$id;
                        $hinh=$img_path.$img;
                        if(($i==2)||($i==5)||($i==8)||($i==11)){
 

@@ -69,13 +69,9 @@ function loadone_sanpham($id){
     $sp=pdo_query_one($sql);
     return $sp;
 }
-// function loadone_sanpham_product_single($id){
-//     $sql="SELECT * from product where id=".$id;
-//     $sp=pdo_query_one($sql);
-//     return $sp;
-// }
+
 function load_sanpham_cungloai($id,$iddm){
-    $sql="SELECT * from product where iddm=".$iddm." AND id <> ".$id;
+    $sql="SELECT * from product where id_cate =".$iddm." AND id <> ".$id;
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
