@@ -16,6 +16,7 @@ if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 <?php include("./global.php"); ?>
 <?php include("./modal/danhmuc.php");  ?>
 <?php include("./modal/nhacungcap.php");  ?>
+<?php include("./modal/modalbill.php") ?>
 
 
 
@@ -166,7 +167,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           $img = $_POST['img'];
           $old_price = $_POST['old_price'];
           $soluong = 1;
-          $thanhtien = $soluong * $new_price;
+          $thanhtien = floatval($soluong)  * floatval($new_price);
+        //$soluong * $new_price;
           $spadd = [$id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien];
           array_push($_SESSION['mycart'], $spadd);
           unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien);
@@ -191,6 +193,26 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           include("view/viewcar.php");
         
           break;
+    case 'billconfirm':
+      if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $tel = $_POST['tel'];
+        $ptt = $_POST['pttt'];
+        $date = date('h:i:sa d/m/Y');
+        $tongdon = tongdon();
+        $idbill = insert_bill($name,$email,$address,$tel,$pttt,$date,$tongdon);
+
+        //insert into cart : $sessio['mycart'] & $idbill
+
+        foreach($session['mycart'] as $cart){
+          insert_cart($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[5],$idbill);
+        }
+      }
+      $listbill = loadone_bill($idbill);
+      include "./view/bill.php";
+      break;
     case 'viewcart':
       include 'view/viewcar.php';
       
@@ -216,9 +238,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
         break;
  
-      case 'bill';
-      include "./view/bill.php";
-      break;
+      // case 'bill';
+      // include "./view/bill.php";
+      // break;
       default:
         include("./view/home.php");
         break;
