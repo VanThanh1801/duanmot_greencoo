@@ -28,12 +28,12 @@
 
                     <div class="d-flex justify-content-around align-items-center mb-4">
                         <!-- Checkbox -->
-                        <div class="form-check">
+                        <!-- <div class="form-check">
 
                             <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
                             <label class="form-check-label" for="form1Example3">Remember me </label>
 
-                        </div>
+                        </div> -->
                         <a href="index.php?act=quenmk">Forgot password?</a>
                     </div>
                     <p><a href="index.php?act=edit_taikhoan">Cập nhật tài khoản?</a></p>

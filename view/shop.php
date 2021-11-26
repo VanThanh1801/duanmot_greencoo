@@ -13,14 +13,14 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 sidebar ftco-animate">
-                <div class="sidebar-box">
+                <!-- <div class="sidebar-box">
                     <form action="#" class="search-form">
                         <div class="form-group">
                             <span class="icon ion-ios-search"></span>
                             <input type="text" class="form-control" placeholder="Search...">
                         </div>
                     </form>
-                </div>
+                </div> -->
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading">Danh muc san pham</h3>
                     <ul class="categories">

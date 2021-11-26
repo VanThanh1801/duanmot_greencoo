@@ -16,8 +16,8 @@ if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 <?php include("./global.php"); ?>
 <?php include("./modal/danhmuc.php");  ?>
 <?php include("./modal/nhacungcap.php");  ?>
-<?php include("./modal/modalbill.php") ?>
 
+<?php include("./modal/cart.php");  ?>
 
 
 <?php 
