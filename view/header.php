@@ -5,7 +5,7 @@
     <title>GreenCoCo </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     -->
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -80,7 +80,7 @@
 
                     <li class="nav-item"><a href="index.php?act=vechungtoi" class="nav-link">Về chúng tôi</a></li>
                     <!-- <li class="nav-item"><a href="index.php?act=tintuc" class="nav-link">Tin tức</a></li> -->
-                    <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login
+                    <!-- <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login -->
                     <li class="nav-item"><a href="index.php?act=lienhe" class="nav-link">Liên hệ</a></li>
 
 
@@ -88,11 +88,24 @@
 
 
 
+                  
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.php?act=dangnhap" id="dropdown04" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Login</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="index.php?act=thoat">Đăng xuất</a>
+                           
+                            <a class="dropdown-item" href="#">Đơn hàng</a>
+                            <a class="dropdown-item" href="index.php?act=dangnhap">Đăng nhập</a>
+                        
+                        </div>
+                    </li>
                     <?php
                             if (isset($_SESSION['user'])) {
                                 extract($_SESSION['user']);
                                 echo '
-                                <li class="nav-item user"> Hello '.$user.'</li>
+                                <li class="nav-item user"> '.$user.'</li>
                                 ';
                             ?>
 
@@ -106,7 +119,7 @@
                             }
 
                             ?>
-                    <li class="nav-item"><a href="index.php?act=thoat" class="nav-link">Thoat</a></li>
+                    <!-- <li class="nav-item"><a href="index.php?act=thoat" class="nav-link">Thoat</a></li> -->
 
 
 

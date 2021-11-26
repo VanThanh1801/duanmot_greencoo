@@ -11,80 +11,42 @@
 
 
 <section class="ftco-section ftco-cart">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 ftco-animate">
-                    <div class="cart-list">
-                        <table class="table">
-                            <thead class="thead-primary">
-                                <tr class="text-center">
-                                    <th>&nbsp;</th>
-                                    <!-- <th>&nbsp;</th> -->
-									<th>Hình sản phẩm</th>
-                                    <th>Tên sản phẩm</th>
-                                    <th>Gía mới</th>
-									<th>Giá cũ</th>
-									<th>Sale</th>
-                                    <th>Số lượng</th>
-                                    <th>Tổng tiền</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ftco-animate">
+                <div class="cart-list">
+                    <table class="table">
+                        <thead class="thead-primary">
+                            <tr class="text-center">
+                                <th>&nbsp;</th>
+                                <!-- <th>&nbsp;</th> -->
+                                <th>Hình sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Gía mới</th>
+                                <th>Giá cũ</th>
+                                <th>Sale</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                            </tr>
+                        </thead>
+                        <tbody>
 
-								<?php 
-								$tong = 0;
-								$i = 0;
-
-								foreach($_SESSION['mycart'] as $cart){
-									$hinh = $img_path.$cart[2];
-									$thanhtien = $cart[3] * $cart[6];
-									$tong += $thanhtien;
-									$xoasp = '<a href="index.php?act=delcart&idcart='.$i.'"><span class="ion-ios-close"></span></a>';
-									echo '
-									<tr class="text-center">
-                                    <td class="product-remove">'.$xoasp.'</td>
-
-                                    <td class="image-prod">
-                                        <div class="img" style="background-image:url('.$hinh.');"></div>
-                                    </td>
-
-                                    <td class="product-name">
-                                        <h3>'.$cart[1].'</h3>
-                                        <p>Far far away, behind the word mountains, far from the countries</p>
-                                    </td>
-
-                                    <td class="price">'.$cart[3].'</td>
-									<td class="price">'.$cart[4].'</td>
-									<td class="price">'.$cart[5].'</td>
-
-
-
-                                    <td class="quantity">
-                                        <div class="input-group mb-3">
-                                            <input type="text" name="quantity"
-                                                class="quantity form-control input-number" value="1" min="1" max="100">
-                                        </div>
-                                    </td>
-
-                                    <td class="total">'.$thanhtien.'</td>
-                                </tr><!-- END TR-->
-									
-									';
-									$i += 1;
-
-								}
+                            <?php 
+								viewcart();
+                                
 								
 								?>
-                                
-                        </table>
-                    </div>
+                          
+
+                            <p><a href="index.php?act=bill" class="btn btn-primary py-3 px-4">Đồng ý đặt hàng</a></p>
+
+                    </table>
                 </div>
             </div>
-            <div class="row justify-content-end">
-                <a href="index.php?act=bill"><input type="button" value="Đồng ý đặt hàng"></a>
-            </div>
         </div>
-    </section>
+
+    </div>
+</section>
 
 <section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
     <div class="container py-4">
