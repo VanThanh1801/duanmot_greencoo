@@ -5,7 +5,10 @@
     <title>GreenCoCo </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -74,58 +77,42 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active"><a href="index.php?act=home" class="nav-link">Trang Chủ</a></li>
                     <li class="nav-item active"><a href="index.php?act=shop" class="nav-link">Cửa hàng</a></li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Danh mục</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
 
-                        
-                 
-
-                            <a class="dropdown-item" href="">Trái cây nội địa, nhập khẩu</a>
-                            <a class="dropdown-item" href="#">Thực phẩm chín, ăn liền</a>
-                            <a class="dropdown-item" href="#">Rau hữu cơ</a>
-                            <a class="dropdown-item" href="#">Hải sản cao câp</a>
-                            <a class="dropdown-item" href="#">Thịt sạch các loại</a>
-                            <a class="dropdown-item" href="#">Thực phẩm khô</a>
-
-                        </div>
-                    </li>
                     <li class="nav-item"><a href="index.php?act=vechungtoi" class="nav-link">Về chúng tôi</a></li>
                     <!-- <li class="nav-item"><a href="index.php?act=tintuc" class="nav-link">Tin tức</a></li> -->
                     <li class="nav-item"><a href="index.php?act=dangnhap" class="nav-link">Login
                     <li class="nav-item"><a href="index.php?act=lienhe" class="nav-link">Liên hệ</a></li>
-                   
 
 
 
-                  
 
-                            <?php
+
+
+                    <?php
                             if (isset($_SESSION['user'])) {
                                 extract($_SESSION['user']);
                                 echo '
                                 <li class="nav-item user"> Hello '.$user.'</li>
                                 ';
                             ?>
-                        
-                              
 
 
-                            
-                            <?php
+
+
+
+                    <?php
                             } else {
                                 echo " ";
                             }
 
                             ?>
-                          <li class="nav-item"><a href="index.php?act=thoat" class="nav-link">Thoat</a></li>
+                    <li class="nav-item"><a href="index.php?act=thoat" class="nav-link">Thoat</a></li>
 
 
-                
+
                     <li class="nav-item cta cta-colored"><a href="index.php?act=viewcart" class="nav-link"><span
                                 class="icon-shopping_cart">
-                            
+
                                 <?php
                                 if(isset($_SESSION['mycart'])){
                                     echo count($_SESSION['mycart']) + 1;
@@ -136,9 +123,9 @@
                                 
                                 
                                 ?>
-                            
+
                             </span>
-                               
+
 
 
                         </a></li>

@@ -5,6 +5,7 @@ include "../modal/pdo.php"; ?>
 <?php include "../modal/danhmuc.php" ?>
 <?php include "../modal/nhacungcap.php" ?>
 <?php include "../modal/sanpham.php" ?>
+<?php include "../modal/binhluan.php" ?>
 <?php  ?>
 <?php include_once "../modal/tk_admin.php" ?>
 
@@ -272,6 +273,20 @@ include "../modal/pdo.php"; ?>
               session_unset();
               header('location:index.php?act=dangnhap');
               break;
+        case 'listbl':
+          $listbinhluan=loadall_binhluan(0);
+          include "binhluan/list.php";
+
+          
+          break;
+      case 'xoabl':
+        if(isset($_GET['id'])&&($_GET['id']>0)){
+        delete_binhluan($_GET['id']);
+    
+          } $listbinhluan=selectall_binhluan();
+        include "binhluan/list.php";
+        break;
+          
     }
   }
   else{
