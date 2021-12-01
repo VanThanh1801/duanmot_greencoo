@@ -10,6 +10,11 @@ function loadall_mess(){
     $listcontact=pdo_query($sql);
     return $listcontact;
 }
+function loadall_mess2(){
+    $sql="SELECT * from contact where luotxem >0 order by luotxem desc limit 0,5";
+    $listcontact=pdo_query($sql);
+    return $listcontact;
+}
 function update_anh($id,$img){
     $sql="UPDATE contact set  img='".$img."' WHERE id=".$id;
     pdo_execute($sql);

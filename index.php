@@ -16,12 +16,13 @@ if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 <?php include("./global.php"); ?>
 <?php include("./modal/danhmuc.php");  ?>
 <?php include("./modal/nhacungcap.php");  ?>
-
+<?php include("./modal/contact.php") ?>
 <?php include("./modal/cart.php");  ?>
 <?php include("./modal/in4.php"); ?>
 
 
 <?php 
+$customer = loadall_mess2();
 $dsdm = loadall_danhmuc();
 $dsncc = loadall_agent();
 $spnew = loadall_sanpham_home();

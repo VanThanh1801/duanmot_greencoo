@@ -6,7 +6,8 @@ include "../modal/pdo.php"; ?>
 <?php include "../modal/nhacungcap.php" ?>
 <?php include "../modal/sanpham.php" ?>
 <?php include "../modal/binhluan.php" ?>
-<?php  ?>
+<?php include "../modal/contact.php"  ?>
+<?php include "../modal/in4.php"; ?>
 <?php include_once "../modal/tk_admin.php" ?>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -342,12 +343,13 @@ include "../modal/pdo.php"; ?>
         include "contact/list.php";
         break;
       
-      case 'listin4':
-        include "./inf/list.php";
+      case 'in4':
+        $ttinlienhe = loadall_in4();
+        include "./inforWeb/list.php";
         break;
       case 'editin4':
 
-        include "./inf/edit.php";
+        include "./inforWeb/edit.php";
         break;
     }
   } else {
