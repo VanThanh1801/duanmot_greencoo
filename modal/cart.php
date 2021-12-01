@@ -285,7 +285,7 @@ function delete_bill($id){
     pdo_execute($sql);
 }
 function update_donhang($id, $ttdonhang){
-    $sql="update bill set bill_status='".$ttdonhang."',  where id=".$id;
+    $sql="UPDATE bill set bill_status ='".$ttdonhang."'  where id=".$id;
     // var_dump($sql);
     // die;
     pdo_execute($sql);

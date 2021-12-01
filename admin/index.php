@@ -350,7 +350,7 @@ include "../modal/pdo.php"; ?>
             $thongbao = "Cập nhật thành công";
           }
          
-        
+          $listbill = loadall_bill(0);
           include "bill/listbill.php";
           break;
     
