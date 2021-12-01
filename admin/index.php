@@ -105,13 +105,13 @@ include "../modal/pdo.php"; ?>
 
 
 
-          insert_sanpham($tensp,$saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $nhacungcap, $khoiluong,  $soluong);
+          insert_sanpham($tensp, $saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $nhacungcap, $khoiluong,  $soluong);
 
           $thongbao = "Thêm thành công";
         }
         $listdanhmuc = loadall_danhmuc();
-        $listnhacungcap = loadall_agent(); 
-     
+        $listnhacungcap = loadall_agent();
+
         include "sanpham/add.php";
         break;
       case 'listsp':
@@ -123,7 +123,7 @@ include "../modal/pdo.php"; ?>
           $iddm = 0;
         }
         $listdanhmuc = loadall_danhmuc();
-      
+
         $listsanpham = loadall_sanpham($kyw, $iddm);
         include "../admin/sanpham/list.php";
         break;
@@ -139,7 +139,7 @@ include "../modal/pdo.php"; ?>
         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
           $sanpham = loadone_sanpham($_GET['id']);
         }
-        
+
         $listdanhmuc = loadall_danhmuc();
         $listnhacungcap = loadall_agent();
         $listsanpham = loadall_sanpham();
@@ -156,7 +156,6 @@ include "../modal/pdo.php"; ?>
           $khoiluong = $_POST['kl'];
           $soluong = $_POST['sl'];
           $mota = $_POST['mota'];
-          $hastag = $_POST['hastag'];
           $nhacungcap = $_POST['idncc'];
           $hinh = $_FILES['hinh']['name'];
           $target_dir = "../upload/";
@@ -167,10 +166,10 @@ include "../modal/pdo.php"; ?>
             //  echo "Sorry, there was an error uploading your file.";
           }
 
-          update_sanpham($id, $tensp,$saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $hastag, $nhacungcap, $soluong, $khoiluong);
+          update_sanpham($id, $tensp, $saleoff, $giaold, $gianew, $hinh, $mota, $iddm, $nhacungcap, $soluong, $khoiluong);
           $thongbao = "Cập nhật thành công";
         }
-       
+
         $listdanhmuc = loadall_danhmuc();
         $listnhacungcap = loadall_agent();
         $listsanpham = loadall_sanpham();
@@ -206,6 +205,7 @@ include "../modal/pdo.php"; ?>
         $listnhacungcap = loadall_agent();
         include "nhacungcap/list.php";
         break;
+       
       case 'suancc':
         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
           $nhacungcap = loadone_nhacungcap($_GET['id']);
@@ -232,72 +232,132 @@ include "../modal/pdo.php"; ?>
           $user = $_POST['user'];
           $pass = $_POST['pass'];
           $checkuser = checkuser($user, $pass);
-        if (is_array($checkuser)) {
-              $_SESSION['user'] = $checkuser;
-              header('refresh:0.5,url=index.php');
-              $thongbao = "Welcome Back!!! " .$user;
+          if (is_array($checkuser)) {
+            $_SESSION['user'] = $checkuser;
+            header('refresh:0.5,url=index.php');
+            $thongbao = "Welcome Back!!! " . $user;
           } else {
-              $thongbao = "Sai tên đăng nhập hoặc mật khẩu ";
-        }
+            $thongbao = "Sai tên đăng nhập hoặc mật khẩu ";
           }
+        }
         include_once "./login-admin/sign-in.php";
-         break;
-         case 'dangky':
-          if (isset($_POST['dangky']) && ($_POST['dangky'])) {
-            $email = $_POST['email'];
-            $user = $_POST['user'];
-            $pass = $_POST['pass'];
-            insert_taikhoan($email, $user, $pass);
+        break;
+      case 'dangky':
+        if (isset($_POST['dangky']) && ($_POST['dangky'])) {
+          $email = $_POST['email'];
+          $user = $_POST['user'];
+          $pass = $_POST['pass'];
+          insert_taikhoan($email, $user, $pass);
         }
         include_once "./login-admin/sign-up.php";
-          break;
-          case 'editadmin':
-            if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
-              $user = $_POST['user'];
-              $pass = $_POST['pass'];
-              $email = $_POST['email'];
-              $address = $_POST['address'];
-              $tel = $_POST['tel'];
-              $id = $_POST['id'];
-              update_taikhoan($id,$user,$pass,$email,$address,$tel);
-              $_SESSION['user']=checkuser($user,$pass);
-              header("location:index.php?act=editadmin");
-              if(is_array($checkuser)){
-                  $_SESSION['user']= $checkuser;
-                  header('location:index.php');
-              }
+        break;
+      case 'listtkadmin':
+        $tkadmin = loadall_taikhoan();
+        include "login-admin/listadmin.php";
+        break;
+      case 'addadmin':
+        if (isset($_POST['addadmin']) && ($_POST['addadmin'])) {
+          $user = $_POST['user'];
+          $email = $_POST['email'];
+          $pass = $_POST['pass'];
+          insert_taikhoan($email, $user, $pass);
+          $thongbao = "Thêm thành công";
+        }
+        include "login-admin/addqtv.php";
+        break;
+      case 'deladmin':
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          del_taikhoan($_GET['id']);
+        }
+        $tkadmin = loadall_taikhoan();
+        include "login-admin/listadmin.php";
+        break;
+      case 'editadmin':
+        if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+          $user = $_POST['user'];
+          $pass = $_POST['pass'];
+          $email = $_POST['email'];
+          $address = $_POST['address'];
+          $fullname = $_POST['fullname'];
+          $tel = $_POST['tel'];
+          $id = $_POST['id'];
+          update_taikhoan($id, $user, $pass, $email, $address, $fullname, $tel);
+          $_SESSION['user'] = checkuser($user, $pass);
+          header("location:index.php?act=editadmin");
+          if (is_array($checkuser)) {
+            $_SESSION['user'] = $checkuser;
+            header('location:index.php');
           }
-          include "./login-admin/edit.php";
-            break;
-            case 'logout':
-              session_unset();
-              header('location:index.php?act=dangnhap');
-              break;
-        case 'listbl':
-          $listbinhluan=loadall_binhluan(0);
-          include "binhluan/list.php";
+        }
+        include "./login-admin/edit.php";
+        break;
+      case 'logout':
+        session_unset();
+        header('location:index.php?act=dangnhap');
+        break;
+      case 'listbl':
+        $listbinhluan = loadall_binhluan(0);
+        include "binhluan/list.php";
 
-          
-          break;
+
+        break;
       case 'xoabl':
-        if(isset($_GET['id'])&&($_GET['id']>0)){
-        delete_binhluan($_GET['id']);
-    
-          } $listbinhluan=selectall_binhluan();
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          delete_binhluan($_GET['id']);
+        }
+        $listbinhluan = selectall_binhluan();
         include "binhluan/list.php";
         break;
-          
+      case 'listlh':
+        $listcontact = loadall_mess();
+        include "contact/list.php";
+        break;
+      case 'xoalh':
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          del_mess($_GET['id']);
+        }
+        $listcontact = loadall_mess();
+        include "contact/list.php";
+        break;
+        case 'updatecus':
+          if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+            $contact = loadone_contact($_GET['id']);
+          }
+          include "contact/addimg.php";
+          break;
+      case 'themanh':
+        if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+          $id = $_POST['id'];
+          $img = $_FILES['hinh']['name'];
+          $target_dir = "../upload/";
+          $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+          if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+            // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          } else {
+            //  echo "Sorry, there was an error uploading your file.";
+          }
+          update_anh($id, $img);
+        }
+        $listcontact = loadall_mess();
+        include "contact/list.php";
+        break;
+      
+      case 'listin4':
+        include "./inf/list.php";
+        break;
+      case 'editin4':
+
+        include "./inf/edit.php";
+        break;
     }
-  }
-  else{
-    if(!isset($_SESSION['user']) && !isset($_SESSION['pass'])){
+  } else {
+    if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) {
       header('location:index.php?act=dangnhap');
-    }
-    else{
+    } else {
       header('refresh:0.5,location:index.php');
-       include('header.php');
-       include('sidebar.php');
-       include('footer.php');
+      include('header.php');
+      include('sidebar.php');
+      include('footer.php');
     }
   }
 
@@ -310,7 +370,7 @@ include "../modal/pdo.php"; ?>
 </script>
 <script src="https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js"></script>
 <script>
-      CKEDITOR.replace( 'mota' );
+  CKEDITOR.replace('mota');
 </script>
 
 </html>
