@@ -5,6 +5,7 @@
     <title>GreenCoCo </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -38,7 +39,11 @@
 <link rel="stylesheet" href="css/icomoon.css">
 <link rel="stylesheet" href="css/style.css">
 </head>
+<?php 
+foreach($listin4 as $in4){
+    extract($in4);
 
+?>
 <body class="goto-here">
     <div class="py-1 bg-primary">
         <div class="container">
@@ -48,16 +53,16 @@
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                                     class="icon-phone2"></span></div>
-                            <span class="text">+ 1235 2355 98</span>
+                            <span class="text">+ <?= $hotline1 ?></span>
                         </div>
                         <div class="col-md pr-4 d-flex topper align-items-center">
                             <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                                     class="icon-paper-plane"></span></div>
-                            <span class="text">poly@email.com</span>
+                            <span class="text"><?= $mail ?></span>
 
                         </div>
                         <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right">
-                            <span class="text">Giao hàng trong ngày &amp; Freeship</span>
+                            <span class="text"><?= $uudai1 ?></span>
                         </div>
                     </div>
                 </div>
@@ -156,3 +161,4 @@
             </div>
         </div>
     </nav>
+    <?php } ?>

@@ -1,3 +1,4 @@
+
 <?php 
 
 function insert_contact($name,$email,$subject,$mess){
@@ -9,9 +10,26 @@ function loadall_mess(){
     $listcontact=pdo_query($sql);
     return $listcontact;
 }
+
 function del_mess($id){
     $sql="DELETE from contact where id=".$id;
     pdo_execute($sql);
 
 }
 ?>
+
+function update_anh($id,$img){
+    $sql="UPDATE contact set  img='".$img."' WHERE id=".$id;
+    pdo_execute($sql);
+        
+}
+function loadone_contact($id){
+    $sql="SELECT * from contact where id=".$id;
+    $ct=pdo_query_one($sql);
+    return $ct;
+}
+function del_mess($id){
+    $sql="DELETE from contact where id=".$id;
+    pdo_execute($sql);
+}
+

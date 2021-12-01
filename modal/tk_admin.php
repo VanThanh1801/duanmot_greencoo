@@ -15,13 +15,18 @@ function update_taikhoan($id,$user,$pass,$email,$address,$fullname,$tel){
     pdo_execute($sql);
 }
 function loadall_taikhoan(){
+
     $sql="SELECT * from qtv order by id desc";
     $listtaikhoan=pdo_query($sql);
     return $listtaikhoan;
+
 }
 function del_taikhoan($id){
     $sql="DELETE from qtv where id=".$id;
     pdo_execute($sql);
+
+
+
 
 }
 ?>

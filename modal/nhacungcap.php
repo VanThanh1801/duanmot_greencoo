@@ -25,7 +25,7 @@ function delete_nhacungcap($id){
 
 
 function update_nhacungcap($id,$tenncc, $emailncc, $telncc, $addressncc, $statusncc){
-    $sql="update agent set name='".$tenncc."', email='".$emailncc."', tel='".$telncc."' , address='".$addressncc."', status='".$statusncc."' where id=".$id;
+    $sql="UPDATE agent set name='".$tenncc."', email='".$emailncc."', tel='".$telncc."' , address='".$addressncc."', status='".$statusncc."' where id=".$id;
  
     pdo_execute($sql);
 }
