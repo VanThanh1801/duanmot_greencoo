@@ -16,6 +16,7 @@ if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 <?php include("./global.php"); ?>
 <?php include("./modal/danhmuc.php");  ?>
 <?php include("./modal/nhacungcap.php");  ?>
+
 <?php include("./modal/cart.php");  ?>
 
 
@@ -157,6 +158,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
   
   
   
+
       case 'addtocart':
       if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
         $id = $_POST['id'];
@@ -173,6 +175,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       }
       include "view/viewcar.php";
       break;
+
+       
        
         case 'delcart':
           if (isset($_GET['idcart'])) {
@@ -191,6 +195,26 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           include("view/viewcar.php");
         
           break;
+    case 'billconfirm':
+      if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $tel = $_POST['tel'];
+        $ptt = $_POST['pttt'];
+        $date = date('h:i:sa d/m/Y');
+        $tongdon = tongdon();
+        $idbill = insert_bill($name,$email,$address,$tel,$pttt,$date,$tongdon);
+
+        //insert into cart : $sessio['mycart'] & $idbill
+
+        foreach($session['mycart'] as $cart){
+          insert_cart($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[5],$idbill);
+        }
+      }
+      $listbill = loadone_bill($idbill);
+      include "./view/bill.php";
+      break;
     case 'viewcart':
       include 'view/viewcar.php';
       
@@ -214,6 +238,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case 'lienhe':
       include 'view/contact.php';
       
+
 
       break;
 
@@ -263,6 +288,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     default:
       include("./view/home.php");
       break;
+
     }
   } else {
    

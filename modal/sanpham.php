@@ -28,7 +28,7 @@ function loadall_sanpham_saleoff(){
     return $listsanpham;
 }
 function loadall_sanpham_new(){
-    $sql="select * from product where 1 order by id desc limit 0,4"; 
+    $sql="select * from product where 1 order by id asc limit 0,4"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
