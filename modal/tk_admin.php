@@ -7,16 +7,25 @@ function checkuser($user,$pass){
 }
 function insert_taikhoan($email,$user,$pass){
     $sql="INSERT into qtv(email,user,pass) values('$email','$user','$pass')";
-    // var_dump($sql);
-    // die;
     pdo_execute($sql);
     
 }
-function update_taikhoan($id,$user,$pass,$email,$address,$tel){
-    $sql="UPDATE qtv set user='".$user."', pass='".$pass."', email='".$email."',address='".$address."',tel='".$tel."' where id=".$id;   
+function update_taikhoan($id,$user,$pass,$email,$address,$fullname,$tel){
+    $sql="UPDATE qtv set user='".$user."', pass='".$pass."', email='".$email."',address='".$address."',tel='".$tel."',fullName='".$fullname."' where id=".$id;   
     pdo_execute($sql);
 }
+function loadall_taikhoan(){
+    $sql="SELECT * from qtv order by id desc";
+    $listtaikhoan=pdo_query($sql);
+    return $listtaikhoan;
+}
+function del_taikhoan($id){
+    $sql="DELETE from qtv where id=".$id;
+    pdo_execute($sql);
+
+}
 ?>
+
 
 
 <!-- Check session để bắt buộc đăng nhập -->

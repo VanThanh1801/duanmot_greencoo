@@ -38,21 +38,21 @@
         </div>
         <div class="row block-9">
           <div class="col-md-6 order-md-last d-flex">
-            <form action="#" class="bg-white p-5 contact-form">
+            <form action="index.php?act=lienhe" method="POST" class="bg-white p-5 contact-form">
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Họ và tên">
+                <input type="text" class="form-control" name="name" placeholder="Họ và tên">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Địa chỉ Email">
+                <input type="text" class="form-control" name="email" placeholder="Địa chỉ Email">
               </div>
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Tiêu đề">
+                <input type="text" class="form-control" name="subject" placeholder="Tiêu đề">
               </div>
               <div class="form-group">
-                <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Ghi chú"></textarea>
+                <textarea cols="30" rows="7" name="mess" class="form-control" placeholder="Ghi chú"></textarea>
               </div>
               <div class="form-group">
-                <input type="submit" value="Gửi" class="btn btn-primary py-3 px-5">
+                <input type="submit" name="guilh" value="Gửi" class="btn btn-primary py-3 px-5">
               </div>
             </form>
           

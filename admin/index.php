@@ -6,7 +6,7 @@ include "../modal/pdo.php"; ?>
 <?php include "../modal/nhacungcap.php" ?>
 <?php include "../modal/sanpham.php" ?>
 <?php include "../modal/binhluan.php" ?>
-<?php  ?>
+<?php include "../modal/contact.php" ?>
 <?php include_once "../modal/tk_admin.php" ?>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -251,15 +251,37 @@ include "../modal/pdo.php"; ?>
         }
         include_once "./login-admin/sign-up.php";
           break;
+          case 'listtkadmin':
+            $tkadmin=loadall_taikhoan();
+            include "login-admin/listadmin.php";
+            break;
+          case 'addadmin':
+            if (isset($_POST['addadmin']) && ($_POST['addadmin'])) {
+              $user = $_POST['user'];
+              $email = $_POST['email'];
+              $pass = $_POST['pass'];
+              insert_taikhoan($email,$user,$pass) ;            
+              $thongbao = "Thêm thành công";
+            }
+            include "login-admin/addqtv.php";
+            break;
+          case 'deladmin':
+              if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                del_taikhoan($_GET['id']);
+              }
+              $tkadmin = loadall_taikhoan();
+              include "login-admin/listadmin.php";
+              break;
           case 'editadmin':
             if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
               $user = $_POST['user'];
               $pass = $_POST['pass'];
               $email = $_POST['email'];
               $address = $_POST['address'];
+              $fullname = $_POST['fullname'];
               $tel = $_POST['tel'];
               $id = $_POST['id'];
-              update_taikhoan($id,$user,$pass,$email,$address,$tel);
+              update_taikhoan($id,$user,$pass,$email,$address,$fullname,$tel);
               $_SESSION['user']=checkuser($user,$pass);
               header("location:index.php?act=editadmin");
               if(is_array($checkuser)){
@@ -286,7 +308,24 @@ include "../modal/pdo.php"; ?>
           } $listbinhluan=selectall_binhluan();
         include "binhluan/list.php";
         break;
-          
+      case 'listlh':
+        $listcontact = loadall_mess();
+        include "contact/list.php";
+        break;
+      case 'xoalh':
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          del_mess($_GET['id']);
+        }
+        $listcontact = loadall_mess();
+        include "contact/list.php";
+        break;   
+      case 'listin4': 
+        include "./inf/list.php";
+      break;
+      case 'editin4':
+        
+        include "./inf/edit.php";
+        break;
     }
   }
   else{

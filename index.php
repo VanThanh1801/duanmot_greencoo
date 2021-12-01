@@ -16,7 +16,7 @@ if (!isset($_SESSION['mycart'])) $_SESSION['mycart'] = [];
 <?php include("./global.php"); ?>
 <?php include("./modal/danhmuc.php");  ?>
 <?php include("./modal/nhacungcap.php");  ?>
-
+<?php include("./modal/contact.php") ?>
 <?php include("./modal/cart.php");  ?>
 
 
@@ -193,26 +193,29 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           include("view/viewcar.php");
         
           break;
-    case 'billconfirm':
-      if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
-        $name = $_POST['name'];
-        $email = $_POST['email'];
-        $address = $_POST['address'];
-        $tel = $_POST['tel'];
-        $ptt = $_POST['pttt'];
-        $date = date('h:i:sa d/m/Y');
-        $tongdon = tongdon();
-        $idbill = insert_bill($name,$email,$address,$tel,$pttt,$date,$tongdon);
+          case 'bill':
+            include_once "./view/bill.php";
+            break;
+    // case 'billconfirm':
+    //   if(isset($_POST['dongydathang'])&&($_POST['dongydathang'])){
+    //     $name = $_POST['name'];
+    //     $email = $_POST['email'];
+    //     $address = $_POST['address'];
+    //     $tel = $_POST['tel'];
+    //     $ptt = $_POST['pttt'];
+    //     $date = date('h:i:sa d/m/Y');
+    //     $tongdon = tongdon();
+    //     $idbill = insert_bill($name,$email,$address,$tel,$pttt,$date,$tongdon);
 
-        //insert into cart : $sessio['mycart'] & $idbill
+    //     //insert into cart : $sessio['mycart'] & $idbill
 
-        foreach($session['mycart'] as $cart){
-          insert_cart($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[5],$idbill);
-        }
-      }
-      $listbill = loadone_bill($idbill);
-      include "./view/bill.php";
-      break;
+    //     foreach($session['mycart'] as $cart){
+    //       insert_cart($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[5],$idbill);
+    //     }
+    //   }
+    //   $listbill = loadone_bill($idbill);
+    //   include "./view/bill.php";
+    //   break;
     case 'viewcart':
       include 'view/viewcar.php';
       
@@ -233,11 +236,15 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       break;
       
       case 'lienhe':
+        if(isset($_POST['guilh']) && ($_POST['guilh'])){
+          $name = $_POST['name'];
+          $email = $_POST['email'];
+          $subject = $_POST['subject'];
+          $mess = $_POST['mess'];
+          insert_contact($name,$email,$subject,$mess);
+        }
         include 'view/contact.php';
-        
-
         break;
- 
       // case 'bill';
       // include "./view/bill.php";
       // break;
@@ -246,7 +253,6 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         break;
     }
   } else {
-   
     include("view/home.php");
      
   }

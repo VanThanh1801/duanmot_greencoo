@@ -1,25 +1,26 @@
-<?php
-include_once "./header.php";
-include_once "./sidebar.php";
+<?php include_once "./header.php";
+    include_once "./sidebar.php";
 ?>
-
 <body class="g-sidenav-show  bg-gray-100">
 
     <main class="main-content position-relative max-height-vh-100 h-100 mt-1 border-radius-lg ">
         <!-- Navbar -->
-        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" navbar-scroll="true">
+        <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur"
+            navbar-scroll="true">
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sản phẩm</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Cập nhật tài khoản</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Danh mục</li>
                     </ol>
+                    <h6 class="font-weight-bolder mb-0">List Danh mục</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group">
-                            <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                            <span class="input-group-text text-body"><i class="fas fa-search"
+                                    aria-hidden="true"></i></span>
                             <input type="text" class="form-control" placeholder="Type here...">
                         </div>
                     </div>
@@ -45,10 +46,12 @@ include_once "./sidebar.php";
                             </a>
                         </li>
                         <li class="nav-item dropdown pe-2 d-flex align-items-center">
-                            <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            <a href="javascript:;" class="nav-link text-body p-0" id="dropdownMenuButton"
+                                data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fa fa-bell cursor-pointer"></i>
                             </a>
-                            <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4" aria-labelledby="dropdownMenuButton">
+                            <ul class="dropdown-menu  dropdown-menu-end  px-2 py-3 me-sm-n4"
+                                aria-labelledby="dropdownMenuButton">
                                 <li class="mb-2">
                                     <a class="dropdown-item border-radius-md" href="javascript:;">
                                         <div class="d-flex py-1">
@@ -71,7 +74,8 @@ include_once "./sidebar.php";
                                     <a class="dropdown-item border-radius-md" href="javascript:;">
                                         <div class="d-flex py-1">
                                             <div class="my-auto">
-                                                <img src="../assets/img/small-logos/logo-spotify.svg" class="avatar avatar-sm bg-gradient-dark  me-3 ">
+                                                <img src="../assets/img/small-logos/logo-spotify.svg"
+                                                    class="avatar avatar-sm bg-gradient-dark  me-3 ">
                                             </div>
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="text-sm font-weight-normal mb-1">
@@ -89,14 +93,20 @@ include_once "./sidebar.php";
                                     <a class="dropdown-item border-radius-md" href="javascript:;">
                                         <div class="d-flex py-1">
                                             <div class="avatar avatar-sm bg-gradient-secondary  me-3  my-auto">
-                                                <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                                <svg width="12px" height="12px" viewBox="0 0 43 36" version="1.1"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    xmlns:xlink="http://www.w3.org/1999/xlink">
                                                     <title>credit-card</title>
                                                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                                                        <g transform="translate(-2169.000000, -745.000000)" fill="#FFFFFF" fill-rule="nonzero">
+                                                        <g transform="translate(-2169.000000, -745.000000)"
+                                                            fill="#FFFFFF" fill-rule="nonzero">
                                                             <g transform="translate(1716.000000, 291.000000)">
                                                                 <g transform="translate(453.000000, 454.000000)">
-                                                                    <path class="color-background" d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z" opacity="0.593633743"></path>
-                                                                    <path class="color-background" d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
+                                                                    <path class="color-background"
+                                                                        d="M43,10.7482083 L43,3.58333333 C43,1.60354167 41.3964583,0 39.4166667,0 L3.58333333,0 C1.60354167,0 0,1.60354167 0,3.58333333 L0,10.7482083 L43,10.7482083 Z"
+                                                                        opacity="0.593633743"></path>
+                                                                    <path class="color-background"
+                                                                        d="M0,16.125 L0,32.25 C0,34.2297917 1.60354167,35.8333333 3.58333333,35.8333333 L39.4166667,35.8333333 C41.3964583,35.8333333 43,34.2297917 43,32.25 L43,16.125 L0,16.125 Z M19.7083333,26.875 L7.16666667,26.875 L7.16666667,23.2916667 L19.7083333,23.2916667 L19.7083333,26.875 Z M35.8333333,26.875 L28.6666667,26.875 L28.6666667,23.2916667 L35.8333333,23.2916667 L35.8333333,26.875 Z">
                                                                     </path>
                                                                 </g>
                                                             </g>
@@ -122,85 +132,126 @@ include_once "./sidebar.php";
                 </div>
             </div>
         </nav>
+
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>Cập nhật tài khoản</h2>
+                            <h2>List san pham</h2>
+                            <button class="btn_butn">
+                                <a href="index.php?act=addsp">Them san pham</a>
+                            </button>
                         </div>
-                        <?php if (isset($_SESSION['user']) && (is_array($_SESSION['user']))) {
-                            extract($_SESSION['user']);
-                        } ?>
-                        <div class="product_item">
-                            <form action="index.php?act=editadmin" method="post">
-                                <div class="col-md-8">
-                                    <input type="hidden" name="id" value="<?= $id ?>">
-                                    <div class="form-group">
-                                        <label for="product-title">User</label>
-                                        <input type="text" class="form-control" name="user" value="<?= $user ?>">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="product-title">Pass</label>
-                                        <input type="password" class="form-control" name="pass" value="<?= $pass ?>">
 
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="product-title">Email</label>
-                                        <input type="text" class="form-control" name="email" value="<?= $email ?>">
 
-                                    </div>
-                                    <div class="form-group row">
 
-                                        <div class="col-xs-3">
-                                            <label for="product-price">Tel</label>
-                                            <input type="text" class="form-control" name="tel" size="60" value="<?= $tel ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
+                        <div class="card-body px-0 pt-0 pb-2">
+                            <div class="table-responsive p-0">
+                                <table class="table align-items-center mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
+                                                ID tin</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Họ tên người gửi</th>
+                                                <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Tiêu đề</th>
+                                            <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Email</th>
+                                            <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Lời nhắn</th>
+                                            <th
+                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                                Action</th>
 
-                                        <div class="col-xs-3">
-                                            <label for="product-price">Address</label>
-                                            <input type="text" class="form-control" size="60" name="address" value="<?= $address ?>">
-                                        </div>
-                                    </div>
-                                    <div class="form-group row">
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <?php 
+                  foreach($listcontact as $contact){
+                    extract($contact);
+                    $xoasp="index.php?act=xoalh&id=".$id;
+                    // $hinhpath = "../upload/" . $img;
+                    // // $hinhpathp = "../upload/".$img_phu;
+                    // if (is_file($hinhpath)) {
+                    //     $hinh = "<img src='" . $hinhpath . "' height='80'>";
+                    // } else {
+                    //     $hinh = "no photo";
+                    // }
+                    
+                  ?>
 
-                                        <div class="col-xs-3">
-                                            <label for="product-price">Full Name</label>
-                                            <input type="text" class="form-control" size="60" name="fullname" value="<?= $fullName ?>">
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--Main Content-->
-                                <!-- SIDEBAR-->
-                                <aside id="admin_sidebar" class="col-md-4">
-                                    <div class="form-group">
-                                        <input type="submit" class="btn btn-primary btn-lg" name="capnhat" value="Cập nhật">
-                                        <!-- <input type="reset" class="btn btn-primary btn-lg" value="NHẬP LẠI"> -->
-                                    </div>
+                      <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                       
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm"></h6>
+                            <p class="text-xs text-secondary mb-0"><?= $id ?></p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0"><?= $name ?></p>
+                      
+                      </td>
+                    <td>
+                      <p class="text-xs font-weight-bold mb-0"><?= $subject ?></p>
+                    
+                    </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0"><?= $email ?></p>
+                    
+                    </td>
+                    <td>
+                    <p class="text-xs font-weight-bold mb-0"><?= $mess ?></p>
+                  
+                  </td>
+                      <td class="align-middle">
+                        <a href="<?= $xoasp ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                         Delete
+                        </a>
+                      </td>
+                    </tr>
 
-                                    <!-- Product Categories-->
-                                </aside>
-                            </form>
+
+
+                    <?php
+                  }
+                  
+                  
+                  ?>
+
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+
         </div>
     </main>
+
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
     <script src="../assets/js/plugins/smooth-scrollbar.min.js"></script>
     <script>
-        var win = navigator.platform.indexOf('Win') > -1;
-        if (win && document.querySelector('#sidenav-scrollbar')) {
-            var options = {
-                damping: '0.5'
-            }
-            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    var win = navigator.platform.indexOf('Win') > -1;
+    if (win && document.querySelector('#sidenav-scrollbar')) {
+        var options = {
+            damping: '0.5'
         }
+        Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+    }
     </script>
 
     <script async defer src="https://buttons.github.io/buttons.js"></script>
@@ -209,4 +260,4 @@ include_once "./sidebar.php";
 </body>
 
 </html>
-<?php include_once "./footer.php" ?>
+<?php include_once "./footer.php"; ?>
