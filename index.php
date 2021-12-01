@@ -205,11 +205,12 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $date = date('h:i:sa d/m/Y');
         $tongdon = tongdon();
         $idbill = insert_bill($name,$email,$address,$tel,$pttt,$date,$tongdon);
+        var_dump($idbill);
 
         //insert into cart : $sessio['mycart'] & $idbill
 
         foreach($session['mycart'] as $cart){
-          insert_cart($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[5],$idbill);
+          insert_cart($_SESSION['user']['id'],$cart[0],$cart[1],$cart[2],$cart[3],$cart[4],$cart[6],$idbill);
         }
       }
       $listbill = loadone_bill($idbill);
