@@ -44,6 +44,14 @@ function loadall_sanpham($kyw="",$iddm=0){
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
+function loadall_sanpham_tatca($iddm){
+    $sql="SELECT * from product  where id_cate=".$iddm; 
+    
+  
+    $listsanpham_tatca=pdo_query($sql);
+    return $listsanpham_tatca;
+}
+
 function loadall_sanpham_shop(){
     $sql="SELECT * from product where 1 order by id desc limit 0,16"; 
     $listsanpham=pdo_query($sql);

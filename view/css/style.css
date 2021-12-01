@@ -5693,6 +5693,7 @@ a.badge-dark:focus {
 
 .alert-heading {
     color: inherit;
+    font-weight: bold;
 }
 
 .alert-link {
@@ -13633,4 +13634,19 @@ img.img-fluid.item {
     width: 500px;
     height: 500px;
     border-radius: 10px;
+}
+
+.card-body.p-md-5 {
+    height: 930px;
+}
+
+.error {
+    color: red;
+}
+
+input.guibinhluan {
+    background-color: #1ca71c;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
 }

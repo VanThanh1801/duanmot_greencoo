@@ -143,12 +143,12 @@
                     </div>
                   </form>
                 </div>
-                <div class="card-footer text-center pt-0 px-lg-2 px-1">
+                <!-- <div class="card-footer text-center pt-0 px-lg-2 px-1">
                   <p class="mb-4 text-sm mx-auto">
                   Không có tài khoản?
                     <a href="index.php?act=dangky" class="text-info text-gradient font-weight-bold">Đăng ký</a>
                   </p>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="col-md-6">

@@ -152,6 +152,13 @@
 
 
                                 <div class="col-md-8">
+                                <div class="form-group">
+                                        <label for="product-title">Logo nhà cung cấp</label>
+                                        <input type="file" name="logo_ncc" class="form-control">
+
+                        
+
+                                    </div>
 
                                     <div class="form-group">
                                         <label for="product-title">Tên nhà cung cấp</label>

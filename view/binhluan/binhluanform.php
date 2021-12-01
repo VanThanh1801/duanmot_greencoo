@@ -167,12 +167,25 @@ $dsbl = loadall_binhluan($id_pro);
 
         </div>
         <div class="panel-body">
-            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
-                <input type="hidden" name="idpro" value="<?= $id_pro ?>">
+          <?php 
+          if(isset($_SESSION['user']['id'] ) == 0){
+              ?>
+             
+                <p>Bạn đăng nhập để bình luận về sản phẩm</p>
+           <?php  
+          }else { ?>
 
-                <input type="text" name="noidung">
-                <input type="submit" name="guibinhluan" value="Gui bình luận">
-            </form>
+            
+
+            <form action="<?= $_SERVER['PHP_SELF'] ?>" method="POST">
+            <input type="hidden" name="idpro" value="<?= $id_pro ?>">
+
+            <input type="text" name="noidung">
+            <input type="submit" name="guibinhluan" value="Gui bình luận" class="guibinhluan">
+       
+          <?php }
+          
+          ?>
         </div>
         <?php 
        
@@ -184,6 +197,9 @@ $dsbl = loadall_binhluan($id_pro);
 
             insert_binhluan($noidung, $iduser, $id_pro, $ngaybinhluan);
             // header("Location: ".$_SERVER['HTTP_REFERER']);
+            // var_dump($_SERVER['HTTP_REFERER']);
+            // die;
+
             // include "../../view/product-single.php";
            
 

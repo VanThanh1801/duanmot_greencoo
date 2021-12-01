@@ -1,8 +1,10 @@
 <?php 
 
 
-function insert_nhacungcap($tenncc,$emailncc,$telncc,$addressncc,$statusncc){
-    $sql="insert into agent(name,email,tel,address,status) values('$tenncc','$emailncc','$telncc','$addressncc','$statusncc')";
+function insert_nhacungcap($image, $tenncc,$emailncc,$telncc,$addressncc,$statusncc){
+    $sql="insert into agent(image,name,email,tel,address,status) values('$image','$tenncc','$emailncc','$telncc','$addressncc','$statusncc')";
+    // var_dump($sql);
+    // die;
     pdo_execute($sql);
    
 }
@@ -24,10 +26,11 @@ function delete_nhacungcap($id){
 }
 
 
-function update_nhacungcap($id,$tenncc, $emailncc, $telncc, $addressncc, $statusncc){
-    $sql="update agent set name='".$tenncc."', email='".$emailncc."', tel='".$telncc."' , address='".$addressncc."', status='".$statusncc."' where id=".$id;
+function update_nhacungcap($id, $image, $tenncc, $emailncc, $telncc, $addressncc, $statusncc){
+    $sql="update agent set image='".$image."', name='".$tenncc."', email='".$emailncc."', tel='".$telncc."' , address='".$addressncc."', status='".$statusncc."' where id=".$id;
  
     pdo_execute($sql);
 }
+
 
 ?>

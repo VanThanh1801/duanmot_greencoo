@@ -1,5 +1,4 @@
-<?php  
-    include_once "./header.php";
+<?php include "./header.php";
     include_once "./sidebar.php";
 ?>
 <body class="g-sidenav-show  bg-gray-100">
@@ -13,9 +12,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Nhà cung cấp</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Tài khoản</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">List Nhà cung cấp</h6>
+                    <!-- <h6 class="font-weight-bolder mb-0">thêm sản phẩm</h6> -->
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -133,131 +132,120 @@
                 </div>
             </div>
         </nav>
+        <?php 
+          if(is_array($taikhoan)){
+            extract($taikhoan);
+        }
+        
+        ?>
 
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List Nhà cung cấp</h2>
-                            <button class="btn_butn">
-                                <a href="index.php?act=addncc">Thêm Nhà cung cấp</a>
-                            </button>
+                            <h2> Sửa tài khoản khách hàng</h2>
+                           
+                        </div>
+
+                        <div class="product_item">
+
+                           
+                            <form action="index.php?act=updatetk" method="post" >
+
+
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label for="product-title">Tên đăng nhập </label>
+                                        <input type="text" name="user" class="form-control"
+                                            value="<?php echo $user; ?>">
+
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">password</label>
+                                            <input type="pass" name="password" class="form-control" size="60"
+                                                value="<?php echo $pass; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Email</label>
+                                            <input type="text" name="email" class="form-control" size="60"
+                                                value="<?php echo $email; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Địa chỉ</label>
+                                            <input type="text" name="address" class="form-control" size="60"
+                                                value="<?php echo $address; ?>">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Số điện thoại</label>
+                                            <input type="text" name="tel" class="form-control" size="60" value="<?php echo $tel ?>">
+                                        </div>
+                                    </div>
+                                    
+
+
+                                 
+
+
+
+
+                                </div>
+                                <!--Main Content-->
+
+
+                                <!-- SIDEBAR-->
+
+
+                                <aside id="admin_sidebar" class="col-md-4">
+
+
+                                    <div class="form-group">
+                                        <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                                        <input type="submit" class="btn btn-primary btn-lg" name="capnhattk" value="SỬA">
+
+                                        <!-- <a href="index.php?act=listsp"><input type="button"
+                                                class="btn btn-primary btn-lg" value="DANH SÁCH"></a> -->
+                                    </div>
+
+
+
+
+
+
+
+
+
+
+
+                                </aside>
+
+
+
+                            </form>
+
+
+
                         </div>
 
 
 
-                        <div class="card-body px-0 pt-0 pb-2">
-                            <div class="table-responsive p-0">
-                                <table class="table align-items-center mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Id Nhà cung cấp</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Hình Nhà cung cấp</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Ten Nhà cung cấp</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Email </th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Số Điện Thoại</th>
 
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Địa chỉ</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Trạng thái</th>
-
-
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                  foreach($listnhacungcap as $nhacungcap){
-                    extract($nhacungcap);
-                    $suancc="index.php?act=suancc&id=".$id;
-                    $xoancc="index.php?act=xoancc&id=".$id;
-
-
-                    echo'
-                      <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                       
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-xs text-secondary mb-0">'.$id.'</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                      <p class="text-xs font-weight-bold mb-0">'.$image.'</p>
-                    
-                    </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$name.'</p>
-                      
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$email.'</p>
-                    
-                        </td>
-                        <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$tel.'</p>
-                        
-                        </td>
-                        <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$address.'</p>
-                    
-                    </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$status.'</p>
-                    
-                    </td>
-                            
-                      <td class="align-middle">
-                        <a href="'.$suancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td> 
-                      <td class="align-middle">
-                        <a href="'.$xoancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                         Delete
-                        </a>
-                      </td>
-                    </tr>';
-
-
-
-
-                  }
-                  
-                  
-                  ?>
-
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
 
-
+            
         </div>
     </main>
 
@@ -281,4 +269,4 @@
 </body>
 
 </html>
-<?php include_once "./footer.php" ?>
+<?php include "./footer.php" ?>

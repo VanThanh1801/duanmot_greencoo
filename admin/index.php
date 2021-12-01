@@ -3,14 +3,18 @@ session_start();
 ob_start();
 include "../modal/pdo.php"; ?>
 <?php include "../modal/danhmuc.php" ?>
+<?php include "../modal/taikhoan.php" ?>
 <?php include "../modal/nhacungcap.php" ?>
 <?php include "../modal/sanpham.php" ?>
 <?php include "../modal/binhluan.php" ?>
-<?php  ?>
-<?php include_once "../modal/tk_admin.php" ?>
+<?php include "../modal/cart.php" ?>
+
+
+<?php include "../modal/tk_admin.php" ?>
+
 
 <body class="g-sidenav-show  bg-gray-100">
-  <?php  ?>
+
 
 
 
@@ -180,14 +184,24 @@ include "../modal/pdo.php"; ?>
 
         //kiểm tra xem người dùng có click vào nút add hay không
         if (isset($_POST['add_ncc']) && ($_POST['add_ncc'])) {
+        
           $tenncc = $_POST['nhacungcap'];
           $emailncc = $_POST['email_ncc'];
           $dtncc = $_POST['dt_ncc'];
           $diachincc = $_POST['dc_ncc'];
           $trangthaincc = $_POST['tt_ncc'];
 
+          $logo = $_FILES['logo_ncc']['name'];
+          $target_dir = "../upload/";
+          $target_file = $target_dir . basename($_FILES["logo_ncc"]["name"]);
+          if (move_uploaded_file($_FILES["logo_ncc"]["tmp_name"], $target_file)) {
+            // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          } else {
+            //  echo "Sorry, there was an error uploading your file.";
+          }
 
-          insert_nhacungcap($tenncc, $emailncc, $dtncc, $diachincc, $trangthaincc);
+
+          insert_nhacungcap($logo, $tenncc, $emailncc, $dtncc, $diachincc, $trangthaincc);
           $thongbao = "Thêm thành công";
         }
 
@@ -215,13 +229,22 @@ include "../modal/pdo.php"; ?>
       case 'updatencc':
         if (isset($_POST['update_ncc']) && ($_POST['update_ncc'])) {
           $id = $_POST['nameid'];
+        
           $tenncc = $_POST['nhacungcap'];
           $emailncc = $_POST['email_ncc'];
           $dtncc = $_POST['dt_ncc'];
           $diachincc = $_POST['dc_ncc'];
           $trangthaincc = $_POST['tt_ncc'];
+          $image = $_FILES['logo_ncc']['name'];
+          $target_dir = "../upload/";
+          $target_file = $target_dir . basename($_FILES["logo_ncc"]["name"]);
+          if (move_uploaded_file($_FILES["logo_ncc"]["tmp_name"], $target_file)) {
+            // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+          } else {
+            //  echo "Sorry, there was an error uploading your file.";
+          }
 
-          update_nhacungcap($id, $tenncc, $emailncc, $dtncc, $diachincc, $trangthaincc);
+          update_nhacungcap($id, $image, $tenncc, $emailncc, $dtncc, $diachincc, $trangthaincc);
           $thongbao = "Cập nhật thành công";
         }
         $listnhacungcap = loadall_agent();
@@ -231,7 +254,7 @@ include "../modal/pdo.php"; ?>
         if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
           $user = $_POST['user'];
           $pass = $_POST['pass'];
-          $checkuser = checkuser($user, $pass);
+          $checkuser = checkadmin($user, $pass);
         if (is_array($checkuser)) {
               $_SESSION['user'] = $checkuser;
               header('refresh:0.5,url=index.php');
@@ -286,7 +309,116 @@ include "../modal/pdo.php"; ?>
           } $listbinhluan=selectall_binhluan();
         include "binhluan/list.php";
         break;
-          
+      case 'listbill':
+        if(isset($_POST['kyw']) && ($_POST['kyw'] != "")){
+          $kyw = $_POST['kyw'];
+        }else{
+          $kyw = "";
+        }
+        $listbill = loadall_bill(0);
+
+
+        
+        include "bill/listbill.php";
+        break;
+      case 'xoadh':
+        if(isset($_GET['id'])&&($_GET['id']>0)){
+        delete_bill($_GET['id']);
+    
+          } 
+        $listbill = loadall_bill( 0);
+        include "bill/listbill.php";
+        break;
+      case 'suadh':
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          $suabill = loadone_bill($_GET['id']);
+        }
+        
+        // $listdanhmuc = loadall_danhmuc();
+        // $listnhacungcap = loadall_agent();
+        // $listsanpham = loadall_sanpham();
+        include "./bill/updatebill.php";
+        break;
+        case 'updatedh':
+          if (isset($_POST['capnhatbill']) && ($_POST['capnhatbill'])) {
+            $id = $_POST['id'];
+           
+
+            $ttdonhang = $_POST['iddonhang'];
+  
+            update_donhang($id, $ttdonhang);
+            $thongbao = "Cập nhật thành công";
+          }
+         
+        
+          include "bill/listbill.php";
+          break;
+    
+      case 'thongke':
+        $listthongke = loadall_thongke();
+
+
+        
+        include "thongke/list.php";
+        break;
+      case 'bieudo':
+        $listthongke = loadall_thongke();
+
+
+        
+
+      
+
+
+        
+        include "thongke/bieudo.php";
+        break;
+      case 'dskh':
+        $listtaikhoan = loadall_customer();
+
+
+        
+
+      
+
+
+        
+        include "taikhoan/list.php";
+        break;
+      case 'xoatk':
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          delete_customer($_GET['id']);
+        }
+        $listtaikhoan = loadall_customer();
+
+        include "taikhoan/list.php";
+        break;
+      case 'suatk':
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          $taikhoan = loadone_taikhoan($_GET['id']);
+        }
+        include "taikhoan/update.php";
+        break;
+      case 'updatetk':
+        if (isset($_POST['capnhattk']) && ($_POST['capnhattk'])) {
+
+          $user = $_POST['user'];
+          $pass = $_POST['password'];
+          $email = $_POST['email'];
+          $address = $_POST['address'];
+          $tel = $_POST['tel'];
+          $id = $_POST['id'];
+
+         
+       
+
+          update_customer($id, $user, $pass, $email, $address, $tel,);
+          $thongbao = "Cập nhật thành công";
+        }
+        $listtaikhoan = loadall_customer();
+        include "taikhoan/list.php";
+        break;
+        
     }
   }
   else{

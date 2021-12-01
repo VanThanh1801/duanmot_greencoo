@@ -16,29 +16,17 @@
             <div class="col-md-12 ftco-animate">
                 <div class="cart-list">
                     <table class="table">
-                        <thead class="thead-primary">
-                            <tr class="text-center">
-                                <th>&nbsp;</th>
-                                <!-- <th>&nbsp;</th> -->
-                                <th>Hình sản phẩm</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Gía mới</th>
-                                <th>Giá cũ</th>
-                                <th>Sale</th>
-                                <th>Số lượng</th>
-                                <th>Tổng tiền</th>
-                            </tr>
-                        </thead>
+                       
                         <tbody>
 
                             <?php 
-								viewcart();
+								viewcart(1);
                                 
 								
 								?>
                           
 
-                            <p><a href="index.php?act=bill" class="btn btn-primary py-3 px-4">Đồng ý đặt hàng</a></p>
+                            <p><a href="index.php?act=bill" class="btn btn-primary py-3 px-4">Tiếp tục  đặt hàng</a></p>
 
                     </table>
                 </div>

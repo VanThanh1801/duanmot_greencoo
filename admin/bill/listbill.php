@@ -1,5 +1,4 @@
-<?php  
-    include_once "./header.php";
+<?php include_once "./header.php";
     include_once "./sidebar.php";
 ?>
 <body class="g-sidenav-show  bg-gray-100">
@@ -11,18 +10,19 @@
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sản phẩm</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Nhà cung cấp</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Đơn hàng</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">List Nhà cung cấp</h6>
+                    <h6 class="font-weight-bolder mb-0">List danh sách đơn hàng</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group">
-                            <span class="input-group-text text-body"><i class="fas fa-search"
-                                    aria-hidden="true"></i></span>
-                            <input type="text" class="form-control" placeholder="Type here...">
+                        <form class="" action="" method="post">
+                            <input class="search_input" type="text" placeholder="Search" aria-label="Search" name="kyw">
+
+                        </form>
                         </div>
                     </div>
                     <ul class="navbar-nav  justify-content-end">
@@ -139,10 +139,8 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List Nhà cung cấp</h2>
-                            <button class="btn_butn">
-                                <a href="index.php?act=addncc">Thêm Nhà cung cấp</a>
-                            </button>
+                            <h2>List danh sách đơn hàng</h2>
+                           
                         </div>
 
 
@@ -154,28 +152,23 @@
                                         <tr>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Id Nhà cung cấp</th>
-                                            <th
-                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Hình Nhà cung cấp</th>
+                                                Mã đơn hàng</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Ten Nhà cung cấp</th>
+                                                Khách hàng</th>
+                                                <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Số lượng hàng</th>
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Email </th>
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Gía trị đơn hàng</th>
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Số Điện Thoại</th>
-
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Tình trạng đơn hàng</th>
                                             <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Địa chỉ</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Trạng thái</th>
-
-
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Ngày đặt hàng</th>
+                                           
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Action</th>
@@ -187,67 +180,110 @@
                                     </thead>
                                     <tbody>
                                         <?php 
-                  foreach($listnhacungcap as $nhacungcap){
-                    extract($nhacungcap);
-                    $suancc="index.php?act=suancc&id=".$id;
-                    $xoancc="index.php?act=xoancc&id=".$id;
+                                        if(isset($listbill) && (is_array($listbill))){
 
-
-                    echo'
-                      <tr>
-                      <td>
-                        <div class="d-flex px-2 py-1">
-                       
-                          <div class="d-flex flex-column justify-content-center">
-                            <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-xs text-secondary mb-0">'.$id.'</p>
-                          </div>
-                        </div>
-                      </td>
-                      <td>
-                      <p class="text-xs font-weight-bold mb-0">'.$image.'</p>
-                    
-                    </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$name.'</p>
-                      
-                      </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$email.'</p>
-                    
-                        </td>
-                        <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$tel.'</p>
-                        
-                        </td>
-                        <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$address.'</p>
-                    
-                    </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$status.'</p>
-                    
-                    </td>
+                                            foreach($listbill as $bill){
+                                                extract($bill);
+                                                $suadh="index.php?act=suadh&id=".$id;
+                                                $xoadh="index.php?act=xoadh&id=".$id;
+    
+    
+                                                $kh = $bill["bill_name"].'
+                                                <br/> '.$bill["bill_email"].'
+                                                <br/> '.$bill["bill_address"].'
+                                                <br/> '.$bill["bill_tel"];
+                                               
+                                                $countsp = loadall_cart_count($bill['id']);
+                                                $ttdh = get_ttdh($bill['bill_status']);
+    
+    
+    
+                                                echo '
+                                                <tr>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm"></h6>
+                                                        <p class="text-xs text-secondary mb-0">'.$bill['id'].'</p>
+                                                    </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm"></h6>
+                                                        <p class="text-xs text-secondary mb-0">'.$kh.'</p>
+                                                    </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm"></h6>
+                                                        <p class="text-xs text-secondary mb-0"> '.$countsp.'</p>
+                                                    </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm"></h6>
+                                                        <p class="text-xs text-secondary mb-0">'.$bill['total'].'</p>
+                                                    </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div class="d-flex px-2 py-1">
+                                                
+                                                    <div class="d-flex flex-column justify-content-center">
+                                                        <h6 class="mb-0 text-sm"></h6>
+                                                        <p class="text-xs text-secondary mb-0"> '.$ttdh.'</p>
+                                                    </div>
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                <div class="d-flex px-2 py-1">
+                                            
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm"></h6>
+                                                    <p class="text-xs text-secondary mb-0"> '.$bill['ngaydathang'].'</p>
+                                                </div>
+                                                </div>
+                                            </td>
+                                                <td class="align-middle">
+                                                <a href="'.$suadh.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                Edit
+                                                </a>
+                                            </td> 
+                                            <td class="align-middle">
+                                                <a href="'.$xoadh.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                                Delete
+                                                </a>
+                                            </td>
+                                                </tr>
+                                                
+                                                
+                                                ';
+    
+    
+    
+                                            }
+                                       
                             
-                      <td class="align-middle">
-                        <a href="'.$suancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td> 
-                      <td class="align-middle">
-                        <a href="'.$xoancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                         Delete
-                        </a>
-                      </td>
-                    </tr>';
+                      
+                   
 
+                                        }
+                                        
 
-
-
-                  }
+                 
                   
                   
-                  ?>
+                                            ?>
 
                                     </tbody>
                                 </table>
@@ -281,4 +317,4 @@
 </body>
 
 </html>
-<?php include_once "./footer.php" ?>
+<?php include_once "./footer.php"; ?>

@@ -10,35 +10,29 @@
                                                 echo $thongbao;
                                         } ?>
                 </h2>
-                <form action="index.php?act=dangnhap" method="POST">
+                <form action="index.php?act=dangnhap" method="POST" id="register-form">
                     <h1>Đăng nhập tài khoản của bạn </h1>
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form1Example13">Email address</label>
-                        <input type="email" id="form1Example13" name="email" class="form-control form-control-lg" />
+                        <input type="email" id="email" name="email" class="form-control form-control-lg" />
 
                     </div>
 
-                    <!-- Password input -->
+                    
                     <div class="form-outline mb-4">
                         <label class="form-label" for="form1Example23">Password</label>
-                        <input type="password" id="form1Example23" name="pass" class="form-control form-control-lg" />
+                        <input type="password" id="password" name="password" class="form-control form-control-lg" />
 
                     </div>
                     <p>Bạn chưa có tài khoản? <a href="index.php?act=dangky">Đăng ký</a></p>
 
                     <div class="d-flex justify-content-around align-items-center mb-4">
-                        <!-- Checkbox -->
-                        <!-- <div class="form-check">
-
-                            <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
-                            <label class="form-check-label" for="form1Example3">Remember me </label>
-
-                        </div> -->
+                      
                         <a href="index.php?act=quenmk">Forgot password?</a>
                     </div>
                     <p><a href="index.php?act=edit_taikhoan">Cập nhật tài khoản?</a></p>
 
-                    <!-- Submit button -->
+                   
                     <input type="submit" name="dangnhap" class="btn btn-primary btn-lg btn-block"
                         value="Đăng nhập"></input>
 
@@ -47,4 +41,7 @@
             </div>
         </div>
     </div>
+   
 </section>
+
+

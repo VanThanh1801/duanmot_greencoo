@@ -14,7 +14,7 @@
             foreach ($dsncc as $sp) {
                 extract($sp);
                 //    $linkncc="index.php?act=agent&id=".$id;
-                $hinh = $img_path . $img;
+                $hinh = $img_path . $image;
                 if (($i == 2) || ($i == 5) || ($i == 8) || ($i == 11)) {
                 }
 
@@ -25,7 +25,9 @@
                                
                                 <div class="overlay"></div>
                             </a>
+                           
                             <div class="text py-3 pb-4 px-3 text-center">
+                            <img src="'.$hinh.'">
                                  <h3>' . $name . '</a></h3>
                                
                             <div class="bottom-area d-flex px-3">

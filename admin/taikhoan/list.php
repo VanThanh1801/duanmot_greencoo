@@ -13,9 +13,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Nhà cung cấp</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Quản lý tài khoản</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">List Nhà cung cấp</h6>
+                    <h6 class="font-weight-bolder mb-0">List tài khoản khách hàng</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -139,10 +139,8 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List Nhà cung cấp</h2>
-                            <button class="btn_butn">
-                                <a href="index.php?act=addncc">Thêm Nhà cung cấp</a>
-                            </button>
+                            <h2>List tài khoản khách hàng</h2>
+                           
                         </div>
 
 
@@ -154,26 +152,24 @@
                                         <tr>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Id Nhà cung cấp</th>
+                                                Mã tài khoản</th>
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Hình Nhà cung cấp</th>
+                                            Tên đăng nhập</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Ten Nhà cung cấp</th>
+                                                Mật khẩu</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Email </th>
+                                                Email</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Số Điện Thoại</th>
+                                                Địa chỉ </th>
 
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Địa chỉ</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Trạng thái</th>
+                                                Số Điện Thoại</th>
+                                           
 
 
                                             <th
@@ -187,10 +183,10 @@
                                     </thead>
                                     <tbody>
                                         <?php 
-                  foreach($listnhacungcap as $nhacungcap){
-                    extract($nhacungcap);
-                    $suancc="index.php?act=suancc&id=".$id;
-                    $xoancc="index.php?act=xoancc&id=".$id;
+                  foreach($listtaikhoan as $taikhoan){
+                    extract($taikhoan);
+                    $suantk="index.php?act=suatk&id=".$id;
+                    $xoantk="index.php?act=xoatk&id=".$id;
 
 
                     echo'
@@ -204,38 +200,37 @@
                           </div>
                         </div>
                       </td>
+                     
                       <td>
-                      <p class="text-xs font-weight-bold mb-0">'.$image.'</p>
-                    
-                    </td>
-                      <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$name.'</p>
+                        <p class="text-xs font-weight-bold mb-0">'.$user.'</p>
                       
                       </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">'.$pass.'</p>
+                    
+                        </td>
                       <td>
                         <p class="text-xs font-weight-bold mb-0">'.$email.'</p>
                     
                         </td>
-                        <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$tel.'</p>
-                        
-                        </td>
+                       
                         <td>
                         <p class="text-xs font-weight-bold mb-0">'.$address.'</p>
                     
                     </td>
                     <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$status.'</p>
+                    <p class="text-xs font-weight-bold mb-0">'.$tel.'</p>
                     
                     </td>
+                   
                             
                       <td class="align-middle">
-                        <a href="'.$suancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="'.$suantk.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                           Edit
                         </a>
                       </td> 
                       <td class="align-middle">
-                        <a href="'.$xoancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                        <a href="'.$xoantk.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
                          Delete
                         </a>
                       </td>

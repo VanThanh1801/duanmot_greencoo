@@ -12,13 +12,13 @@
                                 </h2>
                                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Đăng ký</p>
 
-                                <form class="mx-1 mx-md-6" action="index.php?act=dangky" method="POST">
+                                <form class="mx-1 mx-md-6" action="index.php?act=dangky" method="POST" id="dangky">
 
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-user fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <label class="form-label" >Name của bạn</label>
-                                            <input type="text" id="form3Example1c" class="form-control" name="user" />
+                                            <input type="text" id="form3Example1c" class="form-control" name="username" />
                                            
                                         </div>
                                     </div>
@@ -27,7 +27,7 @@
                                         <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <label class="form-label" >Email của bạn </label>
-                                            <input type="email" id="form3Example3c" name="email" class="form-control" />
+                                            <input type="email" id="email" name="email"  class="form-control" />
                                             
                                         </div>
                                     </div>
@@ -39,15 +39,15 @@
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
                                             <label class="form-label" >Password</label>
-                                            <input type="password" id="form3Example4c" name="pass" class="form-control" />
+                                            <input type="password"  name="password" id="password" class="form-control" />
                                             
                                         </div>
                                     </div>
                                     <div class="d-flex flex-row align-items-center mb-4">
                                         <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
                                         <div class="form-outline flex-fill mb-0">
-                                            <label class="form-label" > Nhâp lại Password</label>
-                                            <input type="password" id="form3Example4c" name="resetpass" class="form-control" />
+                                            <label class="form-label" >Nhâp lại Password</label>
+                                            <input type="password" id="confirm_password" name="confirm_password" class="form-control" />
                                             
                                         </div>
                                     </div>
