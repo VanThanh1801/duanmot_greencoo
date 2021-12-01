@@ -28,6 +28,7 @@ $spsaleoff =loadall_sanpham_saleoff();
 $prnew = loadall_sanpham_new();
 
 
+
 if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     $act = $_GET['act'];
     switch ($act) {
@@ -50,40 +51,39 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           $dssp = loadall_sanpham_shop();
           include "view/shop.php";
         break;
-        case 'sanphamct':
-      
-          if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
+      case 'sanphamct':
     
-            $id = $_GET['idsp'];
-            update_luotxem($id);
-            // if (isset($_POST['insert'])) {
-            //   $noidung = $_POST['noidungbl'];
-    
-            //   $ma_Kh = $_SESSION['user']['id'];
-            //   $ma_sanpham = $id;
-            //   // inser_comment($noidung, $ma_sanpham, $ma_Kh);
-            //   // var_dump(inser_comment($noidung, $ma_sanpham, $ma_Kh, $ngay_bl));
-    
-            // }
-            // $showbl = select_binhluan($id);
-            $onesp = loadone_sanpham($id);
-            
-    
-            $sp_cung_loai = load_sanpham_cungloai($id, $onesp['id_cate']);
-    
-    
-            include "view/product-single.php";
-          } else {
-            include "view/home.php";
+        if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
+  
+          $id = $_GET['idsp'];
+          update_luotxem($id);
+          // if (isset($_POST['insert'])) {
+          //   $noidung = $_POST['noidungbl'];
+  
+          //   $ma_Kh = $_SESSION['user']['id'];
+          //   $ma_sanpham = $id;
+          //   // inser_comment($noidung, $ma_sanpham, $ma_Kh);
+          //   // var_dump(inser_comment($noidung, $ma_sanpham, $ma_Kh, $ngay_bl));
+  
+          // }
+            // $showbl = select_binhluan($id);\
           }
-    
-          break;
+          $onesp = loadone_sanpham($id);
+          
+  
+          $sp_cung_loai = load_sanpham_cungloai($id, $onesp['id_cate']);
+  
+  
+          include "view/product-single.php";
+        break;
+     
+         
       case 'dangky':
         
         if (isset($_POST['dangky']) && ($_POST['dangky'])) {
           $email = $_POST['email'];
-          $user = $_POST['user'];
-          $pass = $_POST['pass'];
+          $user = $_POST['username'];
+          $pass = $_POST['password'];
         
           // $sodienthoai = $_POST['sdt'];
           // $diachi = $_POST['diachi'];
@@ -100,7 +100,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       case 'dangnhap':;
         if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
           $email = $_POST['email'];
-          $pass = $_POST['pass'];
+          $pass = $_POST['password'];
           $checkuser = checkuser($email, $pass);
           $thongbao="Bạn đã đăng nhập thành công!";
           if (is_array($checkuser)) {
@@ -157,22 +157,22 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
   
   
   
-        case 'addtocart':
-        if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
-          $id = $_POST['id'];
-          $name = $_POST['name'];
-          $saleoff = $_POST['sale'];
-          $new_price = $_POST['new_price'];
-          $img = $_POST['img'];
-          $old_price = $_POST['old_price'];
-          $soluong = 1;
-          $thanhtien = $soluong * $new_price;
-          $spadd = [$id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien];
-          array_push($_SESSION['mycart'], $spadd);
-          unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien);
-        }
-        include "view/viewcar.php";
-        break;
+      case 'addtocart':
+      if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $saleoff = $_POST['sale'];
+        $new_price = $_POST['new_price'];
+        $img = $_POST['img'];
+        $old_price = $_POST['old_price'];
+        $soluong = 1;
+        $thanhtien = $soluong * $new_price;
+        $spadd = [$id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien];
+        array_push($_SESSION['mycart'], $spadd);
+        unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien);
+      }
+      include "view/viewcar.php";
+      break;
        
         case 'delcart':
           if (isset($_GET['idcart'])) {
@@ -196,32 +196,73 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       
 
       break;
+   
             
      
        
-      case 'vechungtoi':
-        include 'view/about.php';
-       
-  
-        break;
+    case 'vechungtoi':
+      include 'view/about.php';
+      
+
+      break;
     case 'shop':
       include 'view/shop.php';
       
 
       break;
       
-      case 'lienhe':
-        include 'view/contact.php';
-        
+    case 'lienhe':
+      include 'view/contact.php';
+      
 
-        break;
- 
-      case 'bill';
+      break;
+
+    case 'bill';
       include "./view/bill.php";
       break;
-      default:
-        include("./view/home.php");
-        break;
+    case 'billconfirm';
+      if(isset($_POST['checkout']) && ($_POST['checkout'])){
+        if(isset($_SESSION['user'])) $iduser = $_SESSION['user']['id'];
+        else $id = 0;
+
+        $name = $_POST['name'];
+        $email = $_POST['email'];
+        $address = $_POST['address'];
+        $tel = $_POST['tel'];
+        $pttt = $_POST['pttt'];
+        $ngaydathang = date('h:i:sa d/m/Y'); 
+        $tongdonhang = tongdonhang();
+
+        $idbill = insert_bill($iduser, $name, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
+        // var_dump($idbill);
+        // die;
+        
+
+
+        foreach($_SESSION['mycart'] as $cart){
+          inset_cart($_SESSION['user']['id'], $cart[0], $cart[2], $cart[1],$cart[3], $cart[6], $cart[7], $idbill );
+
+        }
+        $_SESSION['cart'] = [];
+
+
+
+
+
+      }
+      $bill = loadone_bill($idbill);
+      $billct = loadall_cart($idbill);
+      include "view/billconfirm.php";
+      break;
+    case 'mybill':
+      $listbill = loadall_bill($_SESSION['user']['id']);
+
+
+      include 'view/mybill.php';
+      break;
+    default:
+      include("./view/home.php");
+      break;
     }
   } else {
    

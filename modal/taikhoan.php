@@ -22,7 +22,7 @@ function checkemail($email){
     $sp=pdo_query_one($sql);
     return $sp;
 }
-function update_customer($id,$user,$pass,$email,$address,$tel){
+function update_customer($id, $user, $pass, $email, $address, $tel){
     $sql="update customer set user='".$user."', pass='".$pass."', email='".$email."',address='".$address."',tel='".$tel."' where id=".$id;   
     pdo_execute($sql);
 }
@@ -30,6 +30,10 @@ function delete_customer($id){
     $sql="delete from customer where id=".$id;
     pdo_execute($sql);
 }
-
+function loadone_taikhoan($id){
+    $sql="SELECT * from customer where id=".$id;
+    $taikhoan=pdo_query_one($sql);
+    return $taikhoan;
+}
 
 ?>

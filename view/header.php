@@ -5,10 +5,13 @@
     <title>GreenCoCo </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+
+
     <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap" rel="stylesheet">
@@ -88,26 +91,31 @@
 
 
 
-                  
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="index.php?act=dangnhap" id="dropdown04" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Login</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="index.php?act=thoat">Đăng xuất</a>
-                           
-                            <a class="dropdown-item" href="#">Đơn hàng</a>
-                            <a class="dropdown-item" href="index.php?act=dangnhap">Đăng nhập</a>
-                        
-                        </div>
-                    </li>
+                
                     <?php
                             if (isset($_SESSION['user'])) {
                                 extract($_SESSION['user']);
                                 echo '
-                                <li class="nav-item user"> '.$user.'</li>
+                                
+                                <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="index.php?act=dangnhap" id="dropdown04"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                            
+                            '.$user.'</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdown04">
+                            <a class="dropdown-item" href="index.php?act=thoat">Đăng xuất</a>
+
+                            <a class="dropdown-item" href="index.php?act=mybill">Đơn hàng</a>
+                            
+
+                        </div>    
+                    </li>
                                 ';
                             ?>
+
+                        
 
 
 
@@ -115,7 +123,25 @@
 
                     <?php
                             } else {
-                                echo " ";
+                                echo '
+                                
+                                <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="index.php?act=dangnhap" id="dropdown04"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            
+                            
+                            Login</a>
+                            <div class="dropdown-menu" aria-labelledby="dropdown04">
+                          
+
+                            <a class="dropdown-item" href="index.php?act=mybill">Đơn hàng</a>
+                            <a class="dropdown-item" href="index.php?act=dangnhap">Đăng nhập</a>
+
+                        </div>    
+                    </li>
+                                
+                                
+                                ';
                             }
 
                             ?>
