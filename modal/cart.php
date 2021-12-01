@@ -1,5 +1,5 @@
 <?php 
-function viewcart(){
+function viewcart($del){
 $tong = 0;
 $i = 0;
 global $img_path;
@@ -8,11 +8,32 @@ foreach($_SESSION['mycart'] as $cart){
     $hinh = $img_path.$cart[2];
     $thanhtien = $cart[3] * $cart[6];
     $tong += $thanhtien;
-    $xoasp = '<a href="index.php?act=delcart&idcart='.$i.'"><span class="ion-ios-close"></span></a>';
-    echo '
-    <tr class="text-center">
-    <td class="product-remove">'.$xoasp.'</td>
 
+    if($del == 1){
+        $xoasp_th = '  <th>&nbsp;</th>';
+        $xoasp_td = '<td class="product-remove"><a href="index.php?act=delcart&idcart='.$i.'"><span class="ion-ios-close"></span></a></td>';
+    }else{
+        $xoasp_th = '';
+        $xoasp_td = '';
+
+    }
+    // $xoasp = '<a href="index.php?act=delcart&idcart='.$i.'"><span class="ion-ios-close"></span></a>';
+    echo '
+    <thead class="thead-primary">
+                            <tr class="text-center">
+                              
+                                '.$xoasp_th.'
+                                <th>Hình sản phẩm</th>
+                                <th>Tên sản phẩm</th>
+                                <th>Gía mới</th>
+                                <th>Giá cũ</th>
+                                <th>Sale</th>
+                                <th>Số lượng</th>
+                                <th>Tổng tiền</th>
+                            </tr>
+                        </thead>
+    <tr class="text-center">
+   '.$xoasp_td.'
     <td class="image-prod">
         <div class="img" style="background-image:url('.$hinh.');"></div>
     </td>

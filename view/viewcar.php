@@ -16,10 +16,10 @@
             <div class="col-md-12 ftco-animate">
                 <div class="cart-list">
                     <table class="table">
-                        <thead class="thead-primary">
+                        <!-- <thead class="thead-primary">
                             <tr class="text-center">
                                 <th>&nbsp;</th>
-                                <!-- <th>&nbsp;</th> -->
+                               
                                 <th>Hình sản phẩm</th>
                                 <th>Tên sản phẩm</th>
                                 <th>Gía mới</th>
@@ -28,11 +28,11 @@
                                 <th>Số lượng</th>
                                 <th>Tổng tiền</th>
                             </tr>
-                        </thead>
+                        </thead> -->
                         <tbody>
 
                             <?php 
-								viewcart();
+								viewcart(1);
                                 
 								
 								?>
