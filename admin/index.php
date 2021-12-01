@@ -89,7 +89,7 @@ include "../modal/pdo.php"; ?>
           $giaold = $_POST['giaold'];
           $gianew = $_POST['gianew'];
           $mota = $_POST['mota'];
-       
+
           $khoiluong = $_POST['kl'];
           $soluong = $_POST['sl'];
           $nhacungcap = $_POST['idncc'];
