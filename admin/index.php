@@ -339,20 +339,20 @@ include "../modal/pdo.php"; ?>
         // $listsanpham = loadall_sanpham();
         include "./bill/updatebill.php";
         break;
-        case 'updatedh':
-          if (isset($_POST['capnhatbill']) && ($_POST['capnhatbill'])) {
-            $id = $_POST['id'];
-           
+      case 'updatedh':
+        if (isset($_POST['capnhatbill']) && ($_POST['capnhatbill'])) {
+          $id = $_POST['id'];
+          
 
-            $ttdonhang = $_POST['iddonhang'];
-  
-            update_donhang($id, $ttdonhang);
-            $thongbao = "Cập nhật thành công";
-          }
-         
-          $listbill = loadall_bill(0);
-          include "bill/listbill.php";
-          break;
+          $ttdonhang = $_POST['iddonhang'];
+
+          update_donhang($id, $ttdonhang);
+          $thongbao = "Cập nhật thành công";
+        }
+        
+        $listbill = loadall_bill(0);
+        include "bill/listbill.php";
+        break;
     
       case 'thongke':
         $listthongke = loadall_thongke();

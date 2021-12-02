@@ -163,10 +163,10 @@
 
                                           
                                
-                                            <option value="Đơn hàng mới" >Đơn hàng mới</option>';
-                                            <option value="Đang xử lý" >Đang xử lý</option>';
-                                            <option value="Đang giao hàng" >Đang giao hàng</option>';
-                                            <option value="Hoàn tất" >Hoàn tất</option>';
+                                            <option value="0" >Đơn hàng mới</option>';
+                                            <option value="1" >Đang xử lý</option>';
+                                            <option value="2" >Đang giao hàng</option>';
+                                            <option value="3" >Hoàn tất</option>';
                                
                           
 
