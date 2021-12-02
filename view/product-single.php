@@ -47,8 +47,8 @@
                                 <i class="ion-ios-remove"></i>
                             </button>
                         </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1"
-                            min="1" max="100">
+                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1"
+                                min="1" max="100">
                         <span class="input-group-btn ml-2">
                             <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
                                 <i class="ion-ios-add"></i>
@@ -85,7 +85,7 @@
             $i = 0;
             foreach ($sp_cung_loai as $sp) {
                 extract($sp);
-                $linksp = "index.php?act=sanpham&idsp=" . $id;
+                $linksp="index.php?act=sanphamct&idsp=".$id;
                 $hinh = $img_path . $img;
                 if (($i == 2) || ($i == 6) || ($i == 8) || ($i == 11)) {
                 }
@@ -93,7 +93,7 @@
             ?>
             <div class="col-md-6 col-lg-3 ftco-animate">
                 <div class="product">
-                    <a href=<?= $linksp ?> class="img-prod"><img class="img-fluid" src=<?=  $hinh ?> alt="">
+                    <a href=<?= $linksp?> class="img-prod"><img class="img-fluid" src=<?=  $hinh ?> alt="">
                         <?php if ($saleoff != null) {
                                 echo '
                                         <span class="status"> 
@@ -114,17 +114,18 @@
                         </div>
                         <div class="bottom-area d-flex px-3">
                             <div class="m-auto d-flex">
-                                <a href="#"
-                                    class="add-to-cart d-flex justify-content-center align-items-center text-center">
-                                    <span><i class="ion-ios-menu"></i></span>
-                                </a>
-                                <a href="addtocart"
-                                    class="buy-now d-flex justify-content-center align-items-center mx-1">
-                                    <span><i class="ion-ios-cart"></i></span>
-                                </a>
-                                <a href="#" class="heart d-flex justify-content-center align-items-center ">
-                                    <span><i class="ion-ios-heart"></i></span>
-                                </a>
+                            <form action="index.php?act=addtocart" method="post">
+                                 <input type="hidden" name="id" value="'.$id.'">
+                                 <input type="hidden" name="name" value="'.$name.'">
+                                 <input type="hidden" name="img" value="'.$img.'">
+                                 <input type="hidden" name="old_price" value="'.$old_price.'">
+                                 <input type="hidden" name="new_price" value="'.$new_price.'">
+                                 <input type="hidden" name="sale" value="'.$saleoff.'">
+         
+                                 <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+                                     
+                                
+                             </form>
                             </div>
                         </div>
                     </div>

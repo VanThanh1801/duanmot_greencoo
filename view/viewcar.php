@@ -29,6 +29,7 @@
                                 <th>Tổng tiền</th>
                             </tr>
                         </thead> -->
+
                         <tbody>
 
                             <?php 
@@ -38,7 +39,7 @@
 								?>
                           
 
-                            <p><a href="index.php?act=bill" class="btn btn-primary py-3 px-4">Đồng ý đặt hàng</a></p>
+                            <p><a href="index.php?act=bill" class="btn btn-primary py-3 px-4">Tiếp tục  đặt hàng</a></p>
 
                     </table>
                 </div>

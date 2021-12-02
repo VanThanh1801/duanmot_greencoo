@@ -1,6 +1,6 @@
-<?php // include_once "../modal/pdo.php" ?>
+
 <?php 
-function checkuser($user,$pass){
+function checkadmin($user,$pass){
     $sql="SELECT * from qtv where user='".$user."' AND  pass='".$pass."'";
     $sp=pdo_query_one($sql);
     return $sp;

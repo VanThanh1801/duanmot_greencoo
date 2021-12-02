@@ -13,9 +13,9 @@
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Nhà cung cấp</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Thông kê</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">List Nhà cung cấp</h6>
+                    <h6 class="font-weight-bolder mb-0">Thống kê sản phẩm theo danh mục</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -139,10 +139,11 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List Nhà cung cấp</h2>
+                            <h2>Thống kê sản phẩm theo danh mục</h2>
                             <button class="btn_butn">
-                                <a href="index.php?act=addncc">Thêm Nhà cung cấp</a>
+                                <a href="index.php?act=bieudo">Xem biểu đồ</a>
                             </button>
+                           
                         </div>
 
 
@@ -154,43 +155,32 @@
                                         <tr>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Id Nhà cung cấp</th>
+                                                STT</th>
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                            Hình Nhà cung cấp</th>
+                                            TÊN DANH MỤC</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Ten Nhà cung cấp</th>
+                                                SỐ LƯỢNG</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Email </th>
+                                               GIÁ CAO NHẤT</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Số Điện Thoại</th>
+                                                GIÁ THẤP NHÂT</th>
 
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Địa chỉ</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Trạng thái</th>
-
-
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
-                                            <th
-                                                class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                               GIÁ TRUNG BÌNH</th>
+                                            
 
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php 
-                  foreach($listnhacungcap as $nhacungcap){
-                    extract($nhacungcap);
-                    $suancc="index.php?act=suancc&id=".$id;
-                    $xoancc="index.php?act=xoancc&id=".$id;
+                  foreach($listthongke as $thongke){
+                    extract($thongke);
+                  
 
 
                     echo'
@@ -200,45 +190,33 @@
                        
                           <div class="d-flex flex-column justify-content-center">
                             <h6 class="mb-0 text-sm"></h6>
-                            <p class="text-xs text-secondary mb-0">'.$id.'</p>
+                            <p class="text-xs text-secondary mb-0">'.$madm.'</p>
                           </div>
                         </div>
                       </td>
                       <td>
-                      <p class="text-xs font-weight-bold mb-0">'.$image.'</p>
+                      <p class="text-xs font-weight-bold mb-0">'.$tendm.'</p>
                     
                     </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$name.'</p>
+                        <p class="text-xs font-weight-bold mb-0">'.$countsp.'</p>
                       
                       </td>
                       <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$email.'</p>
+                        <p class="text-xs font-weight-bold mb-0">'.$maxprice.'</p>
                     
                         </td>
                         <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$tel.'</p>
+                        <p class="text-xs font-weight-bold mb-0">'.$minprice.'</p>
                         
                         </td>
                         <td>
-                        <p class="text-xs font-weight-bold mb-0">'.$address.'</p>
+                        <p class="text-xs font-weight-bold mb-0">'.$avgprice.'</p>
                     
                     </td>
-                    <td>
-                    <p class="text-xs font-weight-bold mb-0">'.$status.'</p>
                     
-                    </td>
                             
-                      <td class="align-middle">
-                        <a href="'.$suancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
-                        </a>
-                      </td> 
-                      <td class="align-middle">
-                        <a href="'.$xoancc.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                         Delete
-                        </a>
-                      </td>
+                      
                     </tr>';
 
 
@@ -251,8 +229,10 @@
 
                                     </tbody>
                                 </table>
+                               
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>

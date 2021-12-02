@@ -13,16 +13,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 sidebar ftco-animate">
-                <!-- <div class="sidebar-box">
-                    <form action="#" class="search-form">
-                        <div class="form-group">
-                            <span class="icon ion-ios-search"></span>
-                            <input type="text" class="form-control" placeholder="Search...">
-                        </div>
-                    </form>
-                </div> -->
+
                 <div class="sidebar-box ftco-animate">
-                    <h3 class="heading">Danh muc san pham</h3>
+                    <h3 class="heading">Danh mục sản phẩm</h3>
                     <ul class="categories">
 
 
@@ -44,37 +37,63 @@
                 </div>
 
                 <div class="sidebar-box ftco-animate">
-                    <h3 class="heading">Gia san pham</h3>
-                    <ul class="">
-                        <li type="radio"><a href="#"> 50.000VND</a></li>
-                        <li type="radio"><a href="#">100.000VND </a></li>
-                        <li type="radio"><a href="#">300.000VND</a></li>
-                        <li type="radio"><a href="#">500.000VND </a></li>
-                    </ul>
+                    <h3 class="heading">Sắp xếp theo giá sản phẩm</h3>
+                    <label class="form-label" for="customRange1">Example range</label>
+                    <div class="range">
+                        <input type="range" class="form-range" id="customRange1" />
+                    </div>
+
+                </div>
+                <div class="sidebar-box ftco-animate">
+                    <form class="woocommerce-ordering" method="get">
+                        <span>Sort by: </span>
+                        <div class="SumoSelect sumo_orderby" tabindex="0"><select name="orderby"
+                                class="orderby SumoUnder" aria-label="Shop order" tabindex="-1">
+                                <option value="menu_order" selected="selected">Default sorting</option>
+                                <option value="popularity">Sắp xếp theo mới nhất</option>
+                                <option value="rating">Sắp xếp theo giá từ cao đến thấp</option>
+                                <option value="date">Sắp xếp theo từ thấp đến cao</option>
+                               
+                            </select>
+                           
+                          
+                        </div>
+                        <input type="hidden" name="paged" value="1">
+                        <input type="hidden" name="q" value="/greenmart_fresh/product-tag/frozen/">
+                    </form>
 
                 </div>
 
-              
+
+
+
+
             </div>
             <div class="col-lg-8 ftco-animate">
+
+
                 <div class="row">
                     <?php 
                         foreach($dssp as $sp){
                             extract($sp);
                             $hinh = $img_path.$img;
-                            $linhsp = "index.php?act=product-single&idsp=".$id;
-                            ?>
+
+                            $linksp="index.php?act=sanphamct&idsp=".$id;
+                            echo'
                             <div class="col-md-4 d-flex ftco-animate">
                             <div class="product">
-                            <a href="<?= $linksp  ?>" class="img-prod"><img class="img-fluid" src="<?= $hinh ?>" alt="Colorlib Template">
-                            <?php if( $saleoff != null) { ?> 
-                                <span class="status"><?= $saleoff ?>%</span>
+                            <a href="'.$linksp.'" class="img-prod"><img class="img-fluid" src="'.$hinh.'"
+                                    alt="Colorlib Template">
+                                <span class="status">'.$saleoff.'%</span>
+
                                 <div class="overlay"></div>
                                 <?php } ?>
                             </a>
                             <div class="text py-3 pb-4 px-3 text-center">
-                            <h3><a href="<?= $linksp  ?>"><?= $name ?></a></h3>
-                                 <div class="d-flex">
+
+                                <h3><a href="'.$linksp.'">'.$name.'</a></h3>
+                                <div class="d-flex">
+
                                     <div class="pricing">
                                         <p class="price"><span class="mr-2 price-dc"><?=$old_price ?></span><span
                                                 class="price-sale"><?= $new_price ?></span></p>
@@ -99,11 +118,12 @@
                             </div>
                         </div>
                         </div>
+                        ';
                             
                             
                             
                             
-                            <?php 
+                          
                         }
                         ?>
                 </div>
@@ -119,25 +139,24 @@
 
 
 
-            <script src="./js/jquery.min.js"></script>
-            <script src="./js/jquery-migrate-3.0.1.min.js"></script>
-            <script src="./js/popper.min.js"></script>
-            <script src="./js/bootstrap.min.js"></script>
-            <script src="./js/jquery.easing.1.3.js"></script>
-            <script src="./js/jquery.waypoints.min.js"></script>
-            <script src="./js/jquery.stellar.min.js"></script>
-            <script src="./js/owl.carousel.min.js"></script>
-            <script src="./js/jquery.magnific-popup.min.js"></script>
-            <script src="./js/aos.js"></script>
-            <script src="./js/jquery.animateNumber.min.js"></script>
-            <script src="./js/bootstrap-datepicker.js"></script>
-            <script src="./js/scrollax.min.js"></script>
-            <script
-                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
-            </script>
-            <script src="./js/google-map.js"></script>
-            <script src="./js/main.js"></script>
+<script src="./js/jquery.min.js"></script>
+<script src="./js/jquery-migrate-3.0.1.min.js"></script>
+<script src="./js/popper.min.js"></script>
+<script src="./js/bootstrap.min.js"></script>
+<script src="./js/jquery.easing.1.3.js"></script>
+<script src="./js/jquery.waypoints.min.js"></script>
+<script src="./js/jquery.stellar.min.js"></script>
+<script src="./js/owl.carousel.min.js"></script>
+<script src="./js/jquery.magnific-popup.min.js"></script>
+<script src="./js/aos.js"></script>
+<script src="./js/jquery.animateNumber.min.js"></script>
+<script src="./js/bootstrap-datepicker.js"></script>
+<script src="./js/scrollax.min.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false">
+</script>
+<script src="./js/google-map.js"></script>
+<script src="./js/main.js"></script>
 
-            </body>
+</body>
 
-            </html>
+</html>

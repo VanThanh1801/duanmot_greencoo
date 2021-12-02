@@ -11,63 +11,47 @@
 
 <section class="ftco-section ftco-cart">
     <div class="container">
-        <div class="row">
-            <div class="col-md-12 ftco-animate">
-                <div class="cart-list">
-                    <table class="table">
-                        <!-- <thead class="thead-primary">
-                            <tr class="text-center">
-                                <th>&nbsp;</th>
-                                
-                                <th>Hình sản phẩm</th>
-                                <th>Tên sản phẩm</th>
-                                <th>Gía mới</th>
-                                <th>Giá cũ</th>
-                                <th>Sale</th>
-                                <th>Số lượng</th>
-                                <th>Tổng tiền</th>
-                            </tr>
-                        </thead> -->
-                        <tbody>
-
-                            <?php 
-								
+        <form action="index.php?act=billconfirm" method="POST">
+            <div class="row">
+                <div class="col-md-12 ftco-animate">
+                    <div class="cart-list">
+                        <table class="table">
+                            <tbody>
+                                <?php 
+							
 								viewcart(0);
 								?>
 
-                    </table>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="row justify-content-end">
-            <div class="col-lg-12 mt-5 cart-wrap ftco-animate">
-                <div class="cart-total mb-3">
-                    <h2>Phương thức thanh toán</h2>
-                    <tr>
+            <div class="row justify-content-end">
+                <div class="col-lg-12 mt-5 cart-wrap ftco-animate">
+                    <div class="cart-total mb-3">
+                        <h2>Phương thức thanh toán</h2>
+                      
+                       
+                            <div class="form-group">
+                                <input type="radio" id="age1" name="pttt" value="30">
+                                <label for="age1">Thanh toán khi nhận hàng</label><br>
+                                <input type="radio" id="age2" name="pttt" value="60">
+                                <label for="age2">Thanh toán online</label><br>
+                                <input type="radio" id="age3" name="pttt" value="100">
+                                <label for="age3">Thanh toán chuyển khoản</label><br><br>
 
-                    </tr>
+                            </div>
+                   
+                    </div>
 
-                    <form action="#" class="info">
-                        <div class="form-group">
-                            <input type="radio" id="age1" name="age" value="30">
-                            <label for="age1">Thanh toán khi nhận hàng</label><br>
-                            <input type="radio" id="age2" name="age" value="60">
-                            <label for="age2">Thanh toán online</label><br>
-                            <input type="radio" id="age3" name="age" value="100">
-                            <label for="age3">Thanh toán chuyển khoản</label><br><br>
-                          
-                        </div>
-                    </form>
                 </div>
-               
-            </div>
-            <div class="col-lg-12 mt-5 cart-wrap ftco-animate">
-                <div class="cart-total mb-3">
-                    <h2>Thông tin đặt hàng</h2>
-                    <p></p>
-                    <form action="#" class="info">
+                <div class="col-lg-12 mt-5 cart-wrap ftco-animate">
+                    <div class="cart-total mb-3">
+                        <h2>Thông tin đặt hàng</h2>
+                        <p></p>
+                       
 
-                        <?php 
+                            <?php 
                             if(isset($_SESSION['user'])){
                                 $name = $_SESSION['user']['user'];
                                 $address = $_SESSION['user']['address'];
@@ -75,59 +59,50 @@
                                 $tel = $_SESSION['user']['tel'];
                             }else{
                                 $name = " ";
-                                $name = " ";
-                                $name = " ";
-                                $name = " ";
+                                $address = " ";
+                                $email = " ";
+                                $tel = " ";
                             }
                             
                             ?>
-                        <div class="form-group">
-                            <label for="">Người đặt hàng</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="" name="name"
-                                value="<?=$name ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Địa chỉ</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="" name="address"
-                                value="<?=$address ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Email</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="" name="email"
-                                value="<?=$email ?>">
-                        </div>
-                        <div class="form-group">
-                            <label for="country">Số điện thoại</label>
-                            <input type="text" class="form-control text-left px-3" placeholder="" name="tel"
-                                value="<?=$tel ?>">
-                        </div>
-                    </form>
-                </div>
-                <p><a href="checkout.html" class="btn btn-primary py-3 px-4">Tiếp tục đặt hàng</a></p>
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="ftco-section ftco-no-pt ftco-no-pb py-5 bg-light">
-    <div class="container py-4">
-        <div class="row d-flex justify-content-center py-5">
-            <div class="col-md-6">
-                <h2 style="font-size: 22px;" class="mb-0">Subcribe to our Newsletter</h2>
-                <span>Get e-mail updates about our latest shops and special offers</span>
-            </div>
-            <div class="col-md-6 d-flex align-items-center">
-                <form action="#" class="subscribe-form">
-                    <div class="form-group d-flex">
-                        <input type="text" class="form-control" placeholder="Enter email address">
-                        <input type="submit" value="Subscribe" class="submit px-3">
+                            <div class="form-group">
+                                <label for="">Người đặt hàng</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="" name="name"
+                                    value="<?= $name ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Địa chỉ</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="" name="address"
+                                    value="<?=$address ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Email</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="" name="email"
+                                    value="<?=$email ?>">
+                            </div>
+                            <div class="form-group">
+                                <label for="country">Số điện thoại</label>
+                                <input type="text" class="form-control text-left px-3" placeholder="" name="tel"
+                                    value="<?=$tel ?>">
+                            </div>
+                 
                     </div>
-                </form>
+
+                    <a href="index.php?act=billconfirm"><input type="submit" class="btn btn-primary py-3 px-4"
+                            value="Đồng ý đặt hàng" name="checkout"></a>
+                </div>
+
             </div>
-        </div>
+
+
+
+
+        </form>
+
     </div>
 </section>
+
+<?php include_once("contacts.php") ?>
 <?php include_once("footer.php") ?>
 
 
