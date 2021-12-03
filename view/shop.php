@@ -73,27 +73,23 @@
 
 
                 <div class="row">
-                    <?php 
+                <?php 
                         foreach($dssp as $sp){
                             extract($sp);
                             $hinh = $img_path.$img;
-
-                            $linksp="index.php?act=sanphamct&idsp=".$id;
-                            echo'
+                            $linhsp = "index.php?act=product-single&idsp=".$id;
+                            ?>
                             <div class="col-md-4 d-flex ftco-animate">
                             <div class="product">
-                            <a href="'.$linksp.'" class="img-prod"><img class="img-fluid" src="'.$hinh.'"
-                                    alt="Colorlib Template">
-                                <span class="status">'.$saleoff.'%</span>
-
+                            <a href="<?= $linksp  ?>" class="img-prod"><img class="img-fluid" src="<?= $hinh ?>" alt="Colorlib Template">
+                            <?php if( $saleoff != null) { ?> 
+                                <span class="status"><?= $saleoff ?>%</span>
                                 <div class="overlay"></div>
                                 <?php } ?>
                             </a>
                             <div class="text py-3 pb-4 px-3 text-center">
-
-                                <h3><a href="'.$linksp.'">'.$name.'</a></h3>
-                                <div class="d-flex">
-
+                            <h3><a href="<?= $linksp  ?>"><?= $name ?></a></h3>
+                                 <div class="d-flex">
                                     <div class="pricing">
                                         <p class="price"><span class="mr-2 price-dc"><?=$old_price ?></span><span
                                                 class="price-sale"><?= $new_price ?></span></p>
@@ -118,19 +114,19 @@
                             </div>
                         </div>
                         </div>
-                        ';
                             
                             
                             
-                            
-                          
+                        <?php 
                         }
-                        ?>
+                        ?>    
                 </div>
             </div>
         </div>
     </div>
 </section>
+   
+
 <?php include_once("contacts.php") ?>
 <?php include_once("footer.php") ?>
 
