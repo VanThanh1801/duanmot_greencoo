@@ -57,16 +57,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
   
           $id = $_GET['idsp'];
           update_luotxem($id);
-          // if (isset($_POST['insert'])) {
-          //   $noidung = $_POST['noidungbl'];
-  
-          //   $ma_Kh = $_SESSION['user']['id'];
-          //   $ma_sanpham = $id;
-          //   // inser_comment($noidung, $ma_sanpham, $ma_Kh);
-          //   // var_dump(inser_comment($noidung, $ma_sanpham, $ma_Kh, $ngay_bl));
-  
-          // }
-            // $showbl = select_binhluan($id);\
+        
           }
           $onesp = loadone_sanpham($id);
           
@@ -162,14 +153,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $id = $_POST['id'];
         $name = $_POST['name'];
         $saleoff = $_POST['sale'];
-        $new_price = $_POST['new_price'];
+        $new_price = number_format($_POST['new_price'], 0, "", "");
         $img = $_POST['img'];
         $old_price = $_POST['old_price'];
-        $soluong = 1;
+       
+        $soluong = $_POST['quantity'];
+        // var_dump($soluong);
+        // die;
         $thanhtien = $soluong * $new_price;
         $spadd = [$id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien];
         array_push($_SESSION['mycart'], $spadd);
-        unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien);
+        unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtie);
       }
       include "view/viewcar.php";
       break;
@@ -234,8 +228,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $tongdonhang = tongdonhang();
 
         $idbill = insert_bill($iduser, $name, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
-        // var_dump($idbill);
-        // die;
+        
         
 
 
@@ -260,6 +253,11 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
       include 'view/mybill.php';
+      break;
+    case 'ctdh':
+      $bill = loadone_bill($_GET['idbill']);
+      $billct = loadall_cart($_GET['idbill']);
+      include "view/billconfirm.php";
       break;
     default:
       include("./view/home.php");

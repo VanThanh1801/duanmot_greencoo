@@ -21,8 +21,7 @@ echo'
         <th>Hình sản phẩm</th>
         <th>Tên sản phẩm</th>
         <th>Gía mới</th>
-        <th>Giá cũ</th>
-        <th>Sale</th>
+        
         <th>Số lượng</th>
         <th>Tổng tiền</th>
     </tr>   
@@ -33,6 +32,7 @@ foreach($_SESSION['mycart'] as $cart){
     $hinh = $img_path.$cart[2];
     $thanhtien = $cart[3] * $cart[6];
     $tong += $thanhtien;
+   
 
     if($del == 1){
        
@@ -54,23 +54,23 @@ foreach($_SESSION['mycart'] as $cart){
 
     <td class="product-name">
         <h3>'.$cart[1].'</h3>
-        <p>Far far away, behind the word mountains, far from the countries</p>
+      
     </td>
 
-    <td class="price">'.$cart[3].'</td>
-    <td class="price">'.$cart[4].'</td>
-    <td class="price">'.$cart[5].'</td>
+    <td class="price">'.$cart[3].'VND</td>
+   
+
 
 
 
     <td class="quantity">
         <div class="input-group mb-3">
-            <input type="text" name="quantity"
-                class="quantity form-control input-number" value="1" min="1" max="100">
+            <input type="text" name="quantity[]"
+                class="quantity form-control input-number" value="'.$cart[6].'" min="1" max="100" >
         </div>
     </td>
 
-    <td class="total">'.$thanhtien.' VND</td>
+    <td class="total">' .number_format($thanhtien, 0, ',', '.').'VND</td>
 </tr>
     
     ';
@@ -84,7 +84,7 @@ echo '
 <h3>GIỎ HÀNG</h3>
 <p class="d-flex">
     <span>Tổng giá trị đơn hàng</span>
-    <span>'.$tong.' VND</span>
+    <span>'.number_format($tong, 0, ',', '.').' VND</span>
 </p>    
 <p class="d-flex">
     <span>Phí giao hàng tạm tính</span>
@@ -236,11 +236,15 @@ function loadall_cart_count($idbill){
     return sizeof($bill);
 
 }
-function loadall_bill( $iduser){
 
-    $sql = "SELECT * from bill where 1 ";
-    if($iduser > 0)   $sql .=" AND iduser=".$iduser;
-    // if($kyw != "")   $sql .=" AND id like '% " .$kyw. "%'";
+function loadall_bill($iduser= 0){
+
+    $sql = "SELECT * from bill";
+    if($iduser > 0) {
+        $sql .=" where iduser=".$iduser;
+    }
+     
+   
     $sql .= " order by id desc ";
   
     $listbill = pdo_query($sql);

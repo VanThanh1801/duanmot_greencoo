@@ -168,6 +168,9 @@
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                             Ngày đặt hàng</th>
+                                            <th
+                                            class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
+                                            Chi tiết đơn hàng</th>
                                            
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
@@ -251,6 +254,15 @@
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm"></h6>
                                                     <p class="text-xs text-secondary mb-0"> '.$bill['ngaydathang'].'</p>
+                                                </div>
+                                                </div>
+                                            </td>
+                                                <td>
+                                                <div class="d-flex px-2 py-1">
+                                            
+                                                <div class="d-flex flex-column justify-content-center">
+                                                    <h6 class="mb-0 text-sm"></h6>
+                                                    <p class="text-xs text-secondary mb-0"><a href="index.php?act=chitietbill">Chi tiết</a></p>
                                                 </div>
                                                 </div>
                                             </td>

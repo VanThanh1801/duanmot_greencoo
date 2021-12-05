@@ -326,7 +326,7 @@ include "../modal/pdo.php"; ?>
         delete_bill($_GET['id']);
     
           } 
-        $listbill = loadall_bill( 0);
+        $listbill = loadall_bill(0);
         include "bill/listbill.php";
         break;
       case 'suadh':
@@ -334,9 +334,7 @@ include "../modal/pdo.php"; ?>
           $suabill = loadone_bill($_GET['id']);
         }
         
-        // $listdanhmuc = loadall_danhmuc();
-        // $listnhacungcap = loadall_agent();
-        // $listsanpham = loadall_sanpham();
+    
         include "./bill/updatebill.php";
         break;
         case 'updatedh':
@@ -350,9 +348,12 @@ include "../modal/pdo.php"; ?>
             $thongbao = "Cập nhật thành công";
           }
          
-          $listbill = loadall_bill(0);
+          $listbill = loadall_bill();
           include "bill/listbill.php";
           break;
+      case 'chitietbill':
+        include "billct/list.php";
+        break;
     
       case 'thongke':
         $listthongke = loadall_thongke();
