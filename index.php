@@ -298,10 +298,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case 'mybill':
       $listbill = loadall_bill($_SESSION['user']['id']);
 
-      $listin4 = loadall_in4();
-      include_once("./view/header.php");
-      include 'view/mybill.php';
-
+      // $listin4 = loadall_in4();
+      include './view/mybill.php';
+      // include_once("./view/header.php");
+     
       break;
     case 'ctdh':
       $bill = loadone_bill($_GET['idbill']);
