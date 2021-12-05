@@ -226,7 +226,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case 'viewcart':
       $listin4 = loadall_in4();
         include ("./view/header.php");
-        include("view/viewcart.php");
+        include "./view/viewcar.php";
         include ("./view/footer.php");
     break;
 
