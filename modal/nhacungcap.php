@@ -9,7 +9,7 @@ function insert_nhacungcap($image, $tenncc,$emailncc,$telncc,$addressncc,$status
    
 }
 function loadall_agent(){
-    $sql="select * from agent order by id desc limit 0,4";
+    $sql="select * from agent order by id desc limit 0,8";
     $listdanhmuc=pdo_query($sql);
     return $listdanhmuc;
 }

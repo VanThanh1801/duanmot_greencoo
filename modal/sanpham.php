@@ -13,7 +13,7 @@ function delete_sanpham($id){
     pdo_execute($sql);
 }
 function loadall_sanpham_top10(){
-    $sql="select * from product where 1 order by view asc limit 0,8"; 
+    $sql="select * from product where 1 order by view desc limit 0,8"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
