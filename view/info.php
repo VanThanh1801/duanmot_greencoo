@@ -1,5 +1,4 @@
-
- <section class="ftco-section testimony-section">
+<section class="ftco-section testimony-section">
         <div class="container">
             <div class="row justify-content-center mb-5 pb-3">
                 <div class="col-md-7 heading-section ftco-animate text-center">
@@ -11,21 +10,31 @@
             <div class="row ftco-animate">
                 <div class="col-md-12">
                     <div class="carousel-testimony owl-carousel">
-                        <div class="item">
-                            <div class="testimony-wrap p-4 pb-5">
-                                <div class="user-img mb-5" style="background-image: url(./view/images/person_1.jpg)">
-                                    <span class="quote d-flex align-items-center justify-content-center">
-                                        <i class="icon-quote-left"></i>
-                                    </span>
-                                </div>
-                                <div class="text text-center">
-                                    <p class="mb-5 pl-4 line">Chất lượng miễn chê, phong cách bán hàng nhiệt tình.</p>
-                                    <p class="name">Garreth Smith</p>
-                                    <span class="position">Marketing Manager</span>
-                                </div>
+                    <?php
+                    foreach ($customer as $cus) {
+                    extract($cus);
+                ?>
+                    <div class="item">
+                        <div class="testimony-wrap p-4 pb-5">
+
+                            <div class="user-img mb-5" style="background-image: url(upload/<?= $img ?>)">
+                                <span class="quote d-flex align-items-center justify-content-center">
+                                    <i class="icon-quote-left"></i>
+                                </span>
                             </div>
+                            <div class="text text-center">
+                                <p class="mb-5 pl-4 line"> <?= $mess ?> </p>
+                                <p class="name"><?= $name ?></p>
+                                <span class="position"><?= $subject ?></span>
+                            </div>
+
                         </div>
-                        <div class="item">
+                    </div>
+                    
+                <?php
+                }
+                ?>
+                        <!-- <div class="item">
                             <div class="testimony-wrap p-4 pb-5">
                                 <div class="user-img mb-5" style="background-image: url(./view/images/person_2.jpg)">
                                     <span class="quote d-flex align-items-center justify-content-center">
@@ -80,7 +89,7 @@
                                     <span class="position">System Analyst</span>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>

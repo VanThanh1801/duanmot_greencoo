@@ -1,3 +1,10 @@
+<?php 
+
+foreach($listin4 as $in4){
+    extract($in4);
+
+
+?>
 <footer class="ftco-footer ftco-section">
     <div class="container">
         <div class="row">
@@ -11,9 +18,9 @@
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">GreenCoCo</h2>
-                    <p> Giao hàng trong vòng 3 giờ
-                        Thời gian nhận đơn hàng: 08:00 - 17:00
-                        Hotline: 0931910246</p>
+                    <p> <?= $uudai2 ?></p><br>
+                   
+                    <p> Hotline: <?= $hotline1 ?></p>
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
                         <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
                         <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
@@ -54,10 +61,9 @@
                     <h2 class="ftco-heading-2">Câu hỏi thường gặp?</h2>
                     <div class="block-23 mb-3">
                         <ul>
-                            <li><span class="icon icon-map-marker"></span><span class="text">Số 1 Trịnh Văn Bô, Phường Mỹ Đình 1, Quận Nam Từ Liêm, TP. Hà Nội</span></li>
-                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929
-                                        210</span></a></li>
-                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">poly@email.com</span></a></li>
+                            <li><span class="icon icon-map-marker"></span><span class="text"><?= $add ?></span></li>
+                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+ <?= $hotline2 ?></span></a></li>
+                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text"><?= $mail ?></</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -168,3 +174,4 @@
 </body>
 
 </html>
+<?php } ?>
