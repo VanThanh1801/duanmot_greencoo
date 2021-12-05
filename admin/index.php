@@ -8,8 +8,8 @@ include "../modal/pdo.php"; ?>
 <?php include "../modal/sanpham.php" ?>
 <?php include "../modal/binhluan.php" ?>
 <?php include "../modal/cart.php" ?>
-
-
+<?php include "../modal/contact.php"; ?>
+<?php include "../modal/in4.php" ?>
 <?php include "../modal/tk_admin.php" ?>
 
 
@@ -274,41 +274,102 @@ include "../modal/pdo.php"; ?>
         }
         include_once "./login-admin/sign-up.php";
           break;
+          case 'addadmin':
+            if (isset($_POST['addadmin']) && ($_POST['addadmin'])) {
+              $user = $_POST['user'];
+              $email = $_POST['email'];
+              $pass = $_POST['pass'];
+              insert_taikhoan($email, $user, $pass);
+              $thongbao = "Thêm thành công";
+            }
+            include "login-admin/addqtv.php";
+            break;
+          case 'deladmin':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+              del_taikhoan($_GET['id']);
+            }
+            $tkadmin = loadall_taikhoan();
+            include "login-admin/listadmin.php";
+            break;
           case 'editadmin':
-            if(isset($_POST['capnhat'])&&($_POST['capnhat'])){
+            if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
               $user = $_POST['user'];
               $pass = $_POST['pass'];
               $email = $_POST['email'];
               $address = $_POST['address'];
+              $fullname = $_POST['fullname'];
               $tel = $_POST['tel'];
               $id = $_POST['id'];
-              update_taikhoan($id,$user,$pass,$email,$address,$tel);
-              $_SESSION['user']=checkuser($user,$pass);
+              update_taikhoan($id, $user, $pass, $email, $address, $fullname, $tel);
+              $_SESSION['user'] = checkuser($user, $pass);
               header("location:index.php?act=editadmin");
-              if(is_array($checkuser)){
-                  $_SESSION['user']= $checkuser;
-                  header('location:index.php');
+              if (is_array($checkuser)) {
+                $_SESSION['user'] = $checkuser;
+                header('location:index.php');
               }
-          }
-          include "./login-admin/edit.php";
+            }
+            include "./login-admin/edit.php";
             break;
             case 'logout':
               session_unset();
               header('location:index.php?act=dangnhap');
               break;
-        case 'listbl':
-          $listbinhluan=loadall_binhluan(0);
-          include "binhluan/list.php";
-
-          
-          break;
-      case 'xoabl':
-        if(isset($_GET['id'])&&($_GET['id']>0)){
-        delete_binhluan($_GET['id']);
-    
-          } $listbinhluan=selectall_binhluan();
-        include "binhluan/list.php";
-        break;
+              case 'listbl':
+                $listbinhluan = loadall_binhluan(0);
+                include "binhluan/list.php";
+        
+        
+                break;
+              case 'xoabl':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  delete_binhluan($_GET['id']);
+                }
+                $listbinhluan = selectall_binhluan();
+                include "binhluan/list.php";
+                break;
+                //duy
+              case 'listlh':
+                $listcontact = loadall_mess();
+                include "contact/list.php";
+                break;
+              case 'xoalh':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                  del_mess($_GET['id']);
+                }
+                $listcontact = loadall_mess();
+                include "contact/list.php";
+                break;
+                case 'updatecus':
+                  if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $contact = loadone_contact($_GET['id']);
+                  }
+                  include "contact/addimg.php";
+                  break;
+              case 'themanh':
+                if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                  $id = $_POST['id'];
+                  $img = $_FILES['hinh']['name'];
+                  $target_dir = "../upload/";
+                  $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+                  if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                    // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                  } else {
+                    //  echo "Sorry, there was an error uploading your file.";
+                  }
+                  update_anh($id, $img);
+                }
+                $listcontact = loadall_mess();
+                include "contact/list.php";
+                break;
+              
+              case 'in4':
+                $ttinlienhe = loadall_in4();
+                include "./inforWeb/list.php";
+                break;
+              case 'editin4':
+        
+                include "./inforWeb/edit.php";
+                break;
       case 'listbill':
         if(isset($_POST['kyw']) && ($_POST['kyw'] != "")){
           $kyw = $_POST['kyw'];
@@ -337,6 +398,7 @@ include "../modal/pdo.php"; ?>
     
         include "./bill/updatebill.php";
         break;
+
         case 'updatedh':
           if (isset($_POST['capnhatbill']) && ($_POST['capnhatbill'])) {
             $id = $_POST['id'];
@@ -353,6 +415,7 @@ include "../modal/pdo.php"; ?>
           break;
       case 'chitietbill':
         include "billct/list.php";
+
         break;
     
       case 'thongke':

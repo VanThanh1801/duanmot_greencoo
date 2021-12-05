@@ -39,18 +39,18 @@
                                 </div>
                             <div class="bottom-area d-flex px-3">
                                  <div class="m-auto d-flex">
-                                 <form action="index.php?act=addtocart" method="post">
-                                 <input type="hidden" name="id" value="<?= $id ?>">
-                                 <input type="hidden" name="name" value="<?= $name ?>">
-                                 <input type="hidden" name="img" value="<?= $img ?>">
-                                 <input type="hidden" name="old_price" value="<?=$old_price ?>">
-                                 <input type="hidden" name="new_price" value="<?= $new_price ?>">
-                                 <input type="hidden" name="sale" value="<?= $saleoff ?>">
-         
-                                 <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
-                                     
-                                
-                             </form>
+                                <form action="index.php?act=addtocart" method="post">
+                                    <input type="hidden" name="id" value="<?= $id ?>">
+                                    <input type="hidden" name="name" value="<?= $name ?>">
+                                    <input type="hidden" name="img" value="<?= $img ?>">
+                                    <input type="hidden" name="old_price" value="<?=$old_price ?>">
+                                    <input type="hidden" name="new_price" value="<?= $new_price ?>">
+                                    <input type="hidden" name="sale" value="<?= $saleoff ?>">
+            
+                                    <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+                                        
+                                    
+                                </form>
                                  </div>
                              </div>
                         </div>
