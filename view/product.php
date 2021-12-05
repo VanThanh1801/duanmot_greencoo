@@ -45,6 +45,7 @@
                                  <input type="hidden" name="old_price" value="<?=$old_price ?>">
                                  <input type="hidden" name="new_price" value="<?= $new_price ?>">
                                  <input type="hidden" name="sale" value="<?= $saleoff ?>">
+                                 <input type="hidden" name="quantity" value="1">
          
                                  <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
                                      

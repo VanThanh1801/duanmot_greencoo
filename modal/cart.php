@@ -113,9 +113,8 @@ function bill_chi_tiet($listbill){
            
             <th>Hình sản phẩm</th>
             <th>Tên sản phẩm</th>
-            <th>Gía mới</th>
-            <th>Giá cũ</th>
-            <th>Sale</th>
+            <th>Gía</th>
+           
             <th>Số lượng</th>
             <th>Tổng tiền</th>
         </tr>   
@@ -142,7 +141,7 @@ function bill_chi_tiet($listbill){
             <p>Far far away, behind the word mountains, far from the countries</p>
         </td>
     
-        <td class="price">'.$cart['price'].'</td>
+      
         <td class="price">'.$cart['soluong'].'</td>
         
     

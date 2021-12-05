@@ -225,9 +225,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       break;
     case 'viewcart':
       $listin4 = loadall_in4();
-      include("./view/header.php");
-      include 'view/viewcar.php';
-      include("./view/footer.php");
+        include ("./view/header.php");
+        include("view/viewcart.php");
+        include ("./view/footer.php");
     break;
 
     case 'vechungtoi':
@@ -292,21 +292,27 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       include_once("./view/header.php");
       $bill = loadone_bill($idbill);
       $billct = loadall_cart($idbill);
-      include "view/billconfirm.php";
+      include "./view/billconfirm.php";
       include("./view/footer.php");
     break;
     case 'mybill':
       $listbill = loadall_bill($_SESSION['user']['id']);
 
-      // $listin4 = loadall_in4();
+      $listin4 = loadall_in4();
+     
+      include_once("./view/header.php");
       include './view/mybill.php';
-      // include_once("./view/header.php");
+      include("./view/footer.php");
+      
      
       break;
     case 'ctdh':
       $bill = loadone_bill($_GET['idbill']);
       $billct = loadall_cart($_GET['idbill']);
+      $listin4 = loadall_in4();
+      include_once("./view/header.php");
       include "view/billconfirm.php";
+      include("./view/footer.php");
       break;
 
     default:

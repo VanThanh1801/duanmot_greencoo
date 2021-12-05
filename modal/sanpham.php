@@ -23,7 +23,7 @@ function loadall_sanpham_home(){
     return $listsanpham;
 }
 function loadall_sanpham_saleoff(){
-    $sql="select * from product where 1 order by id asc limit 0,6"; 
+    $sql="select * from product where saleoff >1 order by id desc limit 0,8"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
@@ -53,7 +53,7 @@ function loadall_sanpham_tatca($iddm){
 }
 
 function loadall_sanpham_shop(){
-    $sql="SELECT * from product where 1 order by id desc limit 0,16"; 
+    $sql="SELECT * from product where 1 order by id desc limit 0,10"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }
