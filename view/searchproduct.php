@@ -3,8 +3,7 @@
         <div class="row justify-content-center mb-3 pb-3">
             <div class="col-md-12 heading-section text-center ftco-animate">
                 <span class="subheading">Top sản phẩm có lượt xem cao nhất</span>
-                <!-- <h2 class="mb-4">Our Products</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p> -->
+              
             </div>
         </div>
     </div>
@@ -41,13 +40,16 @@
                             <div class="bottom-area d-flex px-3">
                                  <div class="m-auto d-flex">
                                  <form action="index.php?act=addtocart" method="post">
-                                    <input type="hidden" name="id" value="<?= $id ?>">
-                                    <input type="hidden" name="name" value="<?= $name ?>">
-                                    <input type="hidden" name="img" value="<?= $img ?>">
-                                    <input type="hidden" name="old_price" value="<?=$old_price ?>">
-                                    <input type="hidden" name="new_price" value="<?= $new_price ?>">
-                                    <input type="hidden" name="sale" value="<?= $saleoff ?>">
-                                    <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+
+                                 <input type="hidden" name="id" value="<?= $id ?>">
+                                 <input type="hidden" name="name" value="<?= $name ?>">
+                                 <input type="hidden" name="img" value="<?= $img ?>">
+                                 <input type="hidden" name="old_price" value="<?=$old_price ?>">
+                                 <input type="hidden" name="quantity" value="1">
+                                 <input type="hidden" name="new_price" value="<?= $new_price ?>">
+                                 <input type="hidden" name="sale" value="<?= $saleoff ?>">
+                                 <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+
                                      
                                 
                              </form>

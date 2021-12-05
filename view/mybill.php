@@ -13,6 +13,7 @@
                                 <th>NGÀY ĐẶT</th>
                                 <th>SỐ LƯỢNG</th>
                                 <th>TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
+                                <th>Chi tiết đơn hàng</th>
                                 <th>TÌNH TRẠNG ĐƠN HÀNG</th>
                                 
                             </tr>
@@ -45,6 +46,10 @@
                                     </td>
                                     <td class="product-name">
                                     <h3>'.$bill['total'].'</h3>
+                                  
+                                    </td>
+                                    <td class="product-name">
+                                    <h3><a href="index.php?act=ctdh&idbill='.$bill['id'].'">Chi tiết đơn hàng</a></h3>
                                   
                                     </td>
                             

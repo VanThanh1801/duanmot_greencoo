@@ -63,6 +63,7 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       if (isset($_GET['idsp']) && ($_GET['idsp'] > 0)) {
           $id = $_GET['idsp'];
           update_luotxem($id);
+
           $onesp = loadone_sanpham($id);
           $sp_cung_loai = load_sanpham_cungloai($id, $onesp['id_cate']);
           $listin4 = loadall_in4();
@@ -178,23 +179,29 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
 
       case 'addtocart':
-        if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
-          $id = $_POST['id'];
-          $name = $_POST['name'];
-          $saleoff = $_POST['sale'];
-          $new_price = $_POST['new_price'];
-          $img = $_POST['img'];
-          $old_price = $_POST['old_price'];
-          $soluong = 1;
-          $thanhtien = $soluong * $new_price;
-          $spadd = [$id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien];
-          array_push($_SESSION['mycart'], $spadd);
-          unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien);
-        }
+
+      if (isset($_POST['addtocart']) && ($_POST['addtocart'])) {
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $saleoff = $_POST['sale'];
+        $new_price = number_format($_POST['new_price'], 0, "", "");
+        $img = $_POST['img'];
+        $old_price = $_POST['old_price'];
+       
+        $soluong = $_POST['quantity'];
+        // var_dump($soluong);
+        // die;
+        $thanhtien = $soluong * $new_price;
+        $spadd = [$id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtien];
+        array_push($_SESSION['mycart'], $spadd);
+        unset($id, $name, $img, $new_price,$old_price,  $saleoff,  $soluong, $thanhtie);
+      }
+  
         $listin4 = loadall_in4();
         include ("./view/header.php");
         include "view/viewcar.php";
         include ("./view/footer.php");
+
       break;
 
       case 'delcart':
@@ -268,8 +275,10 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $tongdonhang = tongdonhang();
 
         $idbill = insert_bill($iduser, $name, $email, $address, $tel, $pttt, $ngaydathang, $tongdonhang);
-        // var_dump($idbill);
-        // die;
+
+        
+        
+
 
 
 
@@ -292,8 +301,14 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       $listin4 = loadall_in4();
       include_once("./view/header.php");
       include 'view/mybill.php';
-      include './view/footer.php';
-    break;
+
+      break;
+    case 'ctdh':
+      $bill = loadone_bill($_GET['idbill']);
+      $billct = loadall_cart($_GET['idbill']);
+      include "view/billconfirm.php";
+      break;
+
     default:
       $listin4 = loadall_in4();
       include_once("./view/header.php");

@@ -138,7 +138,7 @@ foreach($listin4 as $in4){
                             <div class="dropdown-menu" aria-labelledby="dropdown04">
                           
 
-                            <a class="dropdown-item" href="index.php?act=mybill">Đơn hàng</a>
+                          
                             <a class="dropdown-item" href="index.php?act=dangnhap">Đăng nhập</a>
 
                         </div>    

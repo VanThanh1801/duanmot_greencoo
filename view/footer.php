@@ -74,7 +74,7 @@ foreach($listin4 as $in4){
 </footer>
 
 
-<!-- <script src="./view/js/jquery.min.js"></script> -->
+
 <script src="./view/js/jquery-migrate-3.0.1.min.js"></script>
 <script src="./view/js/popper.min.js"></script>
 <script src="./view/js/bootstrap.min.js"></script>
@@ -105,7 +105,7 @@ foreach($listin4 as $in4){
                 minlength: 6,
 
 
-                // password: true
+               
             }
         },
         messages: {
@@ -170,7 +170,51 @@ foreach($listin4 as $in4){
 
 </script>
 
+<script>
+$(document).ready(function() {
 
+    var quantitiy = 0;
+    $('.quantity-right-plus').click(function(e) {
+
+      
+        e.preventDefault();
+       
+        var quantity = parseInt($('#quantity').val());
+
+       
+
+        $('#quantity').val(quantity + 1);
+
+
+
+    });
+
+    $('.quantity-left-minus').click(function(e) {
+       
+        e.preventDefault();
+      
+        var quantity = parseInt($('#quantity').val());
+
+       
+        if (quantity > 0) {
+            $('#quantity').val(quantity - 1);
+        }
+    });
+    $('#quantity').on("change",function(e) {
+     
+        e.preventDefault();
+      
+       
+
+        
+
+        
+    });
+    var quantity = $('#quantity');
+        console.log(quantity);
+
+});
+</script>
 </body>
 
 </html>
