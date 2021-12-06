@@ -29,7 +29,7 @@
                         <a href="#" class="mr-2" style="color: #000;">Đã bán <span style="color: #bbb;">500</span></a>
                     </p>
                 </div>
-                <p class="price" id="pr"><span><?php echo $new_price ?> VND/Kg </span> </p>
+                <p class="price" id="pr"><span><?= number_format($new_price, 0, ',', '.')?> VND/Kg </span> </p>
                
                 <p><?php echo $mota ?></p>
                 <div class="row mt-4">

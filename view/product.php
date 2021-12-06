@@ -32,8 +32,8 @@
                                  <h3><a href="<?= $linksp  ?>"><?= $name ?></a></h3>
                                  <div class="d-flex">
                                     <div class="pricing">
-                                        <p class="price"><span class="mr-2 price-dc"><?=$old_price ?></span><span
-                                                class="price-sale"><?= $new_price ?></span></p>
+                                        <p class="price"><span class="mr-2 price-dc"><?=number_format($old_price, 0, ',', '.')?></span><span
+                                                class="price-sale"><?= number_format($new_price, 0, ',', '.') ?></span></p>
                                     </div>
                                 </div>
                             <div class="bottom-area d-flex px-3">

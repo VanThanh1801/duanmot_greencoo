@@ -9,12 +9,12 @@
                                
                    
                                 
-                                <th>MÃ ĐƠN HÀNG</th>
-                                <th>NGÀY ĐẶT</th>
-                                <th>SỐ LƯỢNG</th>
-                                <th>TỔNG GIÁ TRỊ ĐƠN HÀNG</th>
-                                <th>Chi tiết đơn hàng</th>
-                                <th>TÌNH TRẠNG ĐƠN HÀNG</th>
+                                <th>Mã đơn</th>
+                                <th>Ngày đặt</th>
+                                <th>Số lượng</th>
+                                <th>Tổng </th>
+                                <th>Chi tiết</th>
+                                <th>Tình trạng</th>
                                 
                             </tr>
                         </thead>
@@ -32,8 +32,8 @@
       
                                    
                                 
-                                    <td class="image-prod">
-                                        <h3>'.$bill['id'].'</h3>
+                                    <td class="product-name">
+                                        <h3>MĐH'.$bill['id'].'</h3>
                                       
                                     </td>
                                     <td class="product-name">
@@ -49,7 +49,7 @@
                                   
                                     </td>
                                     <td class="product-name">
-                                    <h3><a href="index.php?act=ctdh&idbill='.$bill['id'].'">Chi tiết đơn hàng</a></h3>
+                                    <h3><a href="index.php?act=ctdh&idbill='.$bill['id'].'">Chi tiết </a></h3>
                                   
                                     </td>
                             

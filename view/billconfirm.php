@@ -32,7 +32,7 @@
                 <div class="form-group">
                     <label for="">Mã đơn hàng</label>
                     <input type="text" class="form-control text-left px-3" placeholder=""
-                        value="<?= $bill['id']?>">
+                        value="MĐH<?= $bill['id']?>">
                 </div>
                 <div class="form-group">
                     <label for="">Ngày đặt hàng:</label>
@@ -47,7 +47,7 @@
                 <div class="form-group">
                     <label for="">phương thức thanh toán:</label>
                     <input type="text" class="form-control text-left px-3" placeholder=""
-                        value="<?= $bill['bill_pttt']?>">
+                        value="<?= get_pttt($bill['bill_pttt'])?>">
                 </div>
 
                

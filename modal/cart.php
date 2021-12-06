@@ -138,11 +138,11 @@ function bill_chi_tiet($listbill){
     
         <td class="product-name">
             <h3>'.$cart['name'].'</h3>
-            <p>Far far away, behind the word mountains, far from the countries</p>
+         
         </td>
     
       
-        <td class="price">'.$cart['soluong'].'</td>
+        <td class="price">'.$cart['price'].'</td>
         
     
     
@@ -167,7 +167,7 @@ function bill_chi_tiet($listbill){
     <h3>GIỎ HÀNG</h3>
     <p class="d-flex">
         <span>Tổng giá trị đơn hàng</span>
-        <span>'.$tong.' VND</span>
+        <span>'.number_format($tong, 0, ',', '.').' VND</span>
     </p>    
     <p class="d-flex">
         <span>Phí giao hàng tạm tính</span>
@@ -271,6 +271,26 @@ function get_ttdh($n){
         
     }
     return $tt;
+
+}
+function get_pttt($n){
+    switch($n){
+        case 0:
+            $pt = "Thanh toán khi nhận hàng";
+            break;
+        case 1:
+            $pt = "Thanh toán online";
+            break;
+        case 2:
+            $pt = "Thanh toán chuyên khoản";
+            break;
+     
+        default: 
+            $pt = "Thanh toán khi nhận hàng";
+            break;
+        
+    }
+    return $pt;
 
 }
 function loadall_thongke(){
