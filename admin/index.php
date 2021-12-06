@@ -414,6 +414,27 @@ include "../modal/pdo.php"; ?>
           include "bill/listbill.php";
           break;
       case 'chitietbill':
+        $bill = loadone_bill($_GET['id']);
+       
+       
+        $billadminct = loadall_cart($_GET['id']);
+        
+        
+
+
+
+
+
+       
+     
+       
+      
+        
+
+      
+
+      
+
         include "billct/list.php";
 
         break;

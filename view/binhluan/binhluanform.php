@@ -102,67 +102,7 @@ $dsbl = loadall_binhluan($id_pro);
             
             ?>
                 
-                <!-- <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-2 col-md-1">
-                            <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" />
-                        </div>
-                        <div class="col-xs-10 col-md-11">
-                            <div>
-                                <a href="http://bootsnipp.com/BhaumikPatel/snippets/Obgj">Admin Panel Quick
-                                    Shortcuts</a>
-                                <div class="mic-info">
-                                    By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
-                                </div>
-                            </div>
-                            <div class="comment-text">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                            </div>
-                            <div class="action">
-                                <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </button>
-                                <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="row">
-                        <div class="col-xs-2 col-md-1">
-                            <img src="http://placehold.it/80" class="img-circle img-responsive" alt="" />
-                        </div>
-                        <div class="col-xs-10 col-md-11">
-                            <div>
-                                <a href="http://bootsnipp.com/BhaumikPatel/snippets/4ldn">Cool Sign Up</a>
-                                <div class="mic-info">
-                                    By: <a href="#">Bhaumik Patel</a> on 11 Nov 2013
-                                </div>
-                            </div>
-                            <div class="comment-text">
-                                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim
-                            </div>
-                            <div class="action">
-                                <button type="button" class="btn btn-primary btn-xs" title="Edit">
-                                    <span class="glyphicon glyphicon-pencil"></span>
-                                </button>
-                                <button type="button" class="btn btn-success btn-xs" title="Approved">
-                                    <span class="glyphicon glyphicon-ok"></span>
-                                </button>
-                                <button type="button" class="btn btn-danger btn-xs" title="Delete">
-                                    <span class="glyphicon glyphicon-trash"></span>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li> -->
+               
             </ul>
 
         </div>
@@ -196,7 +136,7 @@ $dsbl = loadall_binhluan($id_pro);
             $ngaybinhluan = date('h:i:sa d/m/Y'); 
 
             insert_binhluan($noidung, $iduser, $id_pro, $ngaybinhluan);
-            // header("Location: ".$_SERVER['HTTP_REFERER']);
+            header("Location: ".$_SERVER['HTTP_REFERER']);
             // var_dump($_SERVER['HTTP_REFERER']);
             // die;
 

@@ -262,7 +262,7 @@
                                             
                                                 <div class="d-flex flex-column justify-content-center">
                                                     <h6 class="mb-0 text-sm"></h6>
-                                                    <p class="text-xs text-secondary mb-0"><a href="index.php?act=chitietbill">Chi tiết</a></p>
+                                                    <p class="text-xs text-secondary mb-0"><a href="index.php?act=chitietbill&id='.$bill['id'].'">Chi tiết</a></p>
                                                 </div>
                                                 </div>
                                             </td>
