@@ -12,9 +12,9 @@ include_once "./sidebar.php";
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Thông tin website</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Sản phẩm</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Thông tin website</h6>
+                    <h6 class="font-weight-bolder mb-0">thêm sản phẩm</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -127,67 +127,47 @@ include_once "./sidebar.php";
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>Thông tin website</h2>
-
+                            <h2>Thay logo web</h2>
                         </div>
+
+                        <?php
+        
+                            if(is_array($lg)){
+                                extract($lg);
+                            }
+                        
+                        ?>
+
                         <div class="product_item">
 
-                            <?php
-                            foreach ($ttinlienhe as $in4) {
-                                extract($in4);
-                                $xoasp = "index.php?act=xoalh&id=" . $id;
-                                $suatt = "index.php?act=editin4&id=" . $id;
-
-
-                            ?>
-
-
+                            <form action="index.php?act=donelogo" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label for="product-title">Mã:</label>
-                                    <p class="form-control"><?= $id ?> | <a href="<?= $suatt ?>">Sửa</a> 
-</p>
+                                    <label for="product-title">Hình ảnh sản phẩm</label>
+                                    <input type="file" name="hinh">
                                 </div>
-                                <div class="form-group">
-                                    <label for="product-title">Hotline 1:</label>
-                                    <p class="form-control"><?= $hotline1 ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Hotline 2:</label>
-                                    <p class="form-control"><?= $hotline2 ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Mail</label>
-                                    <p class="form-control"><?= $mail ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Địa chỉ:</label>
-                                    <p class="form-control"><?= $add ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Ưu Đãi 1:</label>
-                                    <p class="form-control"><?= $uudai1 ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Ưu Đãi 2:</label>
-                                    <p class="form-control"><?= $uudai2 ?></p>
-                                    <!-- <input type="text" name="nhacungcap" class="form-control" value=""> -->
-                                </div>
-                            <?php
-                            }
-
-
-                            ?>
-                            <!--Main Content-->
-
-
-                            <!-- SIDEBAR-->
-
-
-
                         </div>
                     </div>
+                    <!--Main Content-->
+
+
+                    <!-- SIDEBAR-->
+
+
+                    <aside id="admin_sidebar" class="col-md-4">
+
+
+                        <div class="form-group">
+                            <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                            <input type="submit" class="btn btn-primary btn-lg" name="capnhat" value="Thêm">
+
+                            <a href="index.php?act=logo"><input type="button" class="btn btn-primary btn-lg" value="DANH SÁCH"></a>
+                        </div>
+                    </aside>
+                    </form>
                 </div>
             </div>
+        </div>
+        </div>
         </div>
     </main>
 
