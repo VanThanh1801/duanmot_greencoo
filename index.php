@@ -48,6 +48,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       $dssp = loadall_sanpham($kyw, $iddm);
       $tendm = load_ten_dm($iddm);
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
       include ("./view/header.php");
       include "view/shop.php";
       include ("./view/footer.php");
@@ -55,6 +58,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case "shop":
         $dssp = loadall_sanpham_shop();
         $listin4 = loadall_in4();
+        $listban = loadall_banner();
+        $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include "view/shop.php";
         include ("./view/footer.php");
@@ -67,11 +73,17 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           $onesp = loadone_sanpham($id);
           $sp_cung_loai = load_sanpham_cungloai($id, $onesp['id_cate']);
           $listin4 = loadall_in4();
+          $listban = loadall_banner();
+          $logoweb = loadall_logo(); 
+
           include ("./view/header.php");
           include "view/product-single.php";
           include ("./view/footer.php");
         } else {
           $listin4 = loadall_in4();
+          $listban = loadall_banner();
+          $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
           include "view/home.php";
           include ("./view/footer.php");
@@ -79,6 +91,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $onesp = loadone_sanpham($id);
         $sp_cung_loai = load_sanpham_cungloai($id, $onesp['id_cate']);
         $listin4 = loadall_in4();
+        $listban = loadall_banner();
+        $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include "view/product-single.php";
         include ("./view/footer.php");
@@ -99,6 +114,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
        
       }
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
       include("view/dangky.php");
 
@@ -116,6 +134,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
             // $thongbao="Bạn đã đăng nhập thành công!";
             $listin4 = loadall_in4();
+            $listban = loadall_banner();
+            $logoweb = loadall_logo(); 
+
           include ("./view/header.php");
             include("view/home.php");
             include ("./view/footer.php");
@@ -125,6 +146,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           }
         }
         $listin4 = loadall_in4();
+        $listban = loadall_banner();
+        $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include("view/dangnhap.php");
         include ("./view/footer.php");
@@ -146,6 +170,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         // header('Location: index.php?act=edit_taikhoan');
       }
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
       include ("./view/header.php");
       include "view/updatepass.php";
       include ("./view/footer.php");
@@ -162,6 +189,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         }
         }
         $listin4 = loadall_in4();
+        $listban = loadall_banner();
+        $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include "view/resetpass.php";
         include ("./view/footer.php");
@@ -169,6 +199,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       case 'thoat':
         session_unset();
         $listin4 = loadall_in4();
+        $listban = loadall_banner();
+        $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include("view/home.php");
         include ("./view/footer.php");
@@ -198,6 +231,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       }
   
         $listin4 = loadall_in4();
+        $listban = loadall_banner();
+        $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include "view/viewcar.php";
         include ("./view/footer.php");
@@ -219,12 +255,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
           $_SESSION['mycart'] = [];
         }
         $listin4 = loadall_in4();
+        $listban = loadall_banner();
+        $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include("view/viewcar.php");
         include ("./view/footer.php");
       break;
     case 'viewcart':
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
         include ("./view/header.php");
         include "./view/viewcar.php";
         include ("./view/footer.php");
@@ -232,12 +274,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
 
     case 'vechungtoi':
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
       include("./view/header.php");
       include 'view/about.php';
       include("./view/footer.php");
     break;
     case 'shop':
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
       include("./view/header.php");
       include 'view/shop.php';
       include("./view/footer.php");
@@ -251,12 +299,18 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         insert_contact($name, $email, $subject, $mess);
       }
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
       include("./view/header.php");
       include 'view/contact.php';
       include("./view/footer.php");
     break;
     case 'bill';
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
       include("./view/header.php");
       include "./view/bill.php";
       include("./view/footer.php");
@@ -289,6 +343,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
         $_SESSION['mycart'] = [];
       }
       $listin4 = loadall_in4();
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
+
       include_once("./view/header.php");
       $bill = loadone_bill($idbill);
       $billct = loadall_cart($idbill);
@@ -297,6 +354,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     break;
     case 'mybill':
       $listbill = loadall_bill($_SESSION['user']['id']);
+      $listban = loadall_banner();
+      $logoweb = loadall_logo(); 
 
       $listin4 = loadall_in4();
      
@@ -309,6 +368,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     case 'ctdh':
       $bill = loadone_bill($_GET['idbill']);
       $billct = loadall_cart($_GET['idbill']);
+      $logoweb = loadall_logo(); 
+
+      $listban = loadall_banner();
       $listin4 = loadall_in4();
       include_once("./view/header.php");
       include "view/billconfirm.php";
@@ -316,6 +378,9 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
       break;
 
     default:
+    $logoweb = loadall_logo(); 
+
+    $listban = loadall_banner();
       $listin4 = loadall_in4();
       include_once("./view/header.php");
       include("./view/home.php");
@@ -323,6 +388,8 @@ if ((isset($_GET['act'])) && ($_GET['act'] != "")) {
     break;
   }
 } else {
+  $logoweb = loadall_logo(); 
+  $listban = loadall_banner();
   $listin4 = loadall_in4();
   include_once("./view/header.php");
   include("view/home.php");

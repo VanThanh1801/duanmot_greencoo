@@ -74,7 +74,15 @@ foreach($listin4 as $in4){
     </div>
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
-            <a class="navbar-brand" href="index.php">GreenCoCo</a>
+            <?php 
+                foreach ($logoweb as $lg ){
+                    extract($lg);
+                    ?>
+                    
+            <a class="navbar-brand" href="index.php"><img src="upload/<?= $logo ?>" alt="" height="100px"></a>
+            <?php
+                }
+            ?>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
                 aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="oi oi-menu"></span> Menu

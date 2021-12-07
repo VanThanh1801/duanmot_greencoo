@@ -16,6 +16,14 @@ function update_taikhoan($id,$user,$pass,$email,$address,$tel){
     $sql="UPDATE qtv set user='".$user."', pass='".$pass."', email='".$email."',address='".$address."',tel='".$tel."' where id=".$id;   
     pdo_execute($sql);
 }
+
+function loadall_tk_admin(){
+
+    $sql="SELECT * from qtv order by id desc";
+    $listtaikhoan=pdo_query($sql);
+    return $listtaikhoan;
+
+}
 function loadall_taikhoan(){
     $sql="SELECT * from customer order by id desc";
     $tkadmin=pdo_query($sql);

@@ -1,4 +1,4 @@
-<?php include "./header.php";
+<?php include_once "./header.php";
 include_once "./sidebar.php";
 ?>
 
@@ -10,11 +10,10 @@ include_once "./sidebar.php";
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="index.php">Trang chủ Quản Trị</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Thông tin website</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Liên hệ</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Thông tin website</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -122,72 +121,50 @@ include_once "./sidebar.php";
                 </div>
             </div>
         </nav>
+
         <div class="container-fluid py-4">
             <div class="row">
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>Thông tin website</h2>
-
+                            <h2>Logo Website</h2>
                         </div>
-                        <div class="product_item">
-
-                            <?php
-                            foreach ($ttinlienhe as $in4) {
-                                extract($in4);
-                                $xoasp = "index.php?act=xoalh&id=" . $id;
-                                $suatt = "index.php?act=editin4&id=" . $id;
-
-
-                            ?>
-
-
-                                <div class="form-group">
-                                    <label for="product-title">Mã:</label>
-                                    <p class="form-control"><?= $id ?> | <a href="<?= $suatt ?>">Sửa</a> 
-</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Hotline 1:</label>
-                                    <p class="form-control"><?= $hotline1 ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Hotline 2:</label>
-                                    <p class="form-control"><?= $hotline2 ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Mail</label>
-                                    <p class="form-control"><?= $mail ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Địa chỉ:</label>
-                                    <p class="form-control"><?= $add ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Ưu Đãi 1:</label>
-                                    <p class="form-control"><?= $uudai1 ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Ưu Đãi 2:</label>
-                                    <p class="form-control"><?= $uudai2 ?></p>
-                                    <!-- <input type="text" name="nhacungcap" class="form-control" value=""> -->
-                                </div>
-                            <?php
-                            }
-
-
-                            ?>
-                            <!--Main Content-->
-
-
-                            <!-- SIDEBAR-->
 
 
 
-                        </div>
+              
+                                        <?php
+                                        foreach ($logoweb as $lg) {
+                                            extract($lg);
+                                            // $xoasp = "index.php?act=xoalh&id=" . $id;
+                                            $sua = "index.php?act=uplg&id=" . $id;
+                                            // $hinhpath = "../upload/" . $img;
+                                            // // $hinhpathp = "../upload/".$img_phu;
+                                            // if (is_file($hinhpath)) {
+                                            //     $hinh = "<img src='" . $hinhpath . "' height='80'>";
+                                            // } else {
+                                            //     $hinh = "no photo";
+                                            // }
+
+                                        ?>
+                                                <img src="../upload/<?= $logo ?>" alt="" width="200px">
+                                                    <a href="<?= $sua ?>"  data-toggle="tooltip" data-original-title="Edit user">
+                                                        Sửa logo
+                                                    </a>
+
+
+
+                                        <?php
+                                        }
+
+
+                                        ?>
+
                     </div>
                 </div>
             </div>
+
+
         </div>
     </main>
 
@@ -211,4 +188,4 @@ include_once "./sidebar.php";
 </body>
 
 </html>
-<?php include "./footer.php" ?>
+<?php include_once "./footer.php"; ?>

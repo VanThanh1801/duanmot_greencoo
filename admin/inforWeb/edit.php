@@ -1,4 +1,5 @@
-<?php include "./header.php";
+<?php
+include_once "./header.php";
 include_once "./sidebar.php";
 ?>
 
@@ -12,9 +13,8 @@ include_once "./sidebar.php";
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
                         <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Thông tin website</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Cập nhật tài khoản</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">Thông tin website</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
@@ -127,70 +127,61 @@ include_once "./sidebar.php";
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>Thông tin website</h2>
-
+                            <h2>Cập nhật tài khoản</h2>
                         </div>
+                        <?php if (is_array($in4)) {
+                                    extract($in4);
+                                }
+                         ?>
                         <div class="product_item">
-
-                            <?php
-                            foreach ($ttinlienhe as $in4) {
-                                extract($in4);
-                                $xoasp = "index.php?act=xoalh&id=" . $id;
-                                $suatt = "index.php?act=editin4&id=" . $id;
-
-
-                            ?>
-
-
-                                <div class="form-group">
-                                    <label for="product-title">Mã:</label>
-                                    <p class="form-control"><?= $id ?> | <a href="<?= $suatt ?>">Sửa</a> 
-</p>
+                            <form action="index.php?act=donein4" method="post">
+                            <div class="form-group">
+                                    <label for="product-title">Hotline1:</label>
+                                    <input type="text" name="hotline1" class="form-control" value="<?= $hotline1 ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="product-title">Hotline 1:</label>
-                                    <p class="form-control"><?= $hotline1 ?></p>
+                                    <label for="product-title">Hotline2:</label>
+                                    <input type="text" name="hotline2" class="form-control" value="<?= $hotline2 ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="product-title">Hotline 2:</label>
-                                    <p class="form-control"><?= $hotline2 ?></p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="product-title">Mail</label>
-                                    <p class="form-control"><?= $mail ?></p>
+                                    <label for="product-title">Mail:</label>
+                                    <input type="text" name="mail" class="form-control" value="<?= $mail ?>">
                                 </div>
                                 <div class="form-group">
                                     <label for="product-title">Địa chỉ:</label>
-                                    <p class="form-control"><?= $add ?></p>
+                                    <input type="text" name="add" class="form-control" value="<?= $add ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="product-title">Ưu Đãi 1:</label>
-                                    <p class="form-control"><?= $uudai1 ?></p>
+                                    <label for="product-title">Ưu đãi chính:</label>
+                                    <input type="text" name="ud1" class="form-control" value="<?= $uudai1 ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for="product-title">Ưu Đãi 2:</label>
-                                    <p class="form-control"><?= $uudai2 ?></p>
-                                    <!-- <input type="text" name="nhacungcap" class="form-control" value=""> -->
+                                    <label for="product-title">Ưu đãi phụ:</label>
+                                    <input type="text" name="ud2" class="form-control" value="<?= $uudai2 ?>">
                                 </div>
-                            <?php
-                            }
+
+                                <!--Main Content-->
 
 
-                            ?>
-                            <!--Main Content-->
+                                <!-- SIDEBAR-->
 
 
-                            <!-- SIDEBAR-->
+                                <aside id="admin_sidebar" class="col-md-4">
 
 
+                                    <div class="form-group">
+                                        <input type="hidden" name="id" value="<?php echo $id; ?>" />
+                                        <input type="submit" class="btn btn-primary btn-lg" name="capnhat" value="Sửa">
 
+                                    </div>
+                                </aside>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-
     <script src="../assets/js/core/popper.min.js"></script>
     <script src="../assets/js/core/bootstrap.min.js"></script>
     <script src="../assets/js/plugins/perfect-scrollbar.min.js"></script>
@@ -211,4 +202,4 @@ include_once "./sidebar.php";
 </body>
 
 </html>
-<?php include "./footer.php" ?>
+<?php include_once "./footer.php" ?>
