@@ -1,3 +1,5 @@
+
+
 <?php include "./header.php";
     include_once "./sidebar.php";
 ?>
@@ -162,11 +164,11 @@
                                         <select name="iddonhang" id="" class="form-control">
 
                                           
-                               
-                                            <option value="0" >Đơn hàng mới</option>';
-                                            <option value="1" >Đang xử lý</option>';
-                                            <option value="2" >Đang giao hàng</option>';
-                                            <option value="3" >Hoàn tất</option>';
+                                            <option value="0" >Hủy</option>';
+                                            <option value="1" >Đơn hàng mới</option>';
+                                            <option value="2" >Đang xử lý</option>';
+                                            <option value="3" >Đang giao hàng</option>';
+                                            <option value="4" >Hoàn tất</option>';
                                
                           
 

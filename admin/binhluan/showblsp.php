@@ -1,6 +1,8 @@
-
-<?php include_once "./header.php";
+<?php
+include_once "./header.php";
 include_once "./sidebar.php";
+
+
 ?>
 
 <body class="g-sidenav-show  bg-gray-100">
@@ -11,19 +13,17 @@ include_once "./sidebar.php";
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sản phẩm</a>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
                         </li>
-                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Đơn hàng</li>
+                        <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Binh Luan</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">List danh sách đơn hàng</h6>
+                    <h6 class="font-weight-bolder mb-0">List Binh Luan</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
                         <div class="input-group">
-                            <form class="" action="" method="post">
-                                <input class="search_input" type="text" placeholder="Search" aria-label="Search" name="kyw">
-
-                            </form>
+                            <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                            <input type="text" class="form-control" placeholder="Type here...">
                         </div>
                     </div>
                     <ul class="navbar-nav  justify-content-end">
@@ -131,8 +131,10 @@ include_once "./sidebar.php";
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List danh sách đơn hàng</h2>
-
+                            <h2>List Binh luan</h2>
+                            <!-- <button class="btn_butn">
+                                <a href="index.php?act=adddm">Them danh muc</a>
+                            </button> -->
                         </div>
 
 
@@ -143,160 +145,71 @@ include_once "./sidebar.php";
                                     <thead>
                                         <tr>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Mã đơn hàng</th>
+                                                Id</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Khách hàng</th>
+                                                Nội dung bình luận </th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Số lượng hàng</th>
+                                                Người bình luận</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Gía trị đơn hàng</th>
+                                                Id_product</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Tình trạng đơn hàng</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Ngày đặt hàng</th>
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Chi tiết đơn hàng</th>
-
-                                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                                Ngày bình luận</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
                                                 Action</th>
 
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <?php
-                                        if (isset($listbill) && (is_array($listbill))) {
-
-                                            foreach ($listbill as $bill) {
-                                                extract($bill);
-                                                $suadh = "index.php?act=suadh&id=" . $id;
-                                                $xoadh = "index.php?act=xoadh&id=" . $id;
+                                        <?php 
+                  foreach($listbinhluanid as $binhluan){
+                    extract($binhluan);
+                  
+                    $xoabl="index.php?act=xoabl&id=".$id;
 
 
-                                                $kh = $bill["bill_name"] . '
-                                                <br/> ' . $bill["bill_email"] . '
-                                                <br/> ' . $bill["bill_address"] . '
-                                                <br/> ' . $bill["bill_tel"];
-
-                                                $countsp = loadall_cart_count($bill['id']);
-                                                $ttdh = get_ttdh($bill['bill_status']);
-
-
-                                        ?>
-                                                <tr>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm"></h6>
-                                                                <p class="text-xs text-secondary mb-0"><?= $bill['id'] ?></p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm"></h6>
-                                                                <p class="text-xs text-secondary mb-0"><?= $kh ?></p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm"></h6>
-                                                                <p class="text-xs text-secondary mb-0"><?= $countsp ?></p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm"></h6>
-                                                                <p class="text-xs text-secondary mb-0"><?= $bill['total'] ?></p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm"></h6>
-                                                                <p class="text-xs text-secondary mb-0">
-                                                                    <?php
-                                                                    if ($bill_status == 0) {
-                                                                        echo "Hủy";
-                                                                    }
-                                                                    if ($bill_status == 1) {
-                                                                        echo "Đơn hàng mới";
-                                                                    }
-                                                                    if ($bill_status == 2) {
-                                                                        echo "Đang xử lý";
-                                                                    }
-                                                                    if ($bill_status == 3) {
-                                                                        echo "Đang giao hàng";
-                                                                    }
-                                                                    if ($bill_status == 4) {
-                                                                        echo "Hoàn tất";
-                                                                    }
-
-                                                                    ?>
-
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm"></h6>
-                                                                <p class="text-xs text-secondary mb-0"><?= $bill['ngaydathang'] ?></p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        <div class="d-flex px-2 py-1">
-
-                                                            <div class="d-flex flex-column justify-content-center">
-                                                                <h6 class="mb-0 text-sm"></h6>
-                                                                <p class="text-xs text-secondary mb-0"><a href="index.php?act=chitietbill&id=<?= $bill['id'] ?>">Chi tiết</a></p>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="<?= $suadh ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
-                                                        </a>
-                                                    </td>
-                                                    <td class="align-middle">
-                                                        <a href="'<?= $xoadh ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Delete
-                                                        </a>
-                                                    </td>
-                                                </tr>
+                    echo'
+                      <tr>
+                      <td>
+                        <div class="d-flex px-2 py-1">
+                       
+                          <div class="d-flex flex-column justify-content-center">
+                            <h6 class="mb-0 text-sm"></h6>
+                            <p class="text-xs text-secondary mb-0">'.$id.'</p>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <p class="text-xs font-weight-bold mb-0">'.$content.'</p>
+                      
+                      </td>
+                      <td>
+                      <p class="text-xs font-weight-bold mb-0">'.$id_customer.'</p>
+                    
+                        </td>
+                        <td>
+                        <p class="text-xs font-weight-bold mb-0">'.$id_prd.'</p>
+                    
+                    </td>
+                    <td>
+                    <p class="text-xs font-weight-bold mb-0">'.$ngaybinhluan.'</p>
+                    
+                    </td>
+                     
+                     
+                      <td class="align-middle">
+                        <a href="'.$xoabl.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                         Delete
+                        </a>
+                      </td>
+                    </tr>';
 
 
 
 
-
-                                            <?php
-                                            }
-
-                                            ?>
-
-
-                                        <?php  } ?>
-
-
-
-
-
-
-
+                  }
+                  
+                  
+                  ?>
 
                                     </tbody>
                                 </table>
@@ -305,6 +218,7 @@ include_once "./sidebar.php";
                     </div>
                 </div>
             </div>
+            <input type="hidden" name="idpro" value="<?= $id ?>">
 
 
         </div>
@@ -327,7 +241,7 @@ include_once "./sidebar.php";
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="../assets/js/soft-ui-dashboard.min.js?v=1.0.3"></script>
+    <?php include_once "./footer.php" ?>
 </body>
 
 </html>
-<?php include_once "./footer.php"; ?>

@@ -13,13 +13,23 @@
     if($idpro > 0 )
     $sql .= " AND id_prd = '".$idpro."' ";
     $sql .= "  order by id desc";
-
     $listbinhluan=pdo_query($sql);
     return $listbinhluan;
+}
+function loadall_binhluan_id($id){
+    $sql= "SELECT * FROM comment where 1 And id_prd='".$id."' ORDER BY id DESC";
+    $blid=pdo_query($sql);
+    return $blid;
+
 }
 function delete_binhluan($id){
     $sql="delete from comment where id=".$id;
     pdo_execute($sql);
+}
+function loadall_sp_cmt(){
+        $sql="SELECT * from product where socmt >0 ORDER by id"; 
+        $spcobl=pdo_query($sql);
+        return $spcobl;
 }
 function selectall_binhluan(){
     $sql="select * from comment ";

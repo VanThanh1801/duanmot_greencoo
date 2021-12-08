@@ -321,16 +321,23 @@ include "../modal/pdo.php"; ?>
         header('location:index.php?act=dangnhap');
         break;
       case 'listbl':
-        $listbinhluan = loadall_binhluan(0);
-        include "binhluan/list.php";
-
-
+        $spcmt = loadall_sp_cmt();
+        // ;
+         include "binhluan/list.php";
+        break;
+      case 'spbl':
+        if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+          $id = $_GET['id'];
+          $listbinhluanid = loadall_binhluan_id($id);
+          include "binhluan/showblsp.php";
+        }
         break;
       case 'xoabl':
         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
           delete_binhluan($_GET['id']);
         }
-        $listbinhluan = selectall_binhluan();
+        //down_socmt($id_pro); 
+        $spcmt = loadall_sp_cmt();
         include "binhluan/list.php";
         break;
         //duy
