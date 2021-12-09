@@ -1,7 +1,7 @@
 <?php 
 $id_pro = $_REQUEST['idpro'];
 session_start();
-
+ob_start();
 include "../../modal/pdo.php";
 include "../../modal/binhluan.php";
 $dsbl = loadall_binhluan($id_pro);
@@ -134,7 +134,7 @@ $dsbl = loadall_binhluan($id_pro);
             $id_pro = $_POST['idpro'];
             $iduser = $_SESSION['user']['id'];
             $ngaybinhluan = date('h:i:sa d/m/Y'); 
-
+            up_socmt($id_pro);
             insert_binhluan($noidung, $iduser, $id_pro, $ngaybinhluan);
             header("Location: ".$_SERVER['HTTP_REFERER']);
             // var_dump($_SERVER['HTTP_REFERER']);

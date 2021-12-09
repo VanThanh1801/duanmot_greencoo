@@ -101,5 +101,15 @@ function update_luotxem($idsp){
     pdo_execute($sql);
 
 }
+function up_socmt($id_pro){
+    $sql = "UPDATE product set socmt = socmt + 1 where id=".$id_pro;
+    pdo_execute($sql);
+
+}
+function down_socmt($id_pro){
+    $sql = "update product set socmt = socmt - 1 where id=".$id_pro;
+    pdo_execute($sql);
+
+}
 
 ?>
