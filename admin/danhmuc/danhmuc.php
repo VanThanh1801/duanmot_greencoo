@@ -11,7 +11,7 @@
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="index.php">Trang chủ</a>
                         </li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Danh mục</li>
                     </ol>
@@ -19,17 +19,17 @@
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <span class="input-group-text text-body"><i class="fas fa-search"
                                     aria-hidden="true"></i></span>
                             <input type="text" class="form-control" placeholder="Type here...">
-                        </div>
+                        </div> -->
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
                             <a href="index.php?act=logout" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <span class="d-sm-inline d-none">Log Out</span>
+                                <span class="d-sm-inline d-none">Đăng xuất</span>
                             </a>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -139,9 +139,9 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List danh muc</h2>
+                            <h2>Danh sách danh mục sản phẩm.</h2>
                             <button class="btn_butn">
-                                <a href="index.php?act=adddm">Them danh muc</a>
+                                <a href="index.php?act=adddm">Thêm danh mục</a>
                             </button>
                         </div>
 
@@ -154,19 +154,19 @@
                                         <tr>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                                Id Danh muc</th>
+                                                Id</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Ten Danh Muc</th>
+                                                Tên danh mục</th>
                                             <th
                                             class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                            Hinh anh</th>
+                                            Hình anh</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                                Thao tác</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                                Thao tác</th>
 
                                         </tr>
                                     </thead>
@@ -200,12 +200,12 @@
                      
                       <td class="align-middle">
                         <a href="'.$suadm.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                          Edit
+                          Sửa
                         </a>
                       </td> 
                       <td class="align-middle">
                         <a href="'.$xoadm.'" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                         Delete
+                         Xóa
                         </a>
                       </td>
                     </tr>';

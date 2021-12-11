@@ -11,6 +11,7 @@ include "../modal/pdo.php"; ?>
 <?php include "../modal/contact.php"; ?>
 <?php include "../modal/in4.php" ?>
 <?php include "../modal/tk_admin.php" ?>
+<?php include "../modal/event.php" ?>
 
   
 
@@ -121,16 +122,21 @@ include "../modal/pdo.php"; ?>
         include "sanpham/add.php";
         break;
       case 'listsp':
-        if (isset($_POST['listok']) && ($_POST['listok'])) {
+        if (isset($_POST['kyw']) && ($_POST['kyw'] != "")) {
           $kyw = $_POST['kyw'];
-          $iddm = $_POST['iddm'];
         } else {
-          $kyw = '';
+          $kyw = "";
+        }
+        if (isset($_GET['iddm']) && ($_GET['iddm'] > 0)) {
+          $iddm = $_GET['iddm'];
+        } else {
           $iddm = 0;
         }
+        $dssp = loadall_sanpham($kyw);
+
         $listdanhmuc = loadall_danhmuc();
 
-        $listsanpham = loadall_sanpham($kyw, $iddm);
+        //$listsanpham = loadall_sanpham($kyw, $iddm);
         include "../admin/sanpham/list.php";
         break;
       case 'xoasp':
@@ -306,9 +312,9 @@ include "../modal/pdo.php"; ?>
           $fullname = $_POST['fullname'];
           $tel = $_POST['tel'];
           $id = $_POST['id'];
-          update_taikhoan($id, $user, $pass, $email, $address, $fullname, $tel);
+          update_taikhoan($id, $user, $pass, $email, $tel, $address, $fullname);
           $_SESSION['user'] = checkuser($user, $pass);
-          header("location:index.php?act=editadmin");
+          header("location:index.php?act=listtkadmin");
           if (is_array($checkuser)) {
             $_SESSION['user'] = $checkuser;
             header('location:index.php');
@@ -422,8 +428,6 @@ include "../modal/pdo.php"; ?>
         if (isset($_GET['id']) && ($_GET['id'] > 0)) {
           $suabill = loadone_bill($_GET['id']);
         }
-
-
         include "./bill/updatebill.php";
         break;
 
@@ -436,6 +440,7 @@ include "../modal/pdo.php"; ?>
 
           update_donhang($id, $ttdonhang);
           $thongbao = "Cập nhật thành công";
+          header("location:index.php?act=listbill");
         }
 
         $listbill = loadall_bill();
@@ -608,9 +613,63 @@ include "../modal/pdo.php"; ?>
             }
             $logoweb = loadall_logo(); 
             include "logo/list.php";
-            break;
     
           break;
+          case 'listeve':
+            $listeve = loadall_event();
+            include "event/list.php";
+            break;
+          case 'addeve':
+            if (isset($_POST['themmoi']) && ($_POST['themmoi'])) {
+              $title1 = $_POST['tit1'];
+              $title2 = $_POST['tit2'];
+              $intro = $_POST['intro'];
+              $evepro = $_POST['evepro'];
+              $status = $_POST['sts'];
+              $price_old = $_POST['giacu'];
+              $price_new = $_POST['giamoi'];
+              $hinh = $_FILES['hinh']['name'];
+              $target_dir = "../upload/";
+              $target_file = $target_dir . basename($_FILES["hinh"]["name"]);
+              if (move_uploaded_file($_FILES["hinh"]["tmp_name"], $target_file)) {
+                // echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+              } else {
+                //  echo "Sorry, there was an error uploading your file.";
+              }
+              insert_event($hinh,$title1,$title2,$intro, $evepro,$price_old,$price_new,$status);    
+              $thongbao = "Thêm thành công";
+            }
+            include "event/add.php";
+            break;
+          case 'deleve':
+            if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+              del_event($_GET['id']);
+            }
+            $listeve = loadall_event();    
+            include "event/list.php";
+            break;
+            case 'upeve':
+              if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                $suaeve = loadone_event($_GET['id']);
+              }
+              include "./event/edit.php";
+              break;
+      
+          case 'editeve':
+              if (isset($_POST['capnhat']) && ($_POST['capnhat'])) {
+                $id = $_POST['id'];
+      
+      
+                $status = $_POST['iddonhang'];
+      
+                update_event($id,$status);
+                $thongbao = "Cập nhật thành công";
+                header("location:index.php?act=listeve");
+              }
+      
+              $listeve = loadall_event();
+              include "event/list.php";
+              break;
     }
   } else {
     if (!isset($_SESSION['user']) && !isset($_SESSION['pass'])) {

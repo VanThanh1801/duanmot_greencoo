@@ -7,8 +7,7 @@
                 extract($onesp);
                 $hinh = $img_path . $img;
                 ?>
-                <a href="<?php echo $hinh ?>" class="image-popup"> <img src=<?php echo $hinh ?> class="img-fluid item"
-                        alt=""></a>
+                <a href="<?php echo $hinh ?>" class="image-popup"> <img src=<?php echo $hinh ?> class="img-fluid item" alt=""></a>
             </div>
             <div class="col-lg-6 product-details pl-md-5 ftco-animate">
                 <h3><?php echo $name ?></h3>
@@ -29,8 +28,8 @@
                         <a href="#" class="mr-2" style="color: #000;">Đã bán <span style="color: #bbb;">500</span></a>
                     </p>
                 </div>
-                <p class="price" id="pr"><span><?= number_format($new_price, 0, ',', '.')?> VND/Kg </span> </p>
-               
+                <p class="price" id="pr"><span><?= number_format($new_price, 0, ',', '.') ?> VND/Kg </span> </p>
+
                 <p><?php echo $mota ?></p>
                 <div class="row mt-4">
                     <div class="col-md-6">
@@ -41,38 +40,37 @@
                     <div class="col-md-12">
                         <p style="color: #000;">Số lượng: </p>
                     </div>
-                <form action="index.php?act=addtocart" method="post">
-                    <div class="input-group col-md-6 d-flex mb-3">
+                    <form action="index.php?act=addtocart" method="post">
+                        <div class="input-group col-md-6 d-flex mb-3">
 
-                        <span class="input-group-btn mr-2">
-                            <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
-                                <i class="ion-ios-remove"></i>
-                            </button>
-                        </span>
-                        <input type="text" id="quantity" name="quantity" class="form-control input-number"
-                            value="1" min="1" max="100">
-                        <span class="input-group-btn ml-2">
-                            <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
-                                <i class="ion-ios-add"></i>
-                            </button>
-                        </span>
+                            <span class="input-group-btn mr-2">
+                                <button type="button" class="quantity-left-minus btn" data-type="minus" data-field="">
+                                    <i class="ion-ios-remove"></i>
+                                </button>
+                            </span>
+                            <input type="text" id="quantity" name="quantity" class="form-control input-number" value="1" min="1" max="100">
+                            <span class="input-group-btn ml-2">
+                                <button type="button" class="quantity-right-plus btn" data-type="plus" data-field="">
+                                    <i class="ion-ios-add"></i>
+                                </button>
+                            </span>
 
-                    </div>
-                    <div class="w-100"></div>
+                        </div>
+                        <div class="w-100"></div>
 
                 </div>
                 <div class="m-auto d-flex">
-                  
-                        <input type="hidden" name="id" value="<?= $id ?>">
-                        <input type="hidden" name="name" value="<?= $name ?>">
-                        <input type="hidden" name="img" value="<?= $img ?>">
-                       
-                        <input type="hidden" name="old_price" value="<?=$old_price ?>">
-                        
-                        <input type="hidden" name="new_price" value="<?= $new_price ?>">
-                        <input type="hidden" name="sale" value="<?= $saleoff ?>">
 
-                        <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+                    <input type="hidden" name="id" value="<?= $id ?>">
+                    <input type="hidden" name="name" value="<?= $name ?>">
+                    <input type="hidden" name="img" value="<?= $img ?>">
+
+                    <input type="hidden" name="old_price" value="<?= $old_price ?>">
+
+                    <input type="hidden" name="new_price" value="<?= $new_price ?>">
+                    <input type="hidden" name="sale" value="<?= $saleoff ?>">
+
+                    <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
 
 
                     </form>
@@ -100,16 +98,16 @@
             $i = 0;
             foreach ($sp_cung_loai as $sp) {
                 extract($sp);
-                $linksp="index.php?act=sanphamct&idsp=".$id;
+                $linksp = "index.php?act=sanphamct&idsp=" . $id;
                 $hinh = $img_path . $img;
                 if (($i == 2) || ($i == 6) || ($i == 8) || ($i == 11)) {
                 }
 
             ?>
-            <div class="col-md-6 col-lg-3 ftco-animate">
-                <div class="product">
-                    <a href=<?= $linksp?> class="img-prod"><img class="img-fluid" src=<?=  $hinh ?> alt="">
-                        <?php if ($saleoff != null) {
+                <div class="col-md-6 col-lg-3 ftco-animate">
+                    <div class="product">
+                        <a href=<?= $linksp ?> class="img-prod"><img class="img-fluid" src=<?= $hinh ?> alt="">
+                            <?php if ($saleoff != null) {
                                 echo '
                                         <span class="status"> 
                                             ' . $saleoff . '%
@@ -117,38 +115,36 @@
                             }
                             ?>
 
-                        <div class="overlay"></div>
-                    </a>
-                    <div class="text py-3 pb-4 px-3 text-center">
-                        <h3><a href="' . $linksp . '"><?= $name ?></a></h3>
-                        <div class="d-flex">
-                            <div class="pricing">
-                                <p class="price"><span
-                                        class="mr-2 price-dc"><?= number_format($old_price, 0, ",", ".") ?></span><span
-                                        class="price-sale"><?= number_format($new_price, 0, ",", ".")?></span></p>
+                            <div class="overlay"></div>
+                        </a>
+                        <div class="text py-3 pb-4 px-3 text-center">
+                            <h3><a href="' . $linksp . '"><?= $name ?></a></h3>
+                            <div class="d-flex">
+                                <div class="pricing">
+                                    <p class="price"><span class="mr-2 price-dc"><?= number_format($old_price, 0, ",", ".") ?></span><span class="price-sale"><?= number_format($new_price, 0, ",", ".") ?></span></p>
+                                </div>
                             </div>
-                        </div>
-                        <div class="bottom-area d-flex px-3">
-                            <div class="m-auto d-flex">
-                                <form action="index.php?act=addtocart" method="post">
-                                    <input type="hidden" name="id" value="<?= $id ?>">
-                                    <input type="hidden" name="name" value="<?= $name ?>">
-                                    <input type="hidden" name="img" value="<?= $img ?>">
-                                   
-                                    <input type="hidden" name="old_price" value="<?=$old_price ?>">
-                                    <input type="hidden" name="quantity" value="<?=$product_quanlilty ?>">
-                                    <input type="hidden" name="new_price" value="<?= $new_price ?>">
-                                    <input type="hidden" name="sale" value="<?= $saleoff ?>">
+                            <div class="bottom-area d-flex px-3">
+                                <div class="m-auto d-flex">
+                                    <form action="index.php?act=addtocart" method="post">
 
-                                    <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+                                        <input type="hidden" name="id" value="<?= $id ?>">
+                                        <input type="hidden" name="name" value="<?= $name ?>">
+                                        <input type="hidden" name="img" value="<?= $img ?>">
+                                        <input type="hidden" name="old_price" value="<?= $old_price ?>">
+                                        <input type="hidden" name="quantity" value="1">
+                                        <input type="hidden" name="new_price" value="<?= $new_price ?>">
+                                        <input type="hidden" name="sale" value="<?= $saleoff ?>">
+                                        <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
 
 
-                                </form>
+
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             <?php
                 $i += 1;
             }
@@ -162,11 +158,11 @@
             </div>
         </div>
         <script>
-        $(document).ready(function() {
-            $("#binhluan").load("view/binhluan/binhluanform.php", {
-                idpro: <?= $id ?>
+            $(document).ready(function() {
+                $("#binhluan").load("view/binhluan/binhluanform.php", {
+                    idpro: <?= $id ?>
+                });
             });
-        });
         </script>
         <div id="binhluan">
 

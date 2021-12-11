@@ -53,7 +53,7 @@ function loadall_sanpham_tatca($iddm){
 }
 
 function loadall_sanpham_shop(){
-    $sql="SELECT * from product where 1 order by id desc limit 0,10"; 
+    $sql="SELECT * from product where 1 order by id desc limit 0,9"; 
     $listsanpham=pdo_query($sql);
     return $listsanpham;
 }

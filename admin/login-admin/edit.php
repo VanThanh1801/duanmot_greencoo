@@ -11,7 +11,7 @@ include_once "./sidebar.php";
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a>
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="index.php">Trang chủ</a>
                         </li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Cập nhật tài khoản</li>
                     </ol>
@@ -27,7 +27,7 @@ include_once "./sidebar.php";
                         <li class="nav-item d-flex align-items-center">
                             <a href="index.php?act=logout" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <span class="d-sm-inline d-none">Log Out</span>
+                                <span class="d-sm-inline d-none">Đăng xuất</span>
                             </a>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -137,11 +137,11 @@ include_once "./sidebar.php";
                                 <div class="col-md-8">
                                     <input type="hidden" name="id" value="<?= $id ?>">
                                     <div class="form-group">
-                                        <label for="product-title">User</label>
+                                        <label for="product-title">Tài khoản</label>
                                         <input type="text"  class="form-control" name="user" value="<?= $user ?>">
                                     </div>
                                     <div class="form-group">
-                                        <label for="product-title">Pass</label>
+                                        <label for="product-title">Mật khẩu</label>
                                         <input type="text"  class="form-control" name="pass" value="<?= $pass ?>">
 
                                     </div>
@@ -153,15 +153,23 @@ include_once "./sidebar.php";
                                     <div class="form-group row">
 
                                         <div class="col-xs-3">
-                                            <label for="product-price">Tel</label>
+                                            <label for="product-price">Số điện thoại</label>
                                             <input type="text" class="form-control" name="tel" size="60" value="<?= $tel ?>">
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group row">
+
+                                        <div class="col-xs-3">
+                                            <label for="product-price">Địa chỉ</label>
+                                            <input type="text" class="form-control" size="60" name="address" value="<?= $address ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
 
                                         <div class="col-xs-3">
-                                            <label for="product-price">Address</label>
-                                            <input type="text" class="form-control" size="60" name="address" value="<?= $address ?>">
+                                            <label for="product-price">Họ và Tên:</label>
+                                            <input type="text" class="form-control" name="fullname" size="60" value="<?= $fullName ?>">
                                         </div>
                                     </div>
                                 </div>

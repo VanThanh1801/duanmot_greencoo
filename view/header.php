@@ -117,11 +117,9 @@ foreach($listin4 as $in4){
                             
                             '.$user.'</a>
                         <div class="dropdown-menu" aria-labelledby="dropdown04">
-                            <a class="dropdown-item" href="index.php?act=thoat">Đăng xuất</a>
-
+                            <a class="dropdown-item" href="index.php?act=edit_taikhoan">Cập nhật tài khoản</a>
                             <a class="dropdown-item" href="index.php?act=mybill">Đơn hàng</a>
-                            
-
+                            <a class="dropdown-item" href="index.php?act=thoat">Đăng xuất</a>
                         </div>    
                     </li>
                                 ';

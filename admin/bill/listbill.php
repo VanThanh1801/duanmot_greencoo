@@ -11,26 +11,26 @@ include_once "./sidebar.php";
             <div class="container-fluid py-1 px-3">
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Sản phẩm</a>
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="index.php">Trang chủ</a>
                         </li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Đơn hàng</li>
                     </ol>
-                    <h6 class="font-weight-bolder mb-0">List danh sách đơn hàng</h6>
+                    <h6 class="font-weight-bolder mb-0">Danh sách đơn hàng</h6>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <form class="" action="" method="post">
                                 <input class="search_input" type="text" placeholder="Search" aria-label="Search" name="kyw">
 
                             </form>
-                        </div>
+                        </div> -->
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
                             <a href="index.php?act=logout" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <span class="d-sm-inline d-none">Log Out</span>
+                                <span class="d-sm-inline d-none">Đăng xuất</span>
                             </a>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -131,7 +131,7 @@ include_once "./sidebar.php";
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>List danh sách đơn hàng</h2>
+                            <h2>Danh sách đơn hàng</h2>
 
                         </div>
 
@@ -158,9 +158,9 @@ include_once "./sidebar.php";
                                                 Chi tiết đơn hàng</th>
 
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                                Thao tác</th>
                                             <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                                Thao tác</th>
 
                                         </tr>
                                     </thead>
@@ -269,12 +269,12 @@ include_once "./sidebar.php";
                                                     </td>
                                                     <td class="align-middle">
                                                         <a href="<?= $suadh ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Edit
+                                                            Cập nhật 
                                                         </a>
                                                     </td>
                                                     <td class="align-middle">
                                                         <a href="'<?= $xoadh ?>" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
-                                                            Delete
+                                                            Xóa
                                                         </a>
                                                     </td>
                                                 </tr>
