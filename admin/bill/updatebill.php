@@ -159,16 +159,17 @@
                                   
 
                                     <div class="form-group">
+                                    
                                         <label for="product-title">Tình trạng đơn hàng</label>
+                                        
+                                        <label for="product-title"></label>
+                                        <select name="iddonhang" id="" class="form-control" >
 
-                                        <select name="iddonhang" id="" class="form-control">
-
-                                          
-                                            <option value="0" >Hủy</option>';
-                                            <option value="1" >Đơn hàng mới</option>';
-                                            <option value="2" >Đang xử lý</option>';
-                                            <option value="3" >Đang giao hàng</option>';
-                                            <option value="4" >Hoàn tất</option>';
+                                            <option value="0" >Đơn hàng mới</option>';
+                                            <option value="1" >Đang xử lý</option>';
+                                            <option value="2" >Đang giao hàng</option>';
+                                            <option value="3" >Hoàn tất</option>';
+                                            <option value="4" >Hủy</option>';
                                
                           
 
