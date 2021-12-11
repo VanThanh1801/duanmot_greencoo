@@ -228,19 +228,19 @@ include_once "./sidebar.php";
                                                                 <h6 class="mb-0 text-sm"></h6>
                                                                 <p class="text-xs text-secondary mb-0">
                                                                     <?php
-                                                                    if ($bill_status == 0) {
+                                                                    if ($bill_status == 4) {
                                                                         echo "Hủy";
                                                                     }
-                                                                    if ($bill_status == 1) {
+                                                                    if ($bill_status == 0) {
                                                                         echo "Đơn hàng mới";
                                                                     }
-                                                                    if ($bill_status == 2) {
+                                                                    if ($bill_status == 1) {
                                                                         echo "Đang xử lý";
                                                                     }
-                                                                    if ($bill_status == 3) {
+                                                                    if ($bill_status == 2) {
                                                                         echo "Đang giao hàng";
                                                                     }
-                                                                    if ($bill_status == 4) {
+                                                                    if ($bill_status == 3) {
                                                                         echo "Hoàn tất";
                                                                     }
 
