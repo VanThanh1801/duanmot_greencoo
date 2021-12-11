@@ -19,23 +19,20 @@
                     <ul class="categories">
 
 
-                        <?php 
-                foreach($dsdm as $dm){
-                    extract($dm);
-                    $linkdm = "index.php?act=sanpham&iddm=".$id;
-                
-
-                    echo '
-                    <li><a href="'.$linkdm.'">'.$name.' </a></li>';
-                    
+                        <?php
+                        foreach ($dsdm as $dm) {
+                            extract($dm);
+                            $linkdm = "index.php?act=sanpham&iddm=" . $id;
 
 
-                }
-                ?>
+                            echo '
+                    <li><a href="' . $linkdm . '">' . $name . ' </a></li>';
+                        }
+                        ?>
 
                     </ul>
                 </div>
-
+                <!-- 
                 <div class="sidebar-box ftco-animate">
                     <h3 class="heading">Sắp xếp theo giá sản phẩm</h3>
                     <label class="form-label" for="customRange1">Example range</label>
@@ -62,7 +59,7 @@
                         <input type="hidden" name="q" value="/greenmart_fresh/product-tag/frozen/">
                     </form>
 
-                </div>
+                </div> -->
 
 
 
@@ -73,59 +70,61 @@
 
 
                 <div class="row">
-                <?php 
-                        foreach($dssp as $sp){
-                            extract($sp);
-                            $hinh = $img_path.$img;
-                            $linhsp = "index.php?act=product-single&idsp=".$id;
-                            ?>
-                            <div class="col-md-4 d-flex ftco-animate">
+                    <?php
+                    foreach ($dssp as $sp) {
+                        extract($sp);
+                        $hinh = $img_path . $img;
+                        $linksp = "index.php?act=sanphamct&idsp=" . $id;
+                    ?>
+                        <div class="col-md-4 d-flex ftco-animate">
                             <div class="product">
-                            <a href="<?= $linksp  ?>" class="img-prod"><img class="img-fluid" src="<?= $hinh ?>" alt="Colorlib Template">
-                            <?php if( $saleoff != null) { ?> 
-                                <span class="status"><?= $saleoff ?>%</span>
-                                <div class="overlay"></div>
-                                <?php } ?>
-                            </a>
-                            <div class="text py-3 pb-4 px-3 text-center">
-                            <h3><a href="<?= $linksp  ?>"><?= $name ?></a></h3>
-                                 <div class="d-flex">
-                                    <div class="pricing">
-                                        <p class="price"><span class="mr-2 price-dc"><?=$old_price ?></span><span
-                                                class="price-sale"><?= $new_price ?></span></p>
+                                <a href="<?= $linksp  ?>" class="img-prod"><img class="img-fluid" src="<?= $hinh ?>" alt="Colorlib Template">
+                                    <?php if ($saleoff != null) { ?>
+                                        <span class="status"><?= $saleoff ?>%</span>
+                                        <div class="overlay"></div>
+                                    <?php } ?>
+                                </a>
+                                <div class="text py-3 pb-4 px-3 text-center">
+                                    <h3><a href="<?= $linksp  ?>"><?= $name ?></a></h3>
+                                    <div class="d-flex">
+                                        <div class="pricing">
+                                            
+                                            <p class="price"><span class="mr-2 price-dc"><?= $old_price ?></span> <span class="price-sale"><?= $new_price ?></span></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="bottom-area d-flex px-3">
-                                    <div class="m-auto d-flex">
-                                    <form action="index.php?act=addtocart" method="post">
-                                 <input type="hidden" name="id" value="<?= $id ?>">
-                                 <input type="hidden" name="name" value="<?= $name ?>">
-                                 <input type="hidden" name="img" value="<?= $img ?>">
-                                 <input type="hidden" name="old_price" value="<?=$old_price ?>">
-                                 <input type="hidden" name="new_price" value="<?= $new_price ?>">
-                                 <input type="hidden" name="sale" value="<?= $saleoff ?>">
-         
-                                 <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
-                                     
-                                
-                             </form>
+                                    <div class="bottom-area d-flex px-3">
+                                        <div class="m-auto d-flex">
+                                            <form action="index.php?act=addtocart" method="post">
+
+                                                <input type="hidden" name="id" value="<?= $id ?>">
+                                                <input type="hidden" name="name" value="<?= $name ?>">
+                                                <input type="hidden" name="img" value="<?= $img ?>">
+                                                <input type="hidden" name="old_price" value="<?= $old_price ?>">
+                                                <input type="hidden" name="quantity" value="1">
+                                                <input type="hidden" name="new_price" value="<?= $new_price ?>">
+                                                <input type="hidden" name="sale" value="<?= $saleoff ?>">
+                                                <input type="submit" class="cart" name="addtocart" value="Thêm vào giỏ hàng">
+
+
+
+                                            </form>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        </div>
-                            
-                            
-                            
-                        <?php 
-                        }
-                        ?>    
+
+
+
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
         </div>
     </div>
 </section>
-   
+
 
 <?php include_once("contacts.php") ?>
 <?php include_once("footer.php") ?>

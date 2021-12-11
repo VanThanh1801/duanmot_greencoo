@@ -11,24 +11,24 @@
                 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
-                        <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="index.php">Trang Quản trị</a>
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="index.php">Trang chủ</a>
                         </li>
                         <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Banner</li>
                     </ol>
                 </nav>
                 <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
                     <div class="ms-md-auto pe-md-3 d-flex align-items-center">
-                        <div class="input-group">
+                        <!-- <div class="input-group">
                             <span class="input-group-text text-body"><i class="fas fa-search"
                                     aria-hidden="true"></i></span>
                             <input type="text" class="form-control" placeholder="Type here...">
-                        </div>
+                        </div> -->
                     </div>
                     <ul class="navbar-nav  justify-content-end">
                         <li class="nav-item d-flex align-items-center">
                             <a href="index.php?act=logout" class="nav-link text-body font-weight-bold px-0">
                                 <i class="fa fa-user me-sm-1"></i>
-                                <span class="d-sm-inline d-none">Log Out</span>
+                                <span class="d-sm-inline d-none">Đăng xuất</span>
                             </a>
                         </li>
                         <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
@@ -140,7 +140,7 @@
                         <div class="card-header pb-0">
                             <h2>Banner</h2>
                             <button class="btn_butn">
-                                <a href="index.php?act=addbanner">Thêm Banner</a>
+                                <a href="index.php?act=addeve">Thêm sự kiện</a>
                             </button>
                         </div>
 
@@ -168,10 +168,10 @@
                                             Tìnnh trạng</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                                Thao tác</th>
                                             <th
                                                 class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">
-                                                Action</th>
+                                                Thao tác</th>
                                         </tr>
                                     </thead>
                                     <tbody>

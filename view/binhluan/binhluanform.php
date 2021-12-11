@@ -4,6 +4,7 @@ session_start();
 ob_start();
 include "../../modal/pdo.php";
 include "../../modal/binhluan.php";
+include "../../modal/sanpham.php";
 $dsbl = loadall_binhluan($id_pro);
 
 ?>
@@ -121,7 +122,7 @@ $dsbl = loadall_binhluan($id_pro);
             <input type="hidden" name="idpro" value="<?= $id_pro ?>">
 
             <input type="text" name="noidung">
-            <input type="submit" name="guibinhluan" value="Gui bình luận" class="guibinhluan">
+            <input type="submit" name="guibinhluan" value="Gửi bình luận" class="guibinhluan">
        
           <?php }
           

@@ -23,7 +23,7 @@ if(is_array($bn)){
                                 
                                 <div class="form-group">
                                     <label for="product-title">Hình ảnh</label>
-                                    <input type="file" name="hinh" >
+                                    <input type="file" name="hinh" value="<?= $img ?>" >
 
                                 </div>
 

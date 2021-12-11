@@ -1,12 +1,17 @@
-<section class="ftco-section img" style="background-image: url(./view/images/bg_3.jpg);">
+<?php foreach($listeve as $eve){
+    extract($eve);
+    ?>
+<?php if($status == 1 ){  ?>
+<section class="ftco-section img" style="background-image: url(upload/<?= $img ?>);">
         <div class="container">
             <div class="row justify-content-end">
                 <div class="col-md-6 heading-section ftco-animate deal-of-the-day ftco-animate">
-                    <span class="subheading">Lựa chọn hoàn hảo cho bữa tối</span>
-                    <h2 class="mb-4">Ưu đãi trong ngày</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia</p>
-                    <h3><a href="#">Cải ngọt We are Fresh 500g chuẩn VietGAP</a></h3>
-                    <span class="price"> Giá cũ 25.000 đ - <a href="#"> Giá mới 21.500 đ</a></span>
+                    <span class="subheading"><?= $title1 ?></span>
+                    <h2 class="mb-4"><?= $title2 ?></h2>
+                    <p><?= $intro ?></p>
+                    <h3><a href="#"><?= $evepro ?></a></h3>
+                    <span class="price"> Giá cũ <?= $price_old ?> - <a href="#"> Giá mới <?= $price_new ?></a>
+                </span>
                     <div id="timer" class="d-flex mt-5">
                         <div class="time" id="days"></div>
                         <div class="time pl-3" id="hours"></div>
@@ -17,3 +22,8 @@
             </div>
         </div>
     </section>
+    <?php }?>
+    <?php
+}
+
+?>

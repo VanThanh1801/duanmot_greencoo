@@ -12,7 +12,7 @@
                 <div class="col-12">
                     <div class="card mb-4">
                         <div class="card-header pb-0">
-                            <h2>biểu bồ thống kê</h2>
+                            <h2>Biểu đồ thống kê</h2>
 
                         </div>
 
@@ -53,7 +53,7 @@
 
                                 // Optional; add a title and set the width and height of the chart
                                 var options = {
-                                    'title': 'Thong ke san pham theo danh muc',
+                                    'title': 'Thống kê sản phẩm theo danh mục',
                                     'width': 800,
                                     'height': 600
                                 };

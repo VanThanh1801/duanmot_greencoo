@@ -12,8 +12,8 @@ function insert_taikhoan($email,$user,$pass){
     pdo_execute($sql);
     
 }
-function update_taikhoan($id,$user,$pass,$email,$address,$tel){
-    $sql="UPDATE qtv set user='".$user."', pass='".$pass."', email='".$email."',address='".$address."',tel='".$tel."' where id=".$id;   
+function update_taikhoan($id,$user,$pass,$email,$tel,$address,$fullName){
+    $sql="UPDATE qtv set user='".$user."', pass='".$pass."', email='".$email."',tel='".$tel."',address='".$address."',fullName='".$fullName."' where id=".$id;   
     pdo_execute($sql);
 }
 

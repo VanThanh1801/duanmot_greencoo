@@ -1,4 +1,7 @@
-
+<?php 
+                foreach ($logoweb as $lg ){
+                    extract($lg);
+                    ?>
 
     <div class="hero-wrap hero-bread" style="background-image: url('view/images/bg_1.jpg');">
       <div class="container">
@@ -17,17 +20,17 @@
           <div class="w-100"></div>
           <div class="col-md-3 d-flex">
           	<div class="info bg-white p-4">
-	            <p><span>Địa chỉ:</span> Số 1 Trịnh Văn Bô, Phường Mỹ Đình 1, Quận Nam Từ Liêm,  TP. Hà Nội</p>
+	            <p><span>Địa chỉ:</span> <?= $add ?></p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
           	<div class="info bg-white p-4">
-	            <p><span>Số điện thoại:</span> <a href="tel://1234567920">+ 1235 2355 98</a></p>
+	            <p><span>Số điện thoại:</span> <a href="tel://1234567920">+ <?= $hotline2 ?></a></p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
           	<div class="info bg-white p-4">
-	            <p><span>Email:</span> <a href="mailto:info@yoursite.com">poly@gmail.com</a></p>
+	            <p><span>Email:</span> <a href="mailto:info@yoursite.com"><?= $mail ?></a></p>
 	          </div>
           </div>
           <div class="col-md-3 d-flex">
@@ -59,10 +62,10 @@
           </div>
 
           <div class="col-md-6 d-flex">
-          	<div id="map" class="bg-white"></div>
+          	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3723.8639810443706!2d105.7445984147634!3d21.038127785993293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b991d80fd5%3A0x53cefc99d6b0bf6f!2zVHLGsOG7nW5nIENhbyDEkeG6s25nIEZQVCBQb2x5dGVjaG5pYw!5e0!3m2!1svi!2s!4v1639157942002!5m2!1svi!2s" class="bg-white" width="600" height="600" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
           </div>
         </div>
       </div>
     </section>
 
-    
+    <?php  }?>
